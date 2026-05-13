@@ -2,256 +2,165 @@
 
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Minhas Questões</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
-  :root {
-    --bg: #0f1117;
-    --surface: #181c27;
-    --surface2: #1e2333;
-    --border: #2a2f42;
-    --accent: #4f8ef7;
-    --accent2: #7c3aed;
-    --green: #22c55e;
-    --red: #ef4444;
-    --yellow: #f59e0b;
-    --text: #e8ecf4;
-    --muted: #6b7280;
-    --radius: 12px;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+:root {
+  --bg:#0d1117; --surface:#161b27; --surface2:#1c2236; --border:#2d3450;
+  --accent:#4f8ef7; --accent2:#7c3aed; --green:#22c55e; --red:#ef4444;
+  --yellow:#f59e0b; --text:#f0f4ff; --muted:#8b95b0; --radius:12px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
 
 /* LOGIN */
-#login-screen {
-min-height: 100vh; display: flex; align-items: center; justify-content: center;
-background: radial-gradient(ellipse at 60% 30%, #1a1f35 0%, #0f1117 70%);
-}
-.login-box {
-background: var(–surface); border: 1px solid var(–border); border-radius: 20px;
-padding: 48px 40px; width: 360px; text-align: center;
-box-shadow: 0 32px 80px rgba(0,0,0,0.5);
-position: relative; z-index: 10;
-}
-.login-logo { font-family: ‘Syne’, sans-serif; font-size: 28px; font-weight: 800; color: var(–accent); margin-bottom: 4px; letter-spacing: -1px; }
-.login-sub { color: var(–muted); font-size: 13px; margin-bottom: 32px; }
-.login-input {
-width: 100%; padding: 12px 16px; background: var(–surface2); border: 1px solid var(–border);
-border-radius: var(–radius); color: var(–text); font-size: 15px; margin-bottom: 16px; outline: none;
-transition: border-color .2s;
-}
-.login-input:focus { border-color: var(–accent); }
-.btn-primary {
-width: 100%; padding: 14px; background: var(–accent); color: #fff; border: none;
-border-radius: var(–radius); font-size: 15px; font-weight: 600; cursor: pointer;
-transition: opacity .2s, transform .1s;
--webkit-appearance: none; appearance: none;
-position: relative; z-index: 10;
-}
-.btn-primary:hover { opacity: .9; }
-.btn-primary:active { transform: scale(.98); }
-.login-err { color: var(–red); font-size: 13px; margin-top: 10px; display: none; }
+#login-screen{min-height:100vh;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at 60% 30%,#1a1f35 0%,#0d1117 70%);}
+.login-box{background:var(–surface);border:1px solid var(–border);border-radius:20px;padding:48px 40px;width:360px;text-align:center;box-shadow:0 32px 80px rgba(0,0,0,.6);}
+.login-logo{font-family:‘Syne’,sans-serif;font-size:26px;font-weight:800;color:var(–accent);margin-bottom:4px;}
+.login-sub{color:var(–muted);font-size:13px;margin-bottom:32px;}
+.login-input{width:100%;padding:13px 16px;background:var(–surface2);border:1px solid var(–border);border-radius:var(–radius);color:var(–text);font-size:16px;margin-bottom:14px;outline:none;-webkit-appearance:none;}
+.login-input:focus{border-color:var(–accent);}
+.btn-primary{width:100%;padding:14px;background:var(–accent);color:#fff;border:none;border-radius:var(–radius);font-size:16px;font-weight:700;cursor:pointer;-webkit-appearance:none;touch-action:manipulation;}
+.login-err{color:var(–red);font-size:13px;margin-top:10px;display:none;}
 
-/* APP LAYOUT */
-#app { display: none; min-height: 100vh; }
-.topbar {
-background: var(–surface); border-bottom: 1px solid var(–border);
-padding: 0 24px; height: 60px; display: flex; align-items: center; justify-content: space-between;
-position: sticky; top: 0; z-index: 100;
-}
-.topbar-logo { font-family: ‘Syne’, sans-serif; font-weight: 800; font-size: 20px; color: var(–accent); letter-spacing: -0.5px; }
-.topbar-nav { display: flex; gap: 4px; }
-.nav-btn {
-padding: 7px 16px; border-radius: 8px; border: none; background: transparent;
-color: var(–muted); font-size: 14px; cursor: pointer; transition: all .15s; font-family: ‘DM Sans’, sans-serif;
-}
-.nav-btn:hover { background: var(–surface2); color: var(–text); }
-.nav-btn.active { background: var(–accent); color: #fff; }
-.logout-btn { background: none; border: 1px solid var(–border); color: var(–muted); padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 13px; }
-.logout-btn:hover { border-color: var(–red); color: var(–red); }
+/* APP */
+#app{display:none;min-height:100vh;}
+.topbar{background:var(–surface);border-bottom:1px solid var(–border);padding:0 20px;height:64px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+.topbar-logo{font-family:‘Syne’,sans-serif;font-weight:800;font-size:20px;color:var(–accent);}
+.topbar-nav{display:flex;gap:4px;}
+.nav-btn{padding:8px 16px;border-radius:8px;border:none;background:transparent;color:var(–muted);font-size:14px;font-weight:500;cursor:pointer;font-family:‘DM Sans’,sans-serif;touch-action:manipulation;-webkit-appearance:none;}
+.nav-btn.active{background:var(–accent);color:#fff;}
+.logout-btn{background:none;border:1px solid var(–border);color:var(–muted);padding:7px 14px;border-radius:8px;cursor:pointer;font-size:13px;touch-action:manipulation;-webkit-appearance:none;}
 
 /* VIEWS */
-.view { display: none; padding: 28px 28px; max-width: 1200px; margin: 0 auto; }
-.view.active { display: block; }
+.view{display:none;padding:24px;max-width:1200px;margin:0 auto;}
+.view.active{display:block;}
 
-/* CARDS/PANELS */
-.panel { background: var(–surface); border: 1px solid var(–border); border-radius: var(–radius); padding: 20px; margin-bottom: 20px; }
-.panel-title { font-family: ‘Syne’, sans-serif; font-weight: 700; font-size: 15px; margin-bottom: 16px; color: var(–text); }
+/* PANELS */
+.panel{background:var(–surface);border:1px solid var(–border);border-radius:var(–radius);padding:20px;margin-bottom:20px;}
+.panel-title{font-family:‘Syne’,sans-serif;font-weight:700;font-size:15px;margin-bottom:16px;color:var(–text);}
 
 /* FILTERS */
-.filter-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end; }
-.filter-group { display: flex; flex-direction: column; gap: 6px; min-width: 160px; }
-.filter-label { font-size: 11px; text-transform: uppercase; letter-spacing: .5px; color: var(–muted); }
-select, input[type=text], textarea {
-background: var(–surface2); border: 1px solid var(–border); border-radius: 8px;
-color: var(–text); padding: 8px 12px; font-size: 14px; font-family: ‘DM Sans’, sans-serif; outline: none;
-transition: border-color .2s;
-}
-select:focus, input[type=text]:focus, textarea:focus { border-color: var(–accent); }
-select { cursor: pointer; }
-textarea { resize: vertical; min-height: 80px; }
+.filter-row{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end;}
+.filter-group{display:flex;flex-direction:column;gap:6px;min-width:150px;}
+.filter-label{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(–muted);}
+select,input[type=text],input[type=date],textarea{background:var(–surface2);border:1px solid var(–border);border-radius:8px;color:var(–text);padding:9px 12px;font-size:14px;font-family:‘DM Sans’,sans-serif;outline:none;-webkit-appearance:none;}
+select{cursor:pointer;background-image:url(“data:image/svg+xml,%3Csvg xmlns=‘http://www.w3.org/2000/svg’ width=‘12’ height=‘8’ viewBox=‘0 0 12 8’%3E%3Cpath fill=’%238b95b0’ d=‘M1 1l5 5 5-5’/%3E%3C/svg%3E”);background-repeat:no-repeat;background-position:right 10px center;padding-right:30px;}
+textarea{resize:vertical;min-height:80px;}
 
-/* QUESTÃO CARD */
-.q-card {
-background: var(–surface2); border: 1px solid var(–border); border-radius: var(–radius);
-padding: 16px 18px; margin-bottom: 12px; cursor: pointer; transition: border-color .2s, transform .15s;
-position: relative;
-}
-.q-card:hover { border-color: var(–accent); transform: translateY(-1px); }
-.q-card.selected { border-color: var(–accent); background: #1a2236; }
-.q-card-check {
-position: absolute; top: 14px; right: 14px; width: 22px; height: 22px;
-border: 2px solid var(–border); border-radius: 6px; display: flex; align-items: center; justify-content: center;
-transition: all .15s;
-}
-.q-card.selected .q-card-check { background: var(–accent); border-color: var(–accent); }
-.q-card.selected .q-card-check::after { content: ‘✓’; color: #fff; font-size: 13px; font-weight: 700; }
-.q-card-top { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; padding-right: 36px; }
-.tag {
-font-size: 11px; padding: 3px 9px; border-radius: 20px; font-weight: 500;
-display: inline-flex; align-items: center; gap: 4px; white-space: nowrap;
-}
-.tag-materia { background: rgba(79,142,247,.15); color: #7eb3ff; border: 1px solid rgba(79,142,247,.25); }
-.tag-tema { background: rgba(124,58,237,.15); color: #a78bfa; border: 1px solid rgba(124,58,237,.25); }
-.tag-tipo { background: rgba(34,197,94,.1); color: #86efac; border: 1px solid rgba(34,197,94,.2); }
-.tag-dif-facil { background: rgba(34,197,94,.1); color: #86efac; border: 1px solid rgba(34,197,94,.2); }
-.tag-dif-medio { background: rgba(245,158,11,.1); color: #fcd34d; border: 1px solid rgba(245,158,11,.2); }
-.tag-dif-dificil { background: rgba(239,68,68,.1); color: #fca5a5; border: 1px solid rgba(239,68,68,.2); }
-.tag-used { background: rgba(245,158,11,.08); color: #fbbf24; border: 1px solid rgba(245,158,11,.2); cursor: pointer; }
-.tag-used:hover { background: rgba(245,158,11,.18); }
-.q-card-text { font-size: 14px; line-height: 1.6; color: var(–text); }
-.q-card-text.truncated { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-.q-card-alts { margin-top: 10px; display: none; }
-.q-card.expanded .q-card-alts { display: block; }
-.q-card.expanded .q-card-text { -webkit-line-clamp: unset; overflow: visible; }
-.alt-item { font-size: 13px; padding: 4px 0; color: var(–muted); }
-.alt-item.correta { color: var(–green); font-weight: 500; }
-.q-card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; }
-.q-card-id { font-size: 11px; color: var(–muted); }
-.btn-sm {
-padding: 5px 12px; border-radius: 6px; border: 1px solid var(–border); background: transparent;
-color: var(–muted); font-size: 12px; cursor: pointer; transition: all .15s;
-}
-.btn-sm:hover { background: var(–surface); color: var(–text); }
-.btn-sm.danger:hover { border-color: var(–red); color: var(–red); }
+/* Q CARDS */
+.q-card{background:var(–surface2);border:1px solid var(–border);border-radius:var(–radius);padding:16px 18px;margin-bottom:12px;cursor:pointer;position:relative;touch-action:manipulation;}
+.q-card.selected{border-color:var(–accent);background:#1a2236;}
+.q-card-check{position:absolute;top:14px;right:14px;width:22px;height:22px;border:2px solid var(–border);border-radius:6px;display:flex;align-items:center;justify-content:center;}
+.q-card.selected .q-card-check{background:var(–accent);border-color:var(–accent);}
+.q-card.selected .q-card-check::after{content:‘✓’;color:#fff;font-size:13px;font-weight:700;}
+.q-card-top{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;padding-right:36px;}
+.tag{font-size:11px;padding:3px 9px;border-radius:20px;font-weight:500;display:inline-flex;align-items:center;white-space:nowrap;}
+.tag-materia{background:rgba(79,142,247,.2);color:#a0c4ff;border:1px solid rgba(79,142,247,.3);}
+.tag-tema{background:rgba(124,58,237,.2);color:#c4b5fd;border:1px solid rgba(124,58,237,.3);}
+.tag-tipo{background:rgba(34,197,94,.15);color:#86efac;border:1px solid rgba(34,197,94,.25);}
+.tag-dif-facil{background:rgba(34,197,94,.15);color:#86efac;border:1px solid rgba(34,197,94,.25);}
+.tag-dif-medio{background:rgba(245,158,11,.15);color:#fcd34d;border:1px solid rgba(245,158,11,.25);}
+.tag-dif-dificil{background:rgba(239,68,68,.15);color:#fca5a5;border:1px solid rgba(239,68,68,.25);}
+.tag-used{background:rgba(245,158,11,.12);color:#fbbf24;border:1px solid rgba(245,158,11,.25);cursor:pointer;}
+.q-card-text{font-size:14px;line-height:1.6;color:var(–text);}
+.q-card-text.truncated{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.q-card-alts{margin-top:10px;display:none;}
+.q-card.expanded .q-card-alts{display:block;}
+.q-card.expanded .q-card-text{-webkit-line-clamp:unset;overflow:visible;}
+.alt-item{font-size:13px;padding:4px 0;color:var(–muted);}
+.alt-item.correta{color:var(–green);font-weight:500;}
+.q-card-footer{display:flex;justify-content:space-between;align-items:center;margin-top:12px;}
+.q-card-id{font-size:11px;color:var(–muted);}
+.btn-sm{padding:6px 12px;border-radius:6px;border:1px solid var(–border);background:transparent;color:var(–muted);font-size:12px;cursor:pointer;touch-action:manipulation;-webkit-appearance:none;}
 
-/* CONTADOR SELECIONADOS */
-.selection-bar {
-position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
-background: var(–accent); color: #fff; padding: 12px 24px; border-radius: 40px;
-display: none; align-items: center; gap: 16px; box-shadow: 0 8px 32px rgba(79,142,247,.4);
-font-size: 14px; font-weight: 500; z-index: 200;
-}
-.selection-bar.visible { display: flex; }
-.sel-clear { background: rgba(255,255,255,.2); border: none; color: #fff; padding: 5px 12px; border-radius: 20px; cursor: pointer; font-size: 13px; }
-.sel-export { background: #fff; border: none; color: var(–accent); padding: 6px 16px; border-radius: 20px; cursor: pointer; font-size: 13px; font-weight: 600; }
+/* SELECTION BAR */
+.selection-bar{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(–accent);color:#fff;padding:12px 24px;border-radius:40px;display:none;align-items:center;gap:16px;box-shadow:0 8px 32px rgba(79,142,247,.4);font-size:14px;font-weight:500;z-index:200;}
+.selection-bar.visible{display:flex;}
+.sel-clear{background:rgba(255,255,255,.2);border:none;color:#fff;padding:6px 14px;border-radius:20px;cursor:pointer;font-size:13px;touch-action:manipulation;}
+.sel-export{background:#fff;border:none;color:var(–accent);padding:7px 18px;border-radius:20px;cursor:pointer;font-size:13px;font-weight:700;touch-action:manipulation;}
 
-/* FORM NOVA QUESTÃO */
-.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.form-full { grid-column: 1/-1; }
-.form-group { display: flex; flex-direction: column; gap: 6px; }
-.form-label { font-size: 12px; color: var(–muted); text-transform: uppercase; letter-spacing: .4px; }
-.alt-row { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
-.alt-row input[type=text] { flex: 1; }
-.alt-row input[type=radio] { accent-color: var(–green); width: 16px; height: 16px; cursor: pointer; }
-.alt-label { font-size: 13px; color: var(–muted); width: 20px; }
-.add-alt-btn { background: none; border: 1px dashed var(–border); color: var(–muted); padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 13px; }
-.add-alt-btn:hover { border-color: var(–accent); color: var(–accent); }
+/* FORM */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.form-full{grid-column:1/-1;}
+.form-group{display:flex;flex-direction:column;gap:6px;}
+.form-label{font-size:12px;color:var(–muted);text-transform:uppercase;letter-spacing:.4px;}
+.alt-row{display:flex;gap:8px;align-items:center;margin-bottom:8px;}
+.alt-row input[type=text]{flex:1;}
+.alt-row input[type=radio]{accent-color:var(–green);width:18px;height:18px;cursor:pointer;}
+.alt-label{font-size:13px;color:var(–muted);width:20px;}
+.add-alt-btn{background:none;border:1px dashed var(–border);color:var(–muted);padding:7px 14px;border-radius:8px;cursor:pointer;font-size:13px;touch-action:manipulation;}
 
-/* TAGS MANAGER */
-.tags-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
-.tags-category { background: var(–surface2); border: 1px solid var(–border); border-radius: var(–radius); padding: 16px; }
-.tags-category-title { font-family: ‘Syne’, sans-serif; font-size: 13px; font-weight: 700; margin-bottom: 12px; color: var(–accent); text-transform: uppercase; letter-spacing: .5px; }
-.tag-item { display: flex; justify-content: space-between; align-items: center; padding: 6px 8px; border-radius: 6px; font-size: 13px; margin-bottom: 4px; background: var(–surface); }
-.tag-del { background: none; border: none; color: var(–muted); cursor: pointer; font-size: 14px; line-height: 1; }
-.tag-del:hover { color: var(–red); }
-.tag-add-row { display: flex; gap: 8px; margin-top: 10px; }
-.tag-add-row input { flex: 1; padding: 7px 10px; font-size: 13px; }
-.tag-add-btn { background: var(–accent); border: none; color: #fff; padding: 7px 12px; border-radius: 8px; cursor: pointer; font-size: 13px; }
+/* TAGS */
+.tags-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;}
+.tags-category{background:var(–surface2);border:1px solid var(–border);border-radius:var(–radius);padding:16px;}
+.tags-category-title{font-family:‘Syne’,sans-serif;font-size:13px;font-weight:700;margin-bottom:12px;color:var(–accent);text-transform:uppercase;}
+.tag-item{display:flex;justify-content:space-between;align-items:center;padding:6px 8px;border-radius:6px;font-size:13px;margin-bottom:4px;background:var(–surface);}
+.tag-del{background:none;border:none;color:var(–muted);cursor:pointer;font-size:16px;padding:0 4px;touch-action:manipulation;}
+.tag-add-row{display:flex;gap:8px;margin-top:10px;}
+.tag-add-row input{flex:1;padding:7px 10px;font-size:13px;}
+.tag-add-btn{background:var(–accent);border:none;color:#fff;padding:7px 14px;border-radius:8px;cursor:pointer;font-size:13px;touch-action:manipulation;}
 
 /* STATS */
-.stats-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; margin-bottom: 20px; }
-.stat-card { background: var(–surface2); border: 1px solid var(–border); border-radius: var(–radius); padding: 16px; text-align: center; }
-.stat-num { font-family: ‘Syne’, sans-serif; font-size: 32px; font-weight: 800; color: var(–accent); }
-.stat-label { font-size: 12px; color: var(–muted); margin-top: 4px; }
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-bottom:20px;}
+.stat-card{background:var(–surface2);border:1px solid var(–border);border-radius:var(–radius);padding:16px;text-align:center;}
+.stat-num{font-family:‘Syne’,sans-serif;font-size:32px;font-weight:800;color:var(–accent);}
+.stat-label{font-size:12px;color:var(–muted);margin-top:4px;}
 
 /* UTILS */
-.flex-between { display: flex; justify-content: space-between; align-items: center; }
-.mb-16 { margin-bottom: 16px; }
-.empty-state { text-align: center; padding: 60px 20px; color: var(–muted); }
-.empty-state svg { margin-bottom: 16px; opacity: .4; }
-.empty-state p { font-size: 15px; }
-.btn-accent { background: var(–accent); border: none; color: #fff; padding: 9px 20px; border-radius: var(–radius); cursor: pointer; font-size: 14px; font-weight: 600; transition: opacity .2s; }
-.btn-accent:hover { opacity: .85; }
-.badge { display: inline-block; background: var(–accent); color: #fff; border-radius: 20px; font-size: 11px; padding: 1px 8px; margin-left: 6px; }
-.spinner { display: inline-block; width: 16px; height: 16px; border: 2px solid rgba(255,255,255,.3); border-top-color: #fff; border-radius: 50%; animation: spin .6s linear infinite; }
-@keyframes spin { to { transform: rotate(360deg); } }
-.toast {
-position: fixed; top: 24px; right: 24px; background: var(–surface); border: 1px solid var(–border);
-border-radius: var(–radius); padding: 12px 18px; font-size: 14px; z-index: 999;
-transform: translateY(-60px); opacity: 0; transition: all .3s; pointer-events: none;
-}
-.toast.show { transform: translateY(0); opacity: 1; }
-.toast.success { border-color: var(–green); color: var(–green); }
-.toast.error { border-color: var(–red); color: var(–red); }
+.flex-between{display:flex;justify-content:space-between;align-items:center;}
+.mb-16{margin-bottom:16px;}
+.empty-state{text-align:center;padding:60px 20px;color:var(–muted);}
+.btn-accent{background:var(–accent);border:none;color:#fff;padding:10px 20px;border-radius:var(–radius);cursor:pointer;font-size:14px;font-weight:600;touch-action:manipulation;-webkit-appearance:none;}
+.toast{position:fixed;top:24px;right:24px;background:var(–surface);border:1px solid var(–border);border-radius:var(–radius);padding:12px 18px;font-size:14px;z-index:999;transform:translateY(-60px);opacity:0;transition:all .3s;pointer-events:none;}
+.toast.show{transform:translateY(0);opacity:1;}
+.toast.success{border-color:var(–green);color:var(–green);}
+.toast.error{border-color:var(–red);color:var(–red);}
 
 /* MODAL */
-.modal-overlay {
-position: fixed; inset: 0; background: rgba(0,0,0,.6); z-index: 300; display: none;
-align-items: center; justify-content: center; padding: 20px;
-}
-.modal-overlay.open { display: flex; }
-.modal {
-background: var(–surface); border: 1px solid var(–border); border-radius: 16px;
-padding: 28px; width: 100%; max-width: 640px; max-height: 90vh; overflow-y: auto;
-}
-.modal-title { font-family: ‘Syne’, sans-serif; font-size: 18px; font-weight: 700; margin-bottom: 20px; }
-.modal-footer { display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px; }
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:300;display:none;align-items:center;justify-content:center;padding:20px;}
+.modal-overlay.open{display:flex;}
+.modal{background:var(–surface);border:1px solid var(–border);border-radius:16px;padding:28px;width:100%;max-width:640px;max-height:90vh;overflow-y:auto;}
+.modal-title{font-family:‘Syne’,sans-serif;font-size:18px;font-weight:700;margin-bottom:20px;}
+.modal-footer{display:flex;gap:10px;justify-content:flex-end;margin-top:20px;}
 
-/* SCROLL */
-::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: var(–bg); }
-::-webkit-scrollbar-thumb { background: var(–border); border-radius: 3px; }
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-track{background:var(–bg);}
+::-webkit-scrollbar-thumb{background:var(–border);border-radius:3px;}
 
-@media (max-width: 600px) {
-.form-grid { grid-template-columns: 1fr; }
-.topbar-nav .nav-btn span { display: none; }
-.view { padding: 16px; }
+@media(max-width:600px){
+.form-grid{grid-template-columns:1fr;}
+.view{padding:14px;}
+.topbar-nav .nav-btn span{display:none;}
 }
 </style>
 
 </head>
 <body>
 
-<!-- LOGIN -->
-
 <div id="login-screen">
   <div class="login-box">
     <div class="login-logo">Minhas Questões</div>
     <div class="login-sub">Prof. Felipe Cerqueira</div>
-    <input class="login-input" type="password" id="login-pass" placeholder="Senha de acesso" />
-    <button class="btn-primary" id="btn-login" onclick="doLogin()">Entrar</button>
+    <input class="login-input" type="password" id="login-pass" placeholder="Senha de acesso" autocomplete="current-password"/>
+    <button class="btn-primary" id="btn-login">Entrar</button>
     <div class="login-err" id="login-err">Senha incorreta</div>
   </div>
 </div>
-
-<!-- APP -->
 
 <div id="app">
   <div class="topbar">
     <div class="topbar-logo">MQ</div>
     <div class="topbar-nav">
-      <button class="nav-btn active" onclick="showView('questoes')" id="nav-questoes">📋 <span>Questões</span></button>
-      <button class="nav-btn" onclick="showView('nova')" id="nav-nova">➕ <span>Nova</span></button>
-      <button class="nav-btn" onclick="showView('tags')" id="nav-tags">🏷️ <span>Tags</span></button>
-      <button class="nav-btn" onclick="showView('stats')" id="nav-stats">📊 <span>Stats</span></button>
+      <button class="nav-btn active" id="nav-questoes">📋 <span>Questões</span></button>
+      <button class="nav-btn" id="nav-nova">➕ <span>Nova</span></button>
+      <button class="nav-btn" id="nav-tags">🏷️ <span>Tags</span></button>
+      <button class="nav-btn" id="nav-stats">📊 <span>Stats</span></button>
     </div>
-    <button class="logout-btn" onclick="logout()">Sair</button>
+    <button class="logout-btn" id="btn-logout">Sair</button>
   </div>
-
-  <!-- VIEW: QUESTÕES -->
 
   <div class="view active" id="view-questoes">
     <div class="panel">
@@ -259,47 +168,36 @@ padding: 28px; width: 100%; max-width: 640px; max-height: 90vh; overflow-y: auto
       <div class="filter-row">
         <div class="filter-group">
           <div class="filter-label">Matéria</div>
-          <select id="f-materia" onchange="applyFilters()"><option value="">Todas</option></select>
+          <select id="f-materia"><option value="">Todas</option></select>
         </div>
         <div class="filter-group">
           <div class="filter-label">Tema</div>
-          <select id="f-tema" onchange="applyFilters()"><option value="">Todos</option></select>
+          <select id="f-tema"><option value="">Todos</option></select>
         </div>
         <div class="filter-group">
           <div class="filter-label">Tipo</div>
-          <select id="f-tipo" onchange="applyFilters()"><option value="">Todos</option></select>
+          <select id="f-tipo"><option value="">Todos</option></select>
         </div>
         <div class="filter-group">
           <div class="filter-label">Dificuldade</div>
-          <select id="f-dificuldade" onchange="applyFilters()"><option value="">Todas</option></select>
+          <select id="f-dificuldade"><option value="">Todas</option></select>
         </div>
-        <div class="filter-group" style="flex:1;min-width:200px">
+        <div class="filter-group" style="flex:1;min-width:180px">
           <div class="filter-label">Busca</div>
-          <input type="text" id="f-busca" placeholder="Buscar texto..." oninput="applyFilters()" />
+          <input type="text" id="f-busca" placeholder="Buscar texto..."/>
         </div>
-        <button class="btn-sm" onclick="clearFilters()">Limpar</button>
+        <button class="btn-sm" id="btn-clear-filters">Limpar</button>
       </div>
     </div>
-
-```
-<div class="flex-between mb-16">
-  <div style="font-size:14px;color:var(--muted)">
-    <span id="q-count">0</span> questões encontradas
-    <span id="sel-count-label" style="display:none"> · <strong id="sel-count">0</strong> selecionadas</span>
+    <div class="flex-between mb-16">
+      <div style="font-size:14px;color:var(--muted)"><span id="q-count">0</span> questões encontradas</div>
+      <button class="btn-accent" id="btn-select-all">Selecionar todas</button>
+    </div>
+    <div id="q-list"></div>
+    <div id="empty-q" class="empty-state" style="display:none">
+      <p style="font-size:15px">Nenhuma questão encontrada</p>
+    </div>
   </div>
-  <button class="btn-accent" onclick="selectAll()">Selecionar todas</button>
-</div>
-
-<div id="q-list"></div>
-<div id="empty-q" class="empty-state" style="display:none">
-  <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9 12h6m-3-3v6M3 12a9 9 0 1118 0 9 9 0 01-18 0z"/></svg>
-  <p>Nenhuma questão encontrada</p>
-</div>
-```
-
-  </div>
-
-  <!-- VIEW: NOVA QUESTÃO -->
 
   <div class="view" id="view-nova">
     <div class="panel">
@@ -315,7 +213,7 @@ padding: 28px; width: 100%; max-width: 640px; max-height: 90vh; overflow-y: auto
         </div>
         <div class="form-group">
           <div class="form-label">Tipo *</div>
-          <select id="n-tipo" onchange="updateFormByType()"></select>
+          <select id="n-tipo"></select>
         </div>
         <div class="form-group">
           <div class="form-label">Dificuldade</div>
@@ -323,40 +221,30 @@ padding: 28px; width: 100%; max-width: 640px; max-height: 90vh; overflow-y: auto
         </div>
         <div class="form-group form-full">
           <div class="form-label">Última utilização (opcional)</div>
-          <input type="date" id="n-ultima" style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;color:var(--text);padding:8px 12px;font-size:14px;outline:none;" />
+          <input type="date" id="n-ultima" style="width:100%"/>
         </div>
         <div class="form-group form-full">
           <div class="form-label">Enunciado *</div>
-          <textarea id="n-enunciado" rows="4" placeholder="Digite o enunciado da questão..."></textarea>
+          <textarea id="n-enunciado" rows="5" placeholder="Digite o enunciado da questão..."></textarea>
         </div>
       </div>
-
-```
-  <!-- Alternativas (múltipla escolha) -->
-  <div id="alts-section" style="margin-top:16px">
-    <div class="form-label" style="margin-bottom:10px">Alternativas (marque a correta)</div>
-    <div id="alts-list"></div>
-    <button class="add-alt-btn" onclick="addAlt()">+ Adicionar alternativa</button>
-  </div>
-
-  <!-- Gabarito (V/F ou dissertativa) -->
-  <div id="gabarito-section" style="margin-top:16px;display:none">
-    <div class="form-group">
-      <div class="form-label">Gabarito / Resposta esperada</div>
-      <textarea id="n-gabarito" rows="3" placeholder="Resposta correta ou comentário..."></textarea>
+      <div id="alts-section" style="margin-top:16px">
+        <div class="form-label" style="margin-bottom:10px">Alternativas (marque a correta)</div>
+        <div id="alts-list"></div>
+        <button class="add-alt-btn" id="btn-add-alt">+ Adicionar alternativa</button>
+      </div>
+      <div id="gabarito-section" style="margin-top:16px;display:none">
+        <div class="form-group">
+          <div class="form-label">Gabarito / Resposta esperada</div>
+          <textarea id="n-gabarito" rows="3" placeholder="Resposta correta..."></textarea>
+        </div>
+      </div>
+      <div style="margin-top:20px;display:flex;gap:10px">
+        <button class="btn-accent" id="btn-salvar-questao">Salvar questão</button>
+        <button class="btn-sm" id="btn-limpar-form">Limpar</button>
+      </div>
     </div>
   </div>
-
-  <div style="margin-top:20px;display:flex;gap:10px">
-    <button class="btn-accent" onclick="salvarQuestao()">Salvar questão</button>
-    <button class="btn-sm" onclick="limparForm()">Limpar</button>
-  </div>
-</div>
-```
-
-  </div>
-
-  <!-- VIEW: TAGS -->
 
   <div class="view" id="view-tags">
     <div class="panel">
@@ -364,8 +252,6 @@ padding: 28px; width: 100%; max-width: 640px; max-height: 90vh; overflow-y: auto
       <div class="tags-grid" id="tags-grid"></div>
     </div>
   </div>
-
-  <!-- VIEW: STATS -->
 
   <div class="view" id="view-stats">
     <div class="panel">
@@ -376,108 +262,64 @@ padding: 28px; width: 100%; max-width: 640px; max-height: 90vh; overflow-y: auto
   </div>
 </div>
 
-<!-- SELECTION BAR -->
-
 <div class="selection-bar" id="sel-bar">
   <span><strong id="sel-num">0</strong> questões selecionadas</span>
-  <button class="sel-clear" onclick="clearSelection()">Limpar</button>
-  <button class="sel-export" onclick="abrirModalExportar()">🖨 Montar Prova</button>
+  <button class="sel-clear" id="btn-sel-clear">Limpar</button>
+  <button class="sel-export" id="btn-montar-prova">🖨 Montar Prova</button>
 </div>
-
-<!-- MODAL EXPORTAR -->
 
 <div class="modal-overlay" id="modal-exportar">
   <div class="modal" style="max-width:480px">
     <div class="modal-title">Configurar Prova</div>
-
-```
-<div class="form-group" style="margin-bottom:16px">
-  <div class="form-label">Modelo de cabeçalho</div>
-  <select id="exp-modelo" onchange="toggleCamposModelo()" style="width:100%">
-    <option value="tradicional">Modelo Tradicional (UNIT)</option>
-    <option value="abp">Modelo ABP (Avaliação Multinível)</option>
-  </select>
-</div>
-
-<!-- Campo Tradicional: Disciplina + Unidade -->
-<div id="campos-tradicional">
-  <div class="form-group" style="margin-bottom:12px">
-    <div class="form-label">Disciplina</div>
-    <input type="text" id="exp-disciplina" placeholder="Ex: Fisioterapia Ortopédica" style="width:100%" />
-  </div>
-  <div class="form-group" style="margin-bottom:16px">
-    <div class="form-label">Unidade</div>
-    <input type="text" id="exp-unidade" placeholder="Ex: Aracaju" style="width:100%" />
-  </div>
-</div>
-
-<!-- Campo ABP: Projeto -->
-<div id="campos-abp" style="display:none">
-  <div class="form-group" style="margin-bottom:12px">
-    <div class="form-label">Disciplina</div>
-    <input type="text" id="exp-disciplina-abp" placeholder="Ex: Fisioterapia Ortopédica" style="width:100%" />
-  </div>
-  <div class="form-group" style="margin-bottom:16px">
-    <div class="form-label">Projeto</div>
-    <input type="text" id="exp-projeto" placeholder="Ex: Módulo Musculoesquelético" style="width:100%" />
-  </div>
-</div>
-
-<div class="modal-footer" style="flex-direction:column;gap:10px">
-  <div style="display:flex;gap:10px;width:100%">
-    <button class="btn-accent" style="flex:1" onclick="exportar('word')">⬇ Exportar Word</button>
-    <button class="btn-accent" style="flex:1;background:var(--accent2)" onclick="exportar('pdf')">🖨 Exportar PDF</button>
-  </div>
-  <button class="btn-sm" style="width:100%;text-align:center" onclick="fecharModalExportar()">Cancelar</button>
-</div>
-```
-
+    <div class="form-group" style="margin-bottom:16px">
+      <div class="form-label">Modelo de cabeçalho</div>
+      <select id="exp-modelo" style="width:100%">
+        <option value="tradicional">Modelo Tradicional (UNIT)</option>
+        <option value="abp">Modelo ABP (Avaliação Multinível)</option>
+      </select>
+    </div>
+    <div id="campos-tradicional">
+      <div class="form-group" style="margin-bottom:12px">
+        <div class="form-label">Disciplina</div>
+        <input type="text" id="exp-disciplina" placeholder="Ex: Fisioterapia Ortopédica" style="width:100%"/>
+      </div>
+      <div class="form-group" style="margin-bottom:16px">
+        <div class="form-label">Unidade</div>
+        <input type="text" id="exp-unidade" placeholder="Ex: Aracaju" style="width:100%"/>
+      </div>
+    </div>
+    <div id="campos-abp" style="display:none">
+      <div class="form-group" style="margin-bottom:12px">
+        <div class="form-label">Disciplina</div>
+        <input type="text" id="exp-disciplina-abp" placeholder="Ex: Fisioterapia Ortopédica" style="width:100%"/>
+      </div>
+      <div class="form-group" style="margin-bottom:16px">
+        <div class="form-label">Projeto</div>
+        <input type="text" id="exp-projeto" placeholder="Ex: Módulo Musculoesquelético" style="width:100%"/>
+      </div>
+    </div>
+    <div class="modal-footer" style="flex-direction:column;gap:10px">
+      <div style="display:flex;gap:10px;width:100%">
+        <button class="btn-accent" id="btn-exp-word" style="flex:1">⬇ Exportar Word</button>
+        <button class="btn-accent" id="btn-exp-pdf" style="flex:1;background:var(--accent2)">🖨 Exportar PDF</button>
+      </div>
+      <button class="btn-sm" id="btn-fechar-exportar" style="width:100%;text-align:center">Cancelar</button>
+    </div>
   </div>
 </div>
-
-<!-- MODAL EDITAR -->
 
 <div class="modal-overlay" id="modal-edit">
   <div class="modal">
     <div class="modal-title">Editar Questão</div>
     <div id="modal-body"></div>
     <div class="modal-footer">
-      <button class="btn-sm" onclick="closeModal()">Cancelar</button>
-      <button class="btn-accent" onclick="salvarEdicao()">Salvar</button>
+      <button class="btn-sm" id="btn-close-modal">Cancelar</button>
+      <button class="btn-accent" id="btn-salvar-edicao">Salvar</button>
     </div>
   </div>
 </div>
 
-<!-- TOAST -->
-
 <div class="toast" id="toast"></div>
-
-<!-- LOGIN SCRIPT - independente, antes do Firebase -->
-
-<script>
-const SENHA = "@bento30";
-function doLogin() {
-  const el = document.getElementById('login-pass');
-  const v = el ? el.value : '';
-  if (v === SENHA) {
-    document.getElementById('login-screen').style.display = 'none';
-    document.getElementById('app').style.display = 'block';
-    if (typeof init === 'function') init();
-    else window._pendingInit = true;
-  } else {
-    const err = document.getElementById('login-err');
-    if (err) { err.style.display = 'block'; err.textContent = 'Senha incorreta'; }
-  }
-}
-window.addEventListener('load', function() {
-  const btn = document.getElementById('btn-login');
-  const inp = document.getElementById('login-pass');
-  if (btn) btn.addEventListener('click', doLogin);
-  if (inp) inp.addEventListener('keydown', function(e){ if(e.key==='Enter') doLogin(); });
-});
-</script>
-
-<!-- Firebase + docx via CDN -->
 
 <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
 
@@ -488,46 +330,97 @@ window.addEventListener('load', function() {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 
 <script>
-// ============ CONFIG ============
+// ── CONFIG ──
+const SENHA = "@bento30";
 const firebaseConfig = {
-  apiKey: "AIzaSyDnGMYYokX3GMNfZsZ6D6KnR9XAXq7OWj4",
-  authDomain: "cerqueira-apps.firebaseapp.com",
-  projectId: "cerqueira-apps",
-  storageBucket: "cerqueira-apps.firebasestorage.app",
-  messagingSenderId: "721645026868",
-  appId: "1:721645026868:web:f2e3e2125e43975794d461"
+  apiKey:"AIzaSyDnGMYYokX3GMNfZsZ6D6KnR9XAXq7OWj4",
+  authDomain:"cerqueira-apps.firebaseapp.com",
+  projectId:"cerqueira-apps",
+  storageBucket:"cerqueira-apps.firebasestorage.app",
+  messagingSenderId:"721645026868",
+  appId:"1:721645026868:web:f2e3e2125e43975794d461"
 };
 
-let db;
-try {
-  firebase.initializeApp(firebaseConfig);
-  db = firebase.firestore();
-} catch(e) {
-  console.error('Firebase error:', e);
-}
-
-// ============ STATE ============
-let questoes = [];
-let tags = {
-  materias: ["Ortopedia","Esportiva","Cinesiologia e Biomecânica","Cinesioterapia","Terapia Manual"],
-  temas: ["Tornozelo e Pé","Joelho","Quadril","Coluna","Cotovelo","Punho e Mão","Tendinopatias","ATM","Fratura","Biomecânica Muscular"],
-  tipos: ["Múltipla Escolha","Verdadeiro/Falso","Dissertativa"],
-  dificuldades: ["Fácil","Médio","Difícil"]
+let db, questoes=[], filteredQuestoes=[], selectedIds=new Set(), editingId=null, altCount=0;
+let tags={
+  materias:["Ortopedia","Esportiva","Cinesiologia e Biomecânica","Cinesioterapia","Terapia Manual"],
+  temas:["Tornozelo e Pé","Joelho","Quadril","Coluna","Cotovelo","Punho e Mão","Tendinopatias","ATM","Fratura","Biomecânica Muscular"],
+  tipos:["Múltipla Escolha","Verdadeiro/Falso","Dissertativa"],
+  dificuldades:["Fácil","Médio","Difícil"]
 };
-let selectedIds = new Set();
-let filteredQuestoes = [];
-let editingId = null;
-let altCount = 0;
 
-// ============ LOGIN ============
-function logout() {
-  document.getElementById('login-screen').style.display = 'flex';
-  document.getElementById('app').style.display = 'none';
-  document.getElementById('login-pass').value = '';
+// ── INIT ──
+window.addEventListener('load', function(){
+  try {
+    firebase.initializeApp(firebaseConfig);
+    db = firebase.firestore();
+  } catch(e){ console.warn('Firebase:',e); }
+  bindEvents();
+});
+
+function bindEvents(){
+  // Login
+  document.getElementById('btn-login').addEventListener('click', doLogin);
+  document.getElementById('login-pass').addEventListener('keydown', function(e){ if(e.key==='Enter') doLogin(); });
+
+  // Nav
+  document.getElementById('nav-questoes').addEventListener('click', function(){ showView('questoes'); });
+  document.getElementById('nav-nova').addEventListener('click', function(){ showView('nova'); });
+  document.getElementById('nav-tags').addEventListener('click', function(){ showView('tags'); });
+  document.getElementById('nav-stats').addEventListener('click', function(){ showView('stats'); });
+  document.getElementById('btn-logout').addEventListener('click', logout);
+
+  // Filtros
+  document.getElementById('f-materia').addEventListener('change', applyFilters);
+  document.getElementById('f-tema').addEventListener('change', applyFilters);
+  document.getElementById('f-tipo').addEventListener('change', applyFilters);
+  document.getElementById('f-dificuldade').addEventListener('change', applyFilters);
+  document.getElementById('f-busca').addEventListener('input', applyFilters);
+  document.getElementById('btn-clear-filters').addEventListener('click', clearFilters);
+  document.getElementById('btn-select-all').addEventListener('click', selectAll);
+
+  // Nova questão
+  document.getElementById('n-tipo').addEventListener('change', updateFormByType);
+  document.getElementById('btn-add-alt').addEventListener('click', addAlt);
+  document.getElementById('btn-salvar-questao').addEventListener('click', salvarQuestao);
+  document.getElementById('btn-limpar-form').addEventListener('click', limparForm);
+
+  // Selection bar
+  document.getElementById('btn-sel-clear').addEventListener('click', clearSelection);
+  document.getElementById('btn-montar-prova').addEventListener('click', abrirModalExportar);
+
+  // Modal exportar
+  document.getElementById('exp-modelo').addEventListener('change', toggleCamposModelo);
+  document.getElementById('btn-exp-word').addEventListener('click', function(){ exportar('word'); });
+  document.getElementById('btn-exp-pdf').addEventListener('click', function(){ exportar('pdf'); });
+  document.getElementById('btn-fechar-exportar').addEventListener('click', fecharModalExportar);
+
+  // Modal editar
+  document.getElementById('btn-close-modal').addEventListener('click', closeModal);
+  document.getElementById('btn-salvar-edicao').addEventListener('click', salvarEdicao);
 }
 
-// ============ INIT ============
-async function init() {
+// ── LOGIN ──
+function doLogin(){
+  const v = document.getElementById('login-pass').value;
+  const err = document.getElementById('login-err');
+  if(v === SENHA){
+    document.getElementById('login-screen').style.display='none';
+    document.getElementById('app').style.display='block';
+    appInit();
+  } else {
+    err.style.display='block';
+  }
+}
+
+function logout(){
+  document.getElementById('login-screen').style.display='flex';
+  document.getElementById('app').style.display='none';
+  document.getElementById('login-pass').value='';
+}
+
+// ── APP INIT ──
+async function appInit(){
   await loadTags();
   await loadQuestoes();
   populateAllSelects();
@@ -536,30 +429,29 @@ async function init() {
   resetAlts();
 }
 
-// Se login aconteceu antes do Firebase carregar
-if (window._pendingInit) { window._pendingInit = false; init(); }
-
-// ============ FIRESTORE ============
-async function loadTags() {
+// ── FIRESTORE ──
+async function loadTags(){
   try {
     const doc = await db.collection('bancoquestoes_config').doc('tags').get();
-    if (doc.exists) tags = { ...tags, ...doc.data() };
-  } catch(e) { console.log('Tags default usadas'); }
+    if(doc.exists) tags = {...tags, ...doc.data()};
+  } catch(e){ console.log('Tags default'); }
 }
 
-async function saveTags() {
+async function saveTags(){
   await db.collection('bancoquestoes_config').doc('tags').set(tags);
 }
 
-async function loadQuestoes() {
-  const snap = await db.collection('bancoquestoes_questoes').orderBy('createdAt','desc').get();
-  questoes = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+async function loadQuestoes(){
+  try {
+    const snap = await db.collection('bancoquestoes_questoes').orderBy('createdAt','desc').get();
+    questoes = snap.docs.map(d=>({id:d.id,...d.data()}));
+  } catch(e){ questoes=[]; }
   applyFilters();
 }
 
-async function saveQuestao(q) {
-  if (q.id) {
-    const { id, ...data } = q;
+async function saveQuestao(q){
+  if(q.id){
+    const {id,...data}=q;
     await db.collection('bancoquestoes_questoes').doc(id).set(data);
   } else {
     q.createdAt = firebase.firestore.FieldValue.serverTimestamp();
@@ -568,128 +460,125 @@ async function saveQuestao(q) {
   }
 }
 
-async function deleteQuestao(id) {
+async function deleteQuestao(id){
   await db.collection('bancoquestoes_questoes').doc(id).delete();
-  questoes = questoes.filter(q => q.id !== id);
+  questoes = questoes.filter(q=>q.id!==id);
   selectedIds.delete(id);
   applyFilters();
   updateSelBar();
 }
 
-// ============ FILTERS & LIST ============
-function applyFilters() {
-  const mat = document.getElementById('f-materia')?.value || '';
-  const tema = document.getElementById('f-tema')?.value || '';
-  const tipo = document.getElementById('f-tipo')?.value || '';
-  const dif = document.getElementById('f-dificuldade')?.value || '';
-  const busca = (document.getElementById('f-busca')?.value || '').toLowerCase();
-
-  filteredQuestoes = questoes.filter(q => {
-    if (mat && q.materia !== mat) return false;
-    if (tema && q.tema !== tema) return false;
-    if (tipo && q.tipo !== tipo) return false;
-    if (dif && q.dificuldade !== dif) return false;
-    if (busca && !q.enunciado?.toLowerCase().includes(busca)) return false;
+// ── FILTERS ──
+function applyFilters(){
+  const mat=document.getElementById('f-materia').value;
+  const tema=document.getElementById('f-tema').value;
+  const tipo=document.getElementById('f-tipo').value;
+  const dif=document.getElementById('f-dificuldade').value;
+  const busca=document.getElementById('f-busca').value.toLowerCase();
+  filteredQuestoes = questoes.filter(q=>{
+    if(mat && q.materia!==mat) return false;
+    if(tema && q.tema!==tema) return false;
+    if(tipo && q.tipo!==tipo) return false;
+    if(dif && q.dificuldade!==dif) return false;
+    if(busca && !q.enunciado?.toLowerCase().includes(busca)) return false;
     return true;
   });
-
   renderQList();
   document.getElementById('q-count').textContent = filteredQuestoes.length;
 }
 
-function clearFilters() {
-  ['f-materia','f-tema','f-tipo','f-dificuldade'].forEach(id => {
-    const el = document.getElementById(id); if(el) el.value = '';
+function clearFilters(){
+  ['f-materia','f-tema','f-tipo','f-dificuldade'].forEach(id=>{
+    document.getElementById(id).value='';
   });
-  const b = document.getElementById('f-busca'); if(b) b.value = '';
+  document.getElementById('f-busca').value='';
   applyFilters();
 }
 
-function renderQList() {
-  const list = document.getElementById('q-list');
-  const empty = document.getElementById('empty-q');
-  if (!filteredQuestoes.length) {
-    list.innerHTML = '';
-    empty.style.display = 'block';
-    return;
-  }
-  empty.style.display = 'none';
-  list.innerHTML = filteredQuestoes.map((q,i) => {
-    const sel = selectedIds.has(q.id);
-    const difClass = q.dificuldade === 'Fácil' ? 'tag-dif-facil' : q.dificuldade === 'Difícil' ? 'tag-dif-dificil' : 'tag-dif-medio';
-    const altsHtml = q.tipo === 'Múltipla Escolha' && q.alternativas?.length
-      ? `<div class="q-card-alts">${q.alternativas.map((a,ai) =>
-          `<div class="alt-item ${ai===q.correta?'correta':''}">${String.fromCharCode(65+ai)}) ${a} ${ai===q.correta?'✓':''}</div>`
-        ).join('')}</div>`
-      : q.gabarito
-        ? `<div class="q-card-alts"><div class="alt-item correta">Resposta: ${q.gabarito}</div></div>`
-        : '';
-    return `
-      <div class="q-card ${sel?'selected':''}" id="qc-${q.id}" onclick="toggleSelect('${q.id}')">
-        <div class="q-card-check"></div>
-        <div class="q-card-top">
-          ${q.materia ? `<span class="tag tag-materia">${q.materia}</span>` : ''}
-          ${q.tema ? `<span class="tag tag-tema">${q.tema}</span>` : ''}
-          ${q.tipo ? `<span class="tag tag-tipo">${q.tipo}</span>` : ''}
-          ${q.dificuldade ? `<span class="tag ${difClass}">${q.dificuldade}</span>` : ''}
-          ${q.ultimaUtilizacao
-            ? `<span class="tag tag-used" title="Clique para atualizar" onclick="event.stopPropagation();marcarUtilizacao('${q.id}')">🗓 Usada em ${formatDate(q.ultimaUtilizacao)}</span>`
-            : `<span class="tag tag-used" style="opacity:.5" title="Clique para registrar uso" onclick="event.stopPropagation();marcarUtilizacao('${q.id}')">🗓 Nunca utilizada</span>`}
+// ── RENDER QUESTÕES ──
+function renderQList(){
+  const list=document.getElementById('q-list');
+  const empty=document.getElementById('empty-q');
+  if(!filteredQuestoes.length){ list.innerHTML=''; empty.style.display='block'; return; }
+  empty.style.display='none';
+  list.innerHTML = filteredQuestoes.map(q=>{
+    const sel=selectedIds.has(q.id);
+    const difClass=q.dificuldade==='Fácil'?'tag-dif-facil':q.dificuldade==='Difícil'?'tag-dif-dificil':'tag-dif-medio';
+    const altsHtml = q.tipo==='Múltipla Escolha' && q.alternativas?.length
+      ? `<div class="q-card-alts">${q.alternativas.map((a,i)=>`<div class="alt-item ${i===q.correta?'correta':''}">${String.fromCharCode(65+i)}) ${a} ${i===q.correta?'✓':''}</div>`).join('')}</div>`
+      : q.gabarito ? `<div class="q-card-alts"><div class="alt-item correta">Resposta: ${q.gabarito}</div></div>` : '';
+    const usadaTag = q.ultimaUtilizacao
+      ? `<span class="tag tag-used" data-id="${q.id}">🗓 ${formatDate(q.ultimaUtilizacao)}</span>`
+      : `<span class="tag tag-used" style="opacity:.5" data-id="${q.id}">🗓 Nunca utilizada</span>`;
+    return `<div class="q-card${sel?' selected':''}" data-id="${q.id}">
+      <div class="q-card-check"></div>
+      <div class="q-card-top">
+        ${q.materia?`<span class="tag tag-materia">${q.materia}</span>`:''}
+        ${q.tema?`<span class="tag tag-tema">${q.tema}</span>`:''}
+        ${q.tipo?`<span class="tag tag-tipo">${q.tipo}</span>`:''}
+        ${q.dificuldade?`<span class="tag ${difClass}">${q.dificuldade}</span>`:''}
+        ${usadaTag}
+      </div>
+      <div class="q-card-text truncated">${q.enunciado||''}</div>
+      ${altsHtml}
+      <div class="q-card-footer">
+        <span class="q-card-id">#${q.id?.slice(-6)}</span>
+        <div style="display:flex;gap:6px">
+          <button class="btn-sm" data-action="expand" data-id="${q.id}">Expandir</button>
+          <button class="btn-sm" data-action="edit" data-id="${q.id}">Editar</button>
+          <button class="btn-sm" data-action="delete" data-id="${q.id}">Excluir</button>
         </div>
-        <div class="q-card-text truncated">${q.enunciado || ''}</div>
-        ${altsHtml}
-        <div class="q-card-footer">
-          <span class="q-card-id">#${q.id?.slice(-6)}</span>
-          <div style="display:flex;gap:6px" onclick="event.stopPropagation()">
-            <button class="btn-sm" onclick="expandCard('${q.id}')">Expandir</button>
-            <button class="btn-sm" onclick="openEdit('${q.id}')">Editar</button>
-            <button class="btn-sm danger" onclick="confirmDelete('${q.id}')">Excluir</button>
-          </div>
-        </div>
-      </div>`;
+      </div>
+    </div>`;
   }).join('');
+
+  // Bind card events via delegation
+  list.querySelectorAll('.q-card').forEach(card=>{
+    card.addEventListener('click', function(e){
+      // Ignore clicks on buttons or used-tag
+      if(e.target.closest('button') || e.target.closest('.tag-used')) return;
+      toggleSelect(this.dataset.id);
+    });
+  });
+  list.querySelectorAll('[data-action=expand]').forEach(btn=>{
+    btn.addEventListener('click', function(e){ e.stopPropagation(); expandCard(this.dataset.id); });
+  });
+  list.querySelectorAll('[data-action=edit]').forEach(btn=>{
+    btn.addEventListener('click', function(e){ e.stopPropagation(); openEdit(this.dataset.id); });
+  });
+  list.querySelectorAll('[data-action=delete]').forEach(btn=>{
+    btn.addEventListener('click', function(e){ e.stopPropagation(); confirmDelete(this.dataset.id); });
+  });
+  list.querySelectorAll('.tag-used').forEach(tag=>{
+    tag.addEventListener('click', function(e){ e.stopPropagation(); marcarUtilizacao(this.dataset.id); });
+  });
 }
 
-function expandCard(id) {
-  const el = document.getElementById('qc-'+id);
+function expandCard(id){
+  const el=document.querySelector(`.q-card[data-id="${id}"]`);
+  if(!el) return;
   el.classList.toggle('expanded');
-  const txt = el.querySelector('.q-card-text');
-  txt.classList.toggle('truncated');
+  el.querySelector('.q-card-text').classList.toggle('truncated');
 }
 
-function toggleSelect(id) {
-  if (selectedIds.has(id)) selectedIds.delete(id);
+function toggleSelect(id){
+  if(selectedIds.has(id)) selectedIds.delete(id);
   else selectedIds.add(id);
-  const card = document.getElementById('qc-'+id);
-  if (card) card.classList.toggle('selected', selectedIds.has(id));
+  const card=document.querySelector(`.q-card[data-id="${id}"]`);
+  if(card) card.classList.toggle('selected', selectedIds.has(id));
   updateSelBar();
 }
 
-function selectAll() {
-  filteredQuestoes.forEach(q => selectedIds.add(q.id));
-  renderQList();
-  updateSelBar();
+function selectAll(){ filteredQuestoes.forEach(q=>selectedIds.add(q.id)); renderQList(); updateSelBar(); }
+function clearSelection(){ selectedIds.clear(); renderQList(); updateSelBar(); }
+function updateSelBar(){
+  const n=selectedIds.size;
+  document.getElementById('sel-bar').classList.toggle('visible', n>0);
+  document.getElementById('sel-num').textContent=n;
 }
 
-function clearSelection() {
-  selectedIds.clear();
-  renderQList();
-  updateSelBar();
-}
-
-function updateSelBar() {
-  const n = selectedIds.size;
-  const bar = document.getElementById('sel-bar');
-  bar.classList.toggle('visible', n > 0);
-  document.getElementById('sel-num').textContent = n;
-  const lbl = document.getElementById('sel-count-label');
-  if (lbl) { lbl.style.display = n > 0 ? 'inline' : 'none'; }
-  const cnt = document.getElementById('sel-count');
-  if (cnt) cnt.textContent = n;
-}
-
-// ============ NOVA QUESTÃO ============
-function populateAllSelects() {
+// ── NOVA QUESTÃO ──
+function populateAllSelects(){
   populateSelect('f-materia', tags.materias, true);
   populateSelect('f-tema', tags.temas, true);
   populateSelect('f-tipo', tags.tipos, true);
@@ -700,688 +589,358 @@ function populateAllSelects() {
   populateSelect('n-dificuldade', tags.dificuldades, false);
 }
 
-function populateSelect(id, arr, blank) {
-  const el = document.getElementById(id);
-  if (!el) return;
-  const cur = el.value;
-  el.innerHTML = (blank ? '<option value="">— Selecione —</option>' : '') + arr.map(v => `<option value="${v}">${v}</option>`).join('');
-  if (cur) el.value = cur;
+function populateSelect(id, arr, blank){
+  const el=document.getElementById(id);
+  if(!el) return;
+  const cur=el.value;
+  el.innerHTML=(blank?'<option value="">— Selecione —</option>':'')+arr.map(v=>`<option value="${v}">${v}</option>`).join('');
+  if(cur) el.value=cur;
 }
 
-function updateFormByType() {
-  const t = document.getElementById('n-tipo').value;
-  const isMulti = t === 'Múltipla Escolha';
-  document.getElementById('alts-section').style.display = isMulti ? 'block' : 'none';
-  document.getElementById('gabarito-section').style.display = !isMulti ? 'block' : 'none';
+function updateFormByType(){
+  const t=document.getElementById('n-tipo').value;
+  document.getElementById('alts-section').style.display=t==='Múltipla Escolha'?'block':'none';
+  document.getElementById('gabarito-section').style.display=t!=='Múltipla Escolha'?'block':'none';
 }
 
-function resetAlts() {
-  altCount = 0;
-  document.getElementById('alts-list').innerHTML = '';
+function resetAlts(){
+  altCount=0;
+  document.getElementById('alts-list').innerHTML='';
   addAlt(); addAlt(); addAlt(); addAlt();
   updateFormByType();
 }
 
-function addAlt() {
-  const letter = String.fromCharCode(65 + altCount);
-  const row = document.createElement('div');
-  row.className = 'alt-row';
-  row.dataset.idx = altCount;
-  row.innerHTML = `
-    <input type="radio" name="correta" value="${altCount}" />
-    <span class="alt-label">${letter})</span>
-    <input type="text" placeholder="Alternativa ${letter}..." />
-    <button class="btn-sm danger" onclick="removeAlt(this)" style="padding:5px 8px">✕</button>`;
+function addAlt(){
+  const letter=String.fromCharCode(65+altCount);
+  const row=document.createElement('div');
+  row.className='alt-row';
+  row.dataset.idx=altCount;
+  row.innerHTML=`<input type="radio" name="correta" value="${altCount}"/><span class="alt-label">${letter})</span><input type="text" placeholder="Alternativa ${letter}..."/><button class="btn-sm" style="padding:5px 8px">✕</button>`;
+  row.querySelector('button').addEventListener('click', function(){ row.remove(); });
   document.getElementById('alts-list').appendChild(row);
   altCount++;
 }
 
-function removeAlt(btn) {
-  btn.closest('.alt-row').remove();
-}
-
-async function salvarQuestao() {
-  const enunciado = document.getElementById('n-enunciado').value.trim();
-  const materia = document.getElementById('n-materia').value;
-  const tema = document.getElementById('n-tema').value;
-  const tipo = document.getElementById('n-tipo').value;
-  const dificuldade = document.getElementById('n-dificuldade').value;
-
-  if (!enunciado || !materia || !tema || !tipo) { showToast('Preencha os campos obrigatórios', 'error'); return; }
-
-  const q = { enunciado, materia, tema, tipo, dificuldade };
-  const ultimaInput = document.getElementById('n-ultima').value;
-  if (ultimaInput) q.ultimaUtilizacao = ultimaInput;
-
-  if (tipo === 'Múltipla Escolha') {
-    const rows = document.querySelectorAll('#alts-list .alt-row');
-    const alts = [], corretaEl = document.querySelector('input[name=correta]:checked');
-    rows.forEach(r => alts.push(r.querySelector('input[type=text]').value.trim()));
-    if (alts.some(a => !a)) { showToast('Preencha todas as alternativas', 'error'); return; }
-    if (!corretaEl) { showToast('Marque a alternativa correta', 'error'); return; }
-    q.alternativas = alts;
-    q.correta = parseInt(corretaEl.value);
+async function salvarQuestao(){
+  const enunciado=document.getElementById('n-enunciado').value.trim();
+  const materia=document.getElementById('n-materia').value;
+  const tema=document.getElementById('n-tema').value;
+  const tipo=document.getElementById('n-tipo').value;
+  const dificuldade=document.getElementById('n-dificuldade').value;
+  if(!enunciado||!materia||!tema||!tipo){ showToast('Preencha os campos obrigatórios','error'); return; }
+  const q={enunciado,materia,tema,tipo,dificuldade};
+  const ultima=document.getElementById('n-ultima').value;
+  if(ultima) q.ultimaUtilizacao=ultima;
+  if(tipo==='Múltipla Escolha'){
+    const rows=document.querySelectorAll('#alts-list .alt-row');
+    const alts=[]; rows.forEach(r=>alts.push(r.querySelector('input[type=text]').value.trim()));
+    const corretaEl=document.querySelector('input[name=correta]:checked');
+    if(alts.some(a=>!a)){ showToast('Preencha todas as alternativas','error'); return; }
+    if(!corretaEl){ showToast('Marque a alternativa correta','error'); return; }
+    q.alternativas=alts; q.correta=parseInt(corretaEl.value);
   } else {
-    q.gabarito = document.getElementById('n-gabarito').value.trim();
+    q.gabarito=document.getElementById('n-gabarito').value.trim();
   }
-
   try {
     await saveQuestao(q);
     questoes.unshift(q);
-    applyFilters();
-    renderStats();
-    limparForm();
-    showToast('Questão salva!', 'success');
+    applyFilters(); renderStats(); limparForm();
+    showToast('Questão salva!','success');
     showView('questoes');
-  } catch(e) { showToast('Erro ao salvar: ' + e.message, 'error'); }
+  } catch(e){ showToast('Erro: '+e.message,'error'); }
 }
 
-function limparForm() {
-  document.getElementById('n-enunciado').value = '';
-  document.getElementById('n-gabarito').value = '';
-  document.getElementById('n-ultima').value = '';
+function limparForm(){
+  document.getElementById('n-enunciado').value='';
+  document.getElementById('n-gabarito').value='';
+  document.getElementById('n-ultima').value='';
   resetAlts();
 }
 
-// ============ EDITAR ============
-function openEdit(id) {
-  editingId = id;
-  const q = questoes.find(x => x.id === id);
-  if (!q) return;
-  const difClass = q.dificuldade === 'Fácil' ? 'tag-dif-facil' : q.dificuldade === 'Difícil' ? 'tag-dif-dificil' : 'tag-dif-medio';
-
-  const altsHtml = q.tipo === 'Múltipla Escolha' ? `
-    <div class="form-group form-full" style="margin-top:12px">
-      <div class="form-label">Alternativas</div>
-      ${(q.alternativas||[]).map((a,i) => `
-        <div class="alt-row">
-          <input type="radio" name="edit-correta" value="${i}" ${i===q.correta?'checked':''} />
-          <span class="alt-label">${String.fromCharCode(65+i)})</span>
-          <input type="text" value="${a}" id="edit-alt-${i}" style="flex:1" />
-        </div>`).join('')}
-    </div>` : `
-    <div class="form-group form-full" style="margin-top:12px">
-      <div class="form-label">Gabarito</div>
-      <textarea id="edit-gabarito" rows="3">${q.gabarito||''}</textarea>
+// ── EDITAR ──
+function openEdit(id){
+  editingId=id;
+  const q=questoes.find(x=>x.id===id);
+  if(!q) return;
+  const altsHtml = q.tipo==='Múltipla Escolha'
+    ? `<div class="form-group form-full" style="margin-top:12px">
+        <div class="form-label">Alternativas</div>
+        ${(q.alternativas||[]).map((a,i)=>`<div class="alt-row"><input type="radio" name="edit-correta" value="${i}" ${i===q.correta?'checked':''}/><span class="alt-label">${String.fromCharCode(65+i)})</span><input type="text" id="edit-alt-${i}" value="${a}" style="flex:1"/></div>`).join('')}
+      </div>`
+    : `<div class="form-group form-full" style="margin-top:12px">
+        <div class="form-label">Gabarito</div>
+        <textarea id="edit-gabarito" rows="3">${q.gabarito||''}</textarea>
 
 ```
-</div>`;
+  </div>`;
 ```
 
-document.getElementById(‘modal-body’).innerHTML = ` <div class="form-grid"> <div class="form-group"> <div class="form-label">Matéria</div> <select id="edit-materia">${tags.materias.map(m=>`<option ${m===q.materia?‘selected’:’’}>${m}</option>`).join('')}</select> </div> <div class="form-group"> <div class="form-label">Tema</div> <select id="edit-tema">${tags.temas.map(m=>`<option ${m===q.tema?‘selected’:’’}>${m}</option>`).join('')}</select> </div> <div class="form-group"> <div class="form-label">Tipo</div> <select id="edit-tipo">${tags.tipos.map(m=>`<option ${m===q.tipo?‘selected’:’’}>${m}</option>`).join('')}</select> </div> <div class="form-group"> <div class="form-label">Dificuldade</div> <select id="edit-dif">${tags.dificuldades.map(m=>`<option ${m===q.dificuldade?‘selected’:’’}>${m}</option>`).join('')}</select> </div> <div class="form-group form-full"> <div class="form-label">Última utilização</div> <input type="date" id="edit-ultima" value="${q.ultimaUtilizacao||''}" style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;color:var(--text);padding:8px 12px;font-size:14px;outline:none;width:100%" /> </div> <div class="form-group form-full"> <div class="form-label">Enunciado</div> <textarea id="edit-enunciado" rows="4">${q.enunciado||''}</textarea> </div> ${altsHtml} </div>`;
-
+document.getElementById(‘modal-body’).innerHTML=` <div class="form-grid"> <div class="form-group"><div class="form-label">Matéria</div><select id="edit-materia">${tags.materias.map(m=>`<option ${m===q.materia?‘selected’:’’}>${m}</option>`).join('')}</select></div> <div class="form-group"><div class="form-label">Tema</div><select id="edit-tema">${tags.temas.map(m=>`<option ${m===q.tema?‘selected’:’’}>${m}</option>`).join('')}</select></div> <div class="form-group"><div class="form-label">Tipo</div><select id="edit-tipo">${tags.tipos.map(m=>`<option ${m===q.tipo?‘selected’:’’}>${m}</option>`).join('')}</select></div> <div class="form-group"><div class="form-label">Dificuldade</div><select id="edit-dif">${tags.dificuldades.map(m=>`<option ${m===q.dificuldade?‘selected’:’’}>${m}</option>`).join('')}</select></div> <div class="form-group form-full"><div class="form-label">Última utilização</div><input type="date" id="edit-ultima" value="${q.ultimaUtilizacao||''}" style="width:100%"/></div> <div class="form-group form-full"><div class="form-label">Enunciado</div><textarea id="edit-enunciado" rows="4">${q.enunciado||''}</textarea></div> ${altsHtml} </div>`;
 document.getElementById(‘modal-edit’).classList.add(‘open’);
 }
 
-async function salvarEdicao() {
-const q = questoes.find(x => x.id === editingId);
-if (!q) return;
-q.materia = document.getElementById(‘edit-materia’).value;
-q.tema = document.getElementById(‘edit-tema’).value;
-q.tipo = document.getElementById(‘edit-tipo’).value;
-q.dificuldade = document.getElementById(‘edit-dif’).value;
-q.enunciado = document.getElementById(‘edit-enunciado’).value;
-const editUltima = document.getElementById(‘edit-ultima’)?.value;
-if (editUltima) q.ultimaUtilizacao = editUltima; else delete q.ultimaUtilizacao;
-if (q.tipo === ‘Múltipla Escolha’) {
-q.alternativas = q.alternativas.map((_,i) => document.getElementById(‘edit-alt-’+i)?.value || ‘’);
-const c = document.querySelector(‘input[name=edit-correta]:checked’);
-if (c) q.correta = parseInt(c.value);
+async function salvarEdicao(){
+const q=questoes.find(x=>x.id===editingId);
+if(!q) return;
+q.materia=document.getElementById(‘edit-materia’).value;
+q.tema=document.getElementById(‘edit-tema’).value;
+q.tipo=document.getElementById(‘edit-tipo’).value;
+q.dificuldade=document.getElementById(‘edit-dif’).value;
+q.enunciado=document.getElementById(‘edit-enunciado’).value;
+const eu=document.getElementById(‘edit-ultima’)?.value;
+if(eu) q.ultimaUtilizacao=eu; else delete q.ultimaUtilizacao;
+if(q.tipo===‘Múltipla Escolha’){
+q.alternativas=q.alternativas.map((_,i)=>document.getElementById(‘edit-alt-’+i)?.value||’’);
+const c=document.querySelector(‘input[name=edit-correta]:checked’);
+if(c) q.correta=parseInt(c.value);
 } else {
-q.gabarito = document.getElementById(‘edit-gabarito’)?.value || ‘’;
+q.gabarito=document.getElementById(‘edit-gabarito’)?.value||’’;
 }
 await saveQuestao(q);
-applyFilters();
-closeModal();
-showToast(‘Questão atualizada!’, ‘success’);
+applyFilters(); closeModal();
+showToast(‘Questão atualizada!’,‘success’);
 }
 
-function closeModal() {
-document.getElementById(‘modal-edit’).classList.remove(‘open’);
-editingId = null;
+function closeModal(){ document.getElementById(‘modal-edit’).classList.remove(‘open’); editingId=null; }
+
+async function confirmDelete(id){
+if(confirm(‘Excluir esta questão?’)){ await deleteQuestao(id); showToast(‘Questão excluída’,‘success’); }
 }
 
-async function confirmDelete(id) {
-if (confirm(‘Excluir esta questão? Esta ação não pode ser desfeita.’)) {
-await deleteQuestao(id);
-showToast(‘Questão excluída’, ‘success’);
-}
-}
-
-// ============ TAGS MANAGER ============
-function renderTagsManager() {
-const grid = document.getElementById(‘tags-grid’);
-const categories = [
-{ key: ‘materias’, label: ‘🎓 Matérias’ },
-{ key: ‘temas’, label: ‘🦴 Temas’ },
-{ key: ‘tipos’, label: ‘📝 Tipos’ },
-{ key: ‘dificuldades’, label: ‘⚡ Dificuldades’ }
-];
-grid.innerHTML = categories.map(cat => `<div class="tags-category"> <div class="tags-category-title">${cat.label}</div> ${tags[cat.key].map((t,i) =>`
-<div class="tag-item">
-<span>${t}</span>
-<button class="tag-del" onclick="removeTag('${cat.key}',${i})">✕</button>
-</div>`).join('')} <div class="tag-add-row"> <input type="text" id="new-${cat.key}" placeholder="Nova tag..." onkeydown="if(event.key==='Enter')addTag('${cat.key}')" /> <button class="tag-add-btn" onclick="addTag('${cat.key}')">+</button> </div> </div>`).join(’’);
+// ── TAGS ──
+function renderTagsManager(){
+const cats=[{key:‘materias’,label:‘🎓 Matérias’},{key:‘temas’,label:‘🦴 Temas’},{key:‘tipos’,label:‘📝 Tipos’},{key:‘dificuldades’,label:‘⚡ Dificuldades’}];
+const grid=document.getElementById(‘tags-grid’);
+grid.innerHTML=cats.map(cat=>` <div class="tags-category"> <div class="tags-category-title">${cat.label}</div> ${tags[cat.key].map((t,i)=>`<div class="tag-item"><span>${t}</span><button class="tag-del" data-cat="${cat.key}" data-idx="${i}">✕</button></div>`).join('')} <div class="tag-add-row"> <input type="text" id="new-${cat.key}" placeholder="Nova tag..."/> <button class="tag-add-btn" data-cat="${cat.key}">+</button> </div> </div>`).join(’’);
+grid.querySelectorAll(’.tag-del’).forEach(btn=>{
+btn.addEventListener(‘click’, function(){ removeTag(this.dataset.cat, parseInt(this.dataset.idx)); });
+});
+grid.querySelectorAll(’.tag-add-btn’).forEach(btn=>{
+btn.addEventListener(‘click’, function(){ addTag(this.dataset.cat); });
+});
+grid.querySelectorAll(’.tag-add-row input’).forEach(inp=>{
+inp.addEventListener(‘keydown’, function(e){ if(e.key===‘Enter’) addTag(this.id.replace(‘new-’,’’)); });
+});
 }
 
-async function addTag(cat) {
-const input = document.getElementById(‘new-’+cat);
-const val = input.value.trim();
-if (!val || tags[cat].includes(val)) return;
+async function addTag(cat){
+const input=document.getElementById(‘new-’+cat);
+const val=input.value.trim();
+if(!val||tags[cat].includes(val)) return;
 tags[cat].push(val);
 await saveTags();
-input.value = ‘’;
+input.value=’’;
 renderTagsManager();
 populateAllSelects();
-showToast(‘Tag adicionada!’, ‘success’);
+showToast(‘Tag adicionada!’,‘success’);
 }
 
-async function removeTag(cat, idx) {
-if (!confirm(‘Remover esta tag?’)) return;
-tags[cat].splice(idx, 1);
+async function removeTag(cat,idx){
+if(!confirm(‘Remover esta tag?’)) return;
+tags[cat].splice(idx,1);
 await saveTags();
 renderTagsManager();
 populateAllSelects();
 }
 
-// ============ STATS ============
-function renderStats() {
-const total = questoes.length;
-const byMateria = {};
-const byTema = {};
-const byTipo = {};
-questoes.forEach(q => {
-byMateria[q.materia] = (byMateria[q.materia]||0)+1;
-byTema[q.tema] = (byTema[q.tema]||0)+1;
-byTipo[q.tipo] = (byTipo[q.tipo]||0)+1;
+// ── STATS ──
+function renderStats(){
+const total=questoes.length;
+const byMateria={}, byTema={};
+questoes.forEach(q=>{
+byMateria[q.materia]=(byMateria[q.materia]||0)+1;
+byTema[q.tema]=(byTema[q.tema]||0)+1;
 });
-
-document.getElementById(‘stats-grid’).innerHTML = `<div class="stat-card"><div class="stat-num">${total}</div><div class="stat-label">Total de Questões</div></div> ${Object.entries(byMateria).map(([k,v]) =>`<div class="stat-card"><div class="stat-num">${v}</div><div class="stat-label">${k}</div></div>`).join('')}`;
-
-document.getElementById(‘stats-by-tema’).innerHTML = `<div style="margin-top:16px"> <div class="panel-title">Por Tema</div> ${Object.entries(byTema).sort((a,b)=>b[1]-a[1]).map(([k,v]) =>`
+document.getElementById(‘stats-grid’).innerHTML=` <div class="stat-card"><div class="stat-num">${total}</div><div class="stat-label">Total de Questões</div></div> ${Object.entries(byMateria).map(([k,v])=>`<div class="stat-card"><div class="stat-num">${v}</div><div class="stat-label">${k||‘Sem matéria’}</div></div>`).join('')}`;
+document.getElementById(‘stats-by-tema’).innerHTML=` <div style="margin-top:16px"> <div class="panel-title">Por Tema</div> ${Object.entries(byTema).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`
 <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)">
 <span style="font-size:14px">${k||‘Sem tema’}</span>
 <div style="display:flex;align-items:center;gap:10px">
 <div style="width:100px;height:6px;background:var(--border);border-radius:3px">
-<div style="width:${Math.round(v/total*100)}%;height:100%;background:var(--accent);border-radius:3px"></div>
+<div style="width:${total?Math.round(v/total*100):0}%;height:100%;background:var(--accent);border-radius:3px"></div>
 </div>
 <span style="font-size:13px;color:var(--muted);width:24px;text-align:right">${v}</span>
 </div>
 </div>`).join('')} </div>`;
 }
 
-// ============ MODAL EXPORTAR ============
-function abrirModalExportar() {
-if (!selectedIds.size) { showToast(‘Nenhuma questão selecionada’, ‘error’); return; }
-document.getElementById(‘modal-exportar’).classList.add(‘open’);
-}
-function fecharModalExportar() {
-document.getElementById(‘modal-exportar’).classList.remove(‘open’);
-}
-function toggleCamposModelo() {
-const m = document.getElementById(‘exp-modelo’).value;
-document.getElementById(‘campos-tradicional’).style.display = m === ‘tradicional’ ? ‘block’ : ‘none’;
-document.getElementById(‘campos-abp’).style.display = m === ‘abp’ ? ‘block’ : ‘none’;
-}
-
-// ============ EXPORTAR ============
-async function exportar(formato) {
-const selecionadas = questoes.filter(q => selectedIds.has(q.id));
-if (!selecionadas.length) { showToast(‘Nenhuma questão selecionada’, ‘error’); return; }
-
-const modelo = document.getElementById(‘exp-modelo’).value;
-const disciplina = modelo === ‘tradicional’
-? document.getElementById(‘exp-disciplina’).value.trim()
-: document.getElementById(‘exp-disciplina-abp’).value.trim();
-const unidade = document.getElementById(‘exp-unidade’)?.value.trim() || ‘’;
-const projeto = document.getElementById(‘exp-projeto’)?.value.trim() || ‘’;
-
-fecharModalExportar();
-showToast(‘Gerando documento…’, ‘success’);
-
-try {
-const { Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell,
-HeadingLevel, AlignmentType, WidthType, BorderStyle, ShadingType,
-VerticalAlign, PageNumber } = docx;
-
-```
-const W = 9360; // content width DXA (A4, 1" margins)
-const brd = (color='000000', size=8) => ({ style: BorderStyle.SINGLE, size, color });
-const noBrd = () => ({ style: BorderStyle.NONE, size: 0, color: 'FFFFFF' });
-const cellMargins = { top: 80, bottom: 80, left: 120, right: 120 };
-
-// ── CABEÇALHO TRADICIONAL ──
-function makeHeaderTradicional() {
-  // Row 1: Logo cell (rowspan visual) + Curso / Disciplina / Docente
-  const logoCell = new TableCell({
-    rowSpan: 4,
-    width: { size: 2200, type: WidthType.DXA },
-    borders: { top: brd(), bottom: brd(), left: brd(), right: brd() },
-    margins: cellMargins,
-    verticalAlign: VerticalAlign.CENTER,
-    children: [
-      new Paragraph({ alignment: AlignmentType.CENTER, spacing:{after:40}, children: [
-        new TextRun({ text: 'Unit', bold: true, size: 36, font: 'Arial', color: '1a5276' })
-      ]}),
-      new Paragraph({ alignment: AlignmentType.CENTER, spacing:{after:40}, children: [
-        new TextRun({ text: 'UNIVERSIDADE TIRADENTES', size: 14, font: 'Arial', bold: true })
-      ]}),
-      new Paragraph({ alignment: AlignmentType.CENTER, spacing:{after:60}, children: [
-        new TextRun({ text: 'Direção de Graduação', size: 14, font: 'Arial' })
-      ]}),
-      new Paragraph({ alignment: AlignmentType.CENTER, spacing:{after:40}, children: [
-        new TextRun({ text: 'Cód. Acervo Acadêmico', size: 14, font: 'Arial' })
-      ]}),
-      new Paragraph({ alignment: AlignmentType.CENTER, spacing:{after:60}, children: [
-        new TextRun({ text: '125.31', size: 14, font: 'Arial' })
-      ]}),
-      new Paragraph({ alignment: AlignmentType.CENTER, children: [
-        new TextRun({ text: `${unidade ? unidade.toUpperCase() : '______'} UNIDADE`, size: 18, bold: true, font: 'Arial' })
-      ]}),
-    ]
-  });
-
-  const row1 = new TableRow({ children: [
-    logoCell,
-    new TableCell({
-      columnSpan: 4,
-      width: { size: 7160, type: WidthType.DXA },
-      borders: { top: brd(), bottom: brd(), left: brd(), right: brd() },
-      margins: cellMargins,
-      children: [new Paragraph({ children: [
-        new TextRun({ text: 'CURSO: FISIOTERAPIA', bold: true, size: 22, font: 'Arial' })
-      ]})]
-    })
-  ]});
-
-  const row2 = new TableRow({ children: [
-    new TableCell({
-      columnSpan: 4,
-      width: { size: 7160, type: WidthType.DXA },
-      borders: { top: brd(), bottom: brd(), left: brd(), right: brd() },
-      margins: cellMargins,
-      children: [new Paragraph({ children: [
-        new TextRun({ text: `DISCIPLINA: ${disciplina.toUpperCase()}`, bold: true, size: 22, font: 'Arial' })
-      ]})]
-    })
-  ]});
-
-  const row3 = new TableRow({ children: [
-    new TableCell({
-      columnSpan: 4,
-      width: { size: 7160, type: WidthType.DXA },
-      borders: { top: brd(), bottom: brd(), left: brd(), right: brd() },
-      margins: cellMargins,
-      children: [new Paragraph({ children: [
-        new TextRun({ text: 'DOCENTE: FELIPE CERQUEIRA', bold: true, size: 22, font: 'Arial' })
-      ]})]
-    })
-  ]});
-
-  // Row 4: Data avaliação | Data devolução | Turma | Mapa de notas
-  const row4 = new TableRow({ children: [
-    new TableCell({
-      width: { size: 1800, type: WidthType.DXA },
-      borders: { top: brd(), bottom: brd(), left: brd(), right: brd() },
-      margins: cellMargins,
-      children: [
-        new Paragraph({ alignment: AlignmentType.CENTER, spacing:{after:40}, children: [new TextRun({ text: 'Data da Avaliação', bold: true, size: 18, font: 'Arial' })]}),
-        new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: '____/____/______', size: 18, font: 'Arial' })]})
-      ]
-    }),
-    new TableCell({
-      width: { size: 1800, type: WidthType.DXA },
-      borders: { top: brd(), bottom: brd(), left: brd(), right: brd() },
-      margins: cellMargins,
-      children: [
-        new Paragraph({ alignment: AlignmentType.CENTER, spacing:{after:40}, children: [new TextRun({ text: 'Data da Devolução', bold: true, size: 18, font: 'Arial' })]}),
-        new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: '____/____/______', size: 18, font: 'Arial' })]})
-      ]
-    }),
-    new TableCell({
-      width: { size: 900, type: WidthType.DXA },
-      borders: { top: brd(), bottom: brd(), left: brd(), right: brd() },
-      margins: cellMargins,
-      verticalAlign: VerticalAlign.CENTER,
-      children: [
-        new Paragraph({ alignment: AlignmentType.CENTER, spacing:{after:30}, children: [new TextRun({ text: 'TURMA', bold: true, size: 18, font: 'Arial' })]}),
-        new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: '——', size: 18, font: 'Arial' })]})
-      ]
-    }),
-    new TableCell({
-      width: { size: 2660, type: WidthType.DXA },
-      borders: { top: brd(), bottom: brd(), left: brd(), right: brd() },
-      margins: cellMargins,
-      children: [
-        new Paragraph({ alignment: AlignmentType.CENTER, spacing:{after:40}, children: [new TextRun({ text: 'MAPA DE NOTAS', bold: true, size: 18, font: 'Arial' })]}),
-        new Table({
-          width: { size: 2400, type: WidthType.DXA },
-          columnWidths: [800, 800, 800],
-          rows: [
-            new TableRow({ children: [
-              new TableCell({ width:{size:800,type:WidthType.DXA}, borders:{top:brd(),bottom:brd(),left:brd(),right:brd()}, margins:cellMargins, children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:'PC',bold:true,size:18,font:'Arial'})]})] }),
-              new TableCell({ width:{size:800,type:WidthType.DXA}, borders:{top:brd(),bottom:brd(),left:brd(),right:brd()}, margins:cellMargins, children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:'ME',bold:true,size:18,font:'Arial'})]})] }),
-              new TableCell({ width:{size:800,type:WidthType.DXA}, borders:{top:brd(),bottom:brd(),left:brd(),right:brd()}, margins:cellMargins, children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:'NOTA FINAL',bold:true,size:16,font:'Arial'})]})] }),
-            ]}),
-            new TableRow({ children: [
-              new TableCell({ width:{size:800,type:WidthType.DXA}, borders:{top:brd(),bottom:brd(),left:brd(),right:brd()}, margins:{top:200,bottom:200,left:80,right:80}, children:[new Paragraph({children:[]})] }),
-              new TableCell({ width:{size:800,type:WidthType.DXA}, borders:{top:brd(),bottom:brd(),left:brd(),right:brd()}, margins:{top:200,bottom:200,left:80,right:80}, children:[new Paragraph({children:[]})] }),
-              new TableCell({ width:{size:800,type:WidthType.DXA}, borders:{top:brd(),bottom:brd(),left:brd(),right:brd()}, margins:{top:200,bottom:200,left:80,right:80}, children:[new Paragraph({children:[]})] }),
-            ]}),
-          ]
-        })
-      ]
-    })
-  ]});
-
-  // Row estudante
-  const rowEst = new TableRow({ children: [
-    new TableCell({
-      columnSpan: 5,
-      width: { size: W, type: WidthType.DXA },
-      borders: { top: brd(), bottom: brd(), left: brd(), right: brd() },
-      margins: cellMargins,
-      children: [new Paragraph({ children: [new TextRun({ text: 'ESTUDANTE:', bold: true, size: 22, font: 'Arial' })]})]
-    })
-  ]});
-
-  const tbl = new Table({
-    width: { size: W, type: WidthType.DXA },
-    columnWidths: [2200, 1800, 1800, 900, 2660],
-    rows: [row1, row2, row3, row4, rowEst]
-  });
-
-  // Instrução
-  const instrucao = new Paragraph({
-    spacing: { before: 0, after: 200 },
-    border: { top: brd('000000', 4), bottom: brd('000000', 4), left: brd('000000', 4), right: brd('000000', 4) },
-    children: [
-      new TextRun({ text: '1. A prova deverá ser realizada de caneta azul ou preta. Não serão corrigidas questões a lápis. As questões subjetivas devem ser realizadas no ', size: 18, font: 'Arial' }),
-      new TextRun({ text: 'LOCAL DETERMINADO', size: 18, font: 'Arial', bold: true, underline: {} }),
-      new TextRun({ text: '. As questões objetivas devem ser marcadas na alternativa.', size: 18, font: 'Arial' }),
-    ]
-  });
-
-  return [tbl, instrucao];
-}
-
-// ── CABEÇALHO ABP ──
-function makeHeaderABP() {
-  const azul = 'BDD7EE';
-
-  const row1 = new TableRow({ children: [
-    new TableCell({
-      rowSpan: 3,
-      width: { size: 2600, type: WidthType.DXA },
-      borders: { top: brd(), bottom: brd(), left: brd(), right: brd() },
-      shading: { fill: azul, type: ShadingType.CLEAR },
-      margins: cellMargins,
-      verticalAlign: VerticalAlign.CENTER,
-      children: [
-        new Paragraph({ alignment: AlignmentType.CENTER, spacing:{after:40}, children: [
-          new TextRun({ text: 'Unit', bold: true, size: 40, font: 'Arial', color: '1a5276' })
-        ]}),
-        new Paragraph({ alignment: AlignmentType.CENTER, spacing:{after:60}, children: [
-          new TextRun({ text: 'UNIVERSIDADE TIRADENTES', size: 14, bold: true, font: 'Arial' })
-        ]}),
-        new Paragraph({ alignment: AlignmentType.CENTER, children: [
-          new TextRun({ text: 'Avaliação Multinível', bold: true, size: 20, font: 'Arial' })
-        ]}),
-      ]
-    }),
-    new TableCell({
-      width: { size: 4480, type: WidthType.DXA },
-      borders: { top: brd(), bottom: brd(), left: brd(), right: brd() },
-      shading: { fill: azul, type: ShadingType.CLEAR },
-      margins: cellMargins,
-      children: [new Paragraph({ children: [new TextRun({ text: `Curso: Fisioterapia`, size: 20, font: 'Arial' })]})]
-    }),
-    new TableCell({
-      width: { size: 2280, type: WidthType.DXA },
-      borders: { top: brd(), bottom: brd(), left: brd(), right: brd() },
-      shading: { fill: azul, type: ShadingType.CLEAR },
-      margins: cellMargins,
-      children: [new Paragraph({ children: [new TextRun({ text: 'Código:', size: 20, font: 'Arial' })]})]
-    }),
-  ]});
-
-  const row2 = new TableRow({ children: [
-    new TableCell({
-      columnSpan: 2,
-      width: { size: 6760, type: WidthType.DXA },
-      borders: { top: brd(), bottom: brd(), left: brd(), right: brd() },
-      shading: { fill: azul, type: ShadingType.CLEAR },
-      margins: cellMargins,
-      children: [new Paragraph({ children: [new TextRun({ text: `Projeto: ${projeto}`, size: 20, font: 'Arial' })]})]
-    }),
-  ]});
-
-  const row3 = new TableRow({ children: [
-    new TableCell({
-      columnSpan: 2,
-      width: { size: 6760, type: WidthType.DXA },
-      borders: { top: brd(), bottom: brd(), left: brd(), right: brd() },
-      shading: { fill: azul, type: ShadingType.CLEAR },
-      margins: cellMargins,
-      children: [new Paragraph({ children: [new TextRun({ text: `Docente: Felipe Lima de Cerqueira`, size: 20, font: 'Arial' })]})]
-    }),
-  ]});
-
-  // Disciplina row
-  const rowDisc = new TableRow({ children: [
-    new TableCell({
-      columnSpan: 3,
-      width: { size: W, type: WidthType.DXA },
-      borders: { top: brd(), bottom: brd(), left: brd(), right: brd() },
-      shading: { fill: azul, type: ShadingType.CLEAR },
-      margins: cellMargins,
-      children: [new Paragraph({ children: [new TextRun({ text: `Disciplina: ${disciplina}`, size: 20, font: 'Arial' })]})]
-    }),
-  ]});
-
-  // Estudante row
-  const rowEst = new TableRow({ children: [
-    new TableCell({
-      width: { size: 6760, type: WidthType.DXA },
-      rowSpan: 2,
-      borders: { top: brd(), bottom: brd(), left: brd(), right: brd() },
-      shading: { fill: azul, type: ShadingType.CLEAR },
-      margins: { top: 200, bottom: 200, left: 120, right: 120 },
-      verticalAlign: VerticalAlign.TOP,
-      children: [new Paragraph({ children: [new TextRun({ text: 'Estudante:', size: 20, font: 'Arial' })]})]
-    }),
-    new TableCell({
-      width: { size: 2600, type: WidthType.DXA },
-      borders: { top: brd(), bottom: brd(), left: brd(), right: brd() },
-      shading: { fill: azul, type: ShadingType.CLEAR },
-      margins: cellMargins,
-      children: [new Paragraph({ children: [new TextRun({ text: 'Data:', size: 20, font: 'Arial' })]})]
-    }),
-  ]});
-
-  const rowEst2 = new TableRow({ children: [
-    new TableCell({
-      width: { size: 2600, type: WidthType.DXA },
-      borders: { top: brd(), bottom: brd(), left: brd(), right: brd() },
-      shading: { fill: azul, type: ShadingType.CLEAR },
-      margins: cellMargins,
-      children: [new Paragraph({ children: [new TextRun({ text: 'Nota - Objetivas:', size: 20, font: 'Arial' })]})]
-    }),
-  ]});
-
-  const rowMat = new TableRow({ children: [
-    new TableCell({
-      width: { size: 6760, type: WidthType.DXA },
-      rowSpan: 2,
-      borders: { top: brd(), bottom: brd(), left: brd(), right: brd() },
-      shading: { fill: azul, type: ShadingType.CLEAR },
-      margins: { top: 200, bottom: 200, left: 120, right: 120 },
-      verticalAlign: VerticalAlign.TOP,
-      children: [new Paragraph({ children: [new TextRun({ text: 'Matrícula:', size: 20, font: 'Arial' })]})]
-    }),
-    new TableCell({
-      width: { size: 2600, type: WidthType.DXA },
-      borders: { top: brd(), bottom: brd(), left: brd(), right: brd() },
-      shading: { fill: azul, type: ShadingType.CLEAR },
-      margins: cellMargins,
-      children: [new Paragraph({ children: [new TextRun({ text: 'Nota - Discursivas:', size: 20, font: 'Arial' })]})]
-    }),
-  ]});
-
-  const rowMat2 = new TableRow({ children: [
-    new TableCell({
-      width: { size: 2600, type: WidthType.DXA },
-      borders: { top: brd(), bottom: brd(), left: brd(), right: brd() },
-      shading: { fill: azul, type: ShadingType.CLEAR },
-      margins: cellMargins,
-      children: [new Paragraph({ children: [new TextRun({ text: 'Nota Total:', size: 20, font: 'Arial' })]})]
-    }),
-  ]});
-
-  const tbl = new Table({
-    width: { size: W, type: WidthType.DXA },
-    columnWidths: [2600, 4480, 2280],
-    rows: [row1, row2, row3, rowDisc, rowEst, rowEst2, rowMat, rowMat2]
-  });
-
-  return [tbl];
-}
-
-// ── QUESTÕES ──
-function buildQuestoes(selecionadas) {
-  const children = [];
-  let qNum = 1;
-  selecionadas.forEach(q => {
-    children.push(new Paragraph({
-      spacing: { before: 240, after: 120 },
-      children: [
-        new TextRun({ text: `${qNum}. `, bold: true, size: 24, font: 'Arial' }),
-        new TextRun({ text: q.enunciado || '', size: 24, font: 'Arial' })
-      ]
-    }));
-    if (q.tipo === 'Múltipla Escolha' && q.alternativas?.length) {
-      q.alternativas.forEach((alt, i) => {
-        children.push(new Paragraph({
-          spacing: { after: 60 },
-          indent: { left: 360 },
-          children: [
-            new TextRun({ text: `${String.fromCharCode(65+i)}) `, size: 22, font: 'Arial' }),
-            new TextRun({ text: alt, size: 22, font: 'Arial' })
-          ]
-        }));
-      });
-    }
-    children.push(new Paragraph({ spacing: { after: 80 }, children: [] }));
-    qNum++;
-  });
-  return children;
-}
-
-// ── GABARITO ──
-function buildGabarito(selecionadas) {
-  const children = [];
-  children.push(new Paragraph({
-    pageBreakBefore: true,
-    spacing: { before: 0, after: 200 },
-    children: [new TextRun({ text: 'GABARITO', bold: true, size: 28, font: 'Arial' })]
-  }));
-  selecionadas.forEach((q, i) => {
-    let resp = '';
-    if (q.tipo === 'Múltipla Escolha' && q.correta !== undefined) resp = String.fromCharCode(65 + q.correta);
-    else if (q.gabarito) resp = q.gabarito;
-    if (resp) {
-      children.push(new Paragraph({
-        spacing: { after: 80 },
-        children: [
-          new TextRun({ text: `${i+1}. `, bold: true, size: 22, font: 'Arial' }),
-          new TextRun({ text: resp, size: 22, font: 'Arial' })
-        ]
-      }));
-    }
-  });
-  return children;
-}
-
-// ── MONTAR DOCUMENTO ──
-const headerChildren = modelo === 'tradicional' ? makeHeaderTradicional() : makeHeaderABP();
-const allChildren = [
-  ...headerChildren,
-  new Paragraph({ spacing: { before: 300, after: 0 }, children: [] }),
-  ...buildQuestoes(selecionadas),
-  ...buildGabarito(selecionadas)
-];
-
-const document = new Document({
-  styles: {
-    default: { document: { run: { font: 'Arial', size: 24 } } },
-  },
-  sections: [{
-    properties: {
-      page: {
-        size: { width: 11906, height: 16838 },
-        margin: { top: 1134, right: 1134, bottom: 1134, left: 1134 }
-      }
-    },
-    children: allChildren
-  }]
-});
-
-const buffer = await Packer.toBuffer(document);
-const nomeArq = `prova_${disciplina.replace(/\s+/g,'_') || 'sem_disciplina'}_${new Date().toLocaleDateString('pt-BR').replace(/\//g,'-')}`;
-
-if (formato === 'word') {
-  const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' });
-  saveAs(blob, `${nomeArq}.docx`);
-  showToast(`${selecionadas.length} questões exportadas em Word!`, 'success');
-} else {
-  // PDF via print
-  const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' });
-  saveAs(blob, `${nomeArq}.docx`);
-  showToast('Arquivo gerado! Abra o Word e use Arquivo → Imprimir para PDF.', 'success');
-}
-```
-
-} catch(e) {
-console.error(e);
-showToast(’Erro ao gerar: ’ + e.message, ‘error’);
-}
-}
-
-// ============ ÚLTIMA UTILIZAÇÃO ============
-async function marcarUtilizacao(id) {
-const hoje = new Date().toISOString().slice(0,10);
-const q = questoes.find(x => x.id === id);
-if (!q) return;
-const anterior = q.ultimaUtilizacao ? `\n\nAnterior: ${formatDate(q.ultimaUtilizacao)}` : ‘’;
-const data = prompt(`Data de utilização (AAAA-MM-DD):${anterior}`, hoje);
-if (!data) return;
-q.ultimaUtilizacao = data;
+// ── ÚLTIMA UTILIZAÇÃO ──
+async function marcarUtilizacao(id){
+const hoje=new Date().toISOString().slice(0,10);
+const q=questoes.find(x=>x.id===id);
+if(!q) return;
+const data=prompt(‘Data de utilização (AAAA-MM-DD):’, hoje);
+if(!data) return;
+q.ultimaUtilizacao=data;
 await saveQuestao(q);
 applyFilters();
-showToast(‘Utilização registrada!’, ‘success’);
+showToast(‘Utilização registrada!’,‘success’);
 }
 
-function formatDate(str) {
-if (!str) return ‘’;
-const [y,m,d] = str.split(’-’);
+function formatDate(str){
+if(!str) return ‘’;
+const [y,m,d]=str.split(’-’);
 return `${d}/${m}/${y}`;
 }
 
-// ============ NAV ============
-function showView(view) {
-document.querySelectorAll(’.view’).forEach(v => v.classList.remove(‘active’));
-document.querySelectorAll(’.nav-btn’).forEach(b => b.classList.remove(‘active’));
-document.getElementById(‘view-’+view).classList.add(‘active’);
-document.getElementById(‘nav-’+view).classList.add(‘active’);
-if (view === ‘stats’) renderStats();
+// ── MODAL EXPORTAR ──
+function abrirModalExportar(){
+if(!selectedIds.size){ showToast(‘Nenhuma questão selecionada’,‘error’); return; }
+document.getElementById(‘modal-exportar’).classList.add(‘open’);
+}
+function fecharModalExportar(){ document.getElementById(‘modal-exportar’).classList.remove(‘open’); }
+function toggleCamposModelo(){
+const m=document.getElementById(‘exp-modelo’).value;
+document.getElementById(‘campos-tradicional’).style.display=m===‘tradicional’?‘block’:‘none’;
+document.getElementById(‘campos-abp’).style.display=m===‘abp’?‘block’:‘none’;
 }
 
-// ============ TOAST ============
-function showToast(msg, type=‘success’) {
-const t = document.getElementById(‘toast’);
-t.textContent = msg;
-t.className = ’toast show ’ + type;
-setTimeout(() => t.className = ‘toast’, 2500);
+// ── EXPORTAR ──
+async function exportar(formato){
+const selecionadas=questoes.filter(q=>selectedIds.has(q.id));
+if(!selecionadas.length){ showToast(‘Nenhuma questão selecionada’,‘error’); return; }
+const modelo=document.getElementById(‘exp-modelo’).value;
+const disciplina=modelo===‘tradicional’
+? document.getElementById(‘exp-disciplina’).value.trim()
+: document.getElementById(‘exp-disciplina-abp’).value.trim();
+const unidade=document.getElementById(‘exp-unidade’)?.value.trim()||’’;
+const projeto=document.getElementById(‘exp-projeto’)?.value.trim()||’’;
+fecharModalExportar();
+showToast(‘Gerando documento…’,‘success’);
+try {
+const {Document,Packer,Paragraph,TextRun,Table,TableRow,TableCell,
+AlignmentType,WidthType,BorderStyle,ShadingType,VerticalAlign}=docx;
+const W=9360;
+const brd=(color=‘000000’,size=8)=>({style:BorderStyle.SINGLE,size,color});
+const cm={top:80,bottom:80,left:120,right:120};
+
+```
+function makeHeaderTradicional(){
+  const logoCell=new TableCell({rowSpan:4,width:{size:2200,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:cm,verticalAlign:VerticalAlign.CENTER,children:[
+    new Paragraph({alignment:AlignmentType.CENTER,spacing:{after:40},children:[new TextRun({text:'Unit',bold:true,size:36,font:'Arial',color:'1a5276'})]}),
+    new Paragraph({alignment:AlignmentType.CENTER,spacing:{after:40},children:[new TextRun({text:'UNIVERSIDADE TIRADENTES',size:14,font:'Arial',bold:true})]}),
+    new Paragraph({alignment:AlignmentType.CENTER,spacing:{after:60},children:[new TextRun({text:'Direção de Graduação',size:14,font:'Arial'})]}),
+    new Paragraph({alignment:AlignmentType.CENTER,spacing:{after:40},children:[new TextRun({text:'Cód. Acervo Acadêmico',size:14,font:'Arial'})]}),
+    new Paragraph({alignment:AlignmentType.CENTER,spacing:{after:60},children:[new TextRun({text:'125.31',size:14,font:'Arial'})]}),
+    new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:`${unidade?unidade.toUpperCase():'______'} UNIDADE`,size:18,bold:true,font:'Arial'})]})
+  ]});
+  const r1=new TableRow({children:[logoCell,new TableCell({columnSpan:4,width:{size:7160,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:cm,children:[new Paragraph({children:[new TextRun({text:'CURSO: FISIOTERAPIA',bold:true,size:22,font:'Arial'})]})]})]});
+  const r2=new TableRow({children:[new TableCell({columnSpan:4,width:{size:7160,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:cm,children:[new Paragraph({children:[new TextRun({text:`DISCIPLINA: ${disciplina.toUpperCase()}`,bold:true,size:22,font:'Arial'})]})]})]});
+  const r3=new TableRow({children:[new TableCell({columnSpan:4,width:{size:7160,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:cm,children:[new Paragraph({children:[new TextRun({text:'DOCENTE: FELIPE CERQUEIRA',bold:true,size:22,font:'Arial'})]})]})]});
+  const r4=new TableRow({children:[
+    new TableCell({width:{size:1800,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:cm,children:[new Paragraph({alignment:AlignmentType.CENTER,spacing:{after:40},children:[new TextRun({text:'Data da Avaliação',bold:true,size:18,font:'Arial'})]}),new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:'____/____/______',size:18,font:'Arial'})]})]
+    }),
+    new TableCell({width:{size:1800,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:cm,children:[new Paragraph({alignment:AlignmentType.CENTER,spacing:{after:40},children:[new TextRun({text:'Data da Devolução',bold:true,size:18,font:'Arial'})]}),new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:'____/____/______',size:18,font:'Arial'})]})]
+    }),
+    new TableCell({width:{size:900,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:cm,verticalAlign:VerticalAlign.CENTER,children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:'TURMA',bold:true,size:18,font:'Arial'})]})]
+    }),
+    new TableCell({width:{size:2660,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:cm,children:[
+      new Paragraph({alignment:AlignmentType.CENTER,spacing:{after:40},children:[new TextRun({text:'MAPA DE NOTAS',bold:true,size:18,font:'Arial'})]}),
+      new Table({width:{size:2400,type:WidthType.DXA},columnWidths:[800,800,800],rows:[
+        new TableRow({children:[
+          new TableCell({width:{size:800,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:cm,children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:'PC',bold:true,size:18,font:'Arial'})]})] }),
+          new TableCell({width:{size:800,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:cm,children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:'ME',bold:true,size:18,font:'Arial'})]})] }),
+          new TableCell({width:{size:800,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:cm,children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:'NOTA FINAL',bold:true,size:16,font:'Arial'})]})] }),
+        ]}),
+        new TableRow({children:[
+          new TableCell({width:{size:800,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:{top:200,bottom:200,left:80,right:80},children:[new Paragraph({children:[]})]}),
+          new TableCell({width:{size:800,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:{top:200,bottom:200,left:80,right:80},children:[new Paragraph({children:[]})]}),
+          new TableCell({width:{size:800,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:{top:200,bottom:200,left:80,right:80},children:[new Paragraph({children:[]})]}),
+        ]}),
+      ]})
+    ]})
+  ]});
+  const rEst=new TableRow({children:[new TableCell({columnSpan:5,width:{size:W,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:cm,children:[new Paragraph({children:[new TextRun({text:'ESTUDANTE:',bold:true,size:22,font:'Arial'})]})] })]});
+  const tbl=new Table({width:{size:W,type:WidthType.DXA},columnWidths:[2200,1800,1800,900,2660],rows:[r1,r2,r3,r4,rEst]});
+  const instrucao=new Paragraph({spacing:{before:0,after:200},border:{top:brd('000000',4),bottom:brd('000000',4),left:brd('000000',4),right:brd('000000',4)},children:[
+    new TextRun({text:'1. A prova deverá ser realizada de caneta azul ou preta. Não serão corrigidas questões a lápis. As questões subjetivas devem ser realizadas no ',size:18,font:'Arial'}),
+    new TextRun({text:'LOCAL DETERMINADO',size:18,font:'Arial',bold:true,underline:{}}),
+    new TextRun({text:'. As questões objetivas devem ser marcadas na alternativa.',size:18,font:'Arial'}),
+  ]});
+  return [tbl, instrucao];
+}
+
+function makeHeaderABP(){
+  const az='BDD7EE';
+  const r1=new TableRow({children:[
+    new TableCell({rowSpan:3,width:{size:2600,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},shading:{fill:az,type:ShadingType.CLEAR},margins:cm,verticalAlign:VerticalAlign.CENTER,children:[
+      new Paragraph({alignment:AlignmentType.CENTER,spacing:{after:40},children:[new TextRun({text:'Unit',bold:true,size:40,font:'Arial',color:'1a5276'})]}),
+      new Paragraph({alignment:AlignmentType.CENTER,spacing:{after:60},children:[new TextRun({text:'UNIVERSIDADE TIRADENTES',size:14,bold:true,font:'Arial'})]}),
+      new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:'Avaliação Multinível',bold:true,size:20,font:'Arial'})]})
+    ]}),
+    new TableCell({width:{size:4480,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},shading:{fill:az,type:ShadingType.CLEAR},margins:cm,children:[new Paragraph({children:[new TextRun({text:`Curso: Fisioterapia`,size:20,font:'Arial'})]})] }),
+    new TableCell({width:{size:2280,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},shading:{fill:az,type:ShadingType.CLEAR},margins:cm,children:[new Paragraph({children:[new TextRun({text:'Código:',size:20,font:'Arial'})]})] }),
+  ]});
+  const r2=new TableRow({children:[new TableCell({columnSpan:2,width:{size:6760,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},shading:{fill:az,type:ShadingType.CLEAR},margins:cm,children:[new Paragraph({children:[new TextRun({text:`Projeto: ${projeto}`,size:20,font:'Arial'})]})] })]});
+  const r3=new TableRow({children:[new TableCell({columnSpan:2,width:{size:6760,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},shading:{fill:az,type:ShadingType.CLEAR},margins:cm,children:[new Paragraph({children:[new TextRun({text:'Docente: Felipe Lima de Cerqueira',size:20,font:'Arial'})]})] })]});
+  const rDisc=new TableRow({children:[new TableCell({columnSpan:3,width:{size:W,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},shading:{fill:az,type:ShadingType.CLEAR},margins:cm,children:[new Paragraph({children:[new TextRun({text:`Disciplina: ${disciplina}`,size:20,font:'Arial'})]})] })]});
+  const rE1=new TableRow({children:[
+    new TableCell({rowSpan:2,width:{size:6760,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},shading:{fill:az,type:ShadingType.CLEAR},margins:{top:200,bottom:200,left:120,right:120},verticalAlign:VerticalAlign.TOP,children:[new Paragraph({children:[new TextRun({text:'Estudante:',size:20,font:'Arial'})]})] }),
+    new TableCell({width:{size:2600,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},shading:{fill:az,type:ShadingType.CLEAR},margins:cm,children:[new Paragraph({children:[new TextRun({text:'Data:',size:20,font:'Arial'})]})] }),
+  ]});
+  const rE2=new TableRow({children:[new TableCell({width:{size:2600,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},shading:{fill:az,type:ShadingType.CLEAR},margins:cm,children:[new Paragraph({children:[new TextRun({text:'Nota - Objetivas:',size:20,font:'Arial'})]})] })]});
+  const rM1=new TableRow({children:[
+    new TableCell({rowSpan:2,width:{size:6760,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},shading:{fill:az,type:ShadingType.CLEAR},margins:{top:200,bottom:200,left:120,right:120},verticalAlign:VerticalAlign.TOP,children:[new Paragraph({children:[new TextRun({text:'Matrícula:',size:20,font:'Arial'})]})] }),
+    new TableCell({width:{size:2600,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},shading:{fill:az,type:ShadingType.CLEAR},margins:cm,children:[new Paragraph({children:[new TextRun({text:'Nota - Discursivas:',size:20,font:'Arial'})]})] }),
+  ]});
+  const rM2=new TableRow({children:[new TableCell({width:{size:2600,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},shading:{fill:az,type:ShadingType.CLEAR},margins:cm,children:[new Paragraph({children:[new TextRun({text:'Nota Total:',size:20,font:'Arial'})]})] })]});
+  return [new Table({width:{size:W,type:WidthType.DXA},columnWidths:[2600,4480,2280],rows:[r1,r2,r3,rDisc,rE1,rE2,rM1,rM2]})];
+}
+
+function buildQuestoes(sel){
+  const ch=[];
+  sel.forEach((q,i)=>{
+    ch.push(new Paragraph({spacing:{before:240,after:120},children:[new TextRun({text:`${i+1}. `,bold:true,size:24,font:'Arial'}),new TextRun({text:q.enunciado||'',size:24,font:'Arial'})]}));
+    if(q.tipo==='Múltipla Escolha' && q.alternativas?.length){
+      q.alternativas.forEach((a,ai)=>{
+        ch.push(new Paragraph({spacing:{after:60},indent:{left:360},children:[new TextRun({text:`${String.fromCharCode(65+ai)}) `,size:22,font:'Arial'}),new TextRun({text:a,size:22,font:'Arial'})]}));
+      });
+    }
+    ch.push(new Paragraph({spacing:{after:80},children:[]}));
+  });
+  return ch;
+}
+
+function buildGabarito(sel){
+  const ch=[new Paragraph({pageBreakBefore:true,spacing:{before:0,after:200},children:[new TextRun({text:'GABARITO',bold:true,size:28,font:'Arial'})]})];
+  sel.forEach((q,i)=>{
+    let resp='';
+    if(q.tipo==='Múltipla Escolha' && q.correta!==undefined) resp=String.fromCharCode(65+q.correta);
+    else if(q.gabarito) resp=q.gabarito;
+    if(resp) ch.push(new Paragraph({spacing:{after:80},children:[new TextRun({text:`${i+1}. `,bold:true,size:22,font:'Arial'}),new TextRun({text:resp,size:22,font:'Arial'})]}));
+  });
+  return ch;
+}
+
+const headerChildren=modelo==='tradicional'?makeHeaderTradicional():makeHeaderABP();
+const allChildren=[...headerChildren,new Paragraph({spacing:{before:300,after:0},children:[]}), ...buildQuestoes(selecionadas),...buildGabarito(selecionadas)];
+const document=new Document({
+  sections:[{properties:{page:{size:{width:11906,height:16838},margin:{top:1134,right:1134,bottom:1134,left:1134}}},children:allChildren}]
+});
+const buffer=await Packer.toBuffer(document);
+const nomeArq=`prova_${disciplina.replace(/\s+/g,'_')||'sem_disciplina'}_${new Date().toLocaleDateString('pt-BR').replace(/\//g,'-')}`;
+const blob=new Blob([buffer],{type:'application/vnd.openxmlformats-officedocument.wordprocessingml.document'});
+saveAs(blob,`${nomeArq}.docx`);
+showToast(`${selecionadas.length} questões exportadas!`,'success');
+```
+
+} catch(e){ console.error(e); showToast(’Erro: ’+e.message,‘error’); }
+}
+
+// ── NAV ──
+function showView(view){
+document.querySelectorAll(’.view’).forEach(v=>v.classList.remove(‘active’));
+document.querySelectorAll(’.nav-btn’).forEach(b=>b.classList.remove(‘active’));
+document.getElementById(‘view-’+view).classList.add(‘active’);
+document.getElementById(‘nav-’+view).classList.add(‘active’);
+if(view===‘stats’) renderStats();
+}
+
+// ── TOAST ──
+function showToast(msg,type=‘success’){
+const t=document.getElementById(‘toast’);
+t.textContent=msg; t.className=’toast show ’+type;
+setTimeout(()=>{ t.className=‘toast’; },2500);
 }
 </script>
 
