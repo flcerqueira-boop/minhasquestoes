@@ -145,7 +145,7 @@ textarea{resize:vertical;min-height:80px;}
     <div class="login-logo">Minhas Questões</div>
     <div class="login-sub">Prof. Felipe Cerqueira</div>
     <input class="login-input" type="password" id="login-pass" placeholder="Senha de acesso" autocomplete="current-password"/>
-    <button class="btn-primary" id="btn-login">Entrar</button>
+    <button class="btn-primary" id="btn-login" onclick="doLogin()">Entrar</button>
     <div class="login-err" id="login-err">Senha incorreta</div>
   </div>
 </div>
@@ -154,12 +154,12 @@ textarea{resize:vertical;min-height:80px;}
   <div class="topbar">
     <div class="topbar-logo">MQ</div>
     <div class="topbar-nav">
-      <button class="nav-btn active" id="nav-questoes">📋 <span>Questões</span></button>
-      <button class="nav-btn" id="nav-nova">➕ <span>Nova</span></button>
-      <button class="nav-btn" id="nav-tags">🏷️ <span>Tags</span></button>
-      <button class="nav-btn" id="nav-stats">📊 <span>Stats</span></button>
+      <button class="nav-btn active" id="nav-questoes" onclick="showView('questoes')">📋 <span>Questões</span></button>
+      <button class="nav-btn" id="nav-nova" onclick="showView('nova')">➕ <span>Nova</span></button>
+      <button class="nav-btn" id="nav-tags" onclick="showView('tags')">🏷️ <span>Tags</span></button>
+      <button class="nav-btn" id="nav-stats" onclick="showView('stats')">📊 <span>Stats</span></button>
     </div>
-    <button class="logout-btn" id="btn-logout">Sair</button>
+    <button class="logout-btn" id="btn-logout" onclick="logout()">Sair</button>
   </div>
 
   <div class="view active" id="view-questoes">
@@ -168,30 +168,30 @@ textarea{resize:vertical;min-height:80px;}
       <div class="filter-row">
         <div class="filter-group">
           <div class="filter-label">Matéria</div>
-          <select id="f-materia"><option value="">Todas</option></select>
+          <select id="f-materia" onchange="applyFilters()"><option value="">Todas</option></select>
         </div>
         <div class="filter-group">
           <div class="filter-label">Tema</div>
-          <select id="f-tema"><option value="">Todos</option></select>
+          <select id="f-tema" onchange="applyFilters()"><option value="">Todos</option></select>
         </div>
         <div class="filter-group">
           <div class="filter-label">Tipo</div>
-          <select id="f-tipo"><option value="">Todos</option></select>
+          <select id="f-tipo" onchange="applyFilters()"><option value="">Todos</option></select>
         </div>
         <div class="filter-group">
           <div class="filter-label">Dificuldade</div>
-          <select id="f-dificuldade"><option value="">Todas</option></select>
+          <select id="f-dificuldade" onchange="applyFilters()"><option value="">Todas</option></select>
         </div>
         <div class="filter-group" style="flex:1;min-width:180px">
           <div class="filter-label">Busca</div>
-          <input type="text" id="f-busca" placeholder="Buscar texto..."/>
+          <input type="text" id="f-busca" placeholder="Buscar texto..." oninput="applyFilters()"/>
         </div>
-        <button class="btn-sm" id="btn-clear-filters">Limpar</button>
+        <button class="btn-sm" id="btn-clear-filters" onclick="clearFilters()">Limpar</button>
       </div>
     </div>
     <div class="flex-between mb-16">
       <div style="font-size:14px;color:var(--muted)"><span id="q-count">0</span> questões encontradas</div>
-      <button class="btn-accent" id="btn-select-all">Selecionar todas</button>
+      <button class="btn-accent" id="btn-select-all" onclick="selectAll()">Selecionar todas</button>
     </div>
     <div id="q-list"></div>
     <div id="empty-q" class="empty-state" style="display:none">
@@ -213,7 +213,7 @@ textarea{resize:vertical;min-height:80px;}
         </div>
         <div class="form-group">
           <div class="form-label">Tipo *</div>
-          <select id="n-tipo"></select>
+          <select id="n-tipo" onchange="updateFormByType()"></select>
         </div>
         <div class="form-group">
           <div class="form-label">Dificuldade</div>
@@ -231,7 +231,7 @@ textarea{resize:vertical;min-height:80px;}
       <div id="alts-section" style="margin-top:16px">
         <div class="form-label" style="margin-bottom:10px">Alternativas (marque a correta)</div>
         <div id="alts-list"></div>
-        <button class="add-alt-btn" id="btn-add-alt">+ Adicionar alternativa</button>
+        <button class="add-alt-btn" id="btn-add-alt" onclick="addAlt()">+ Adicionar alternativa</button>
       </div>
       <div id="gabarito-section" style="margin-top:16px;display:none">
         <div class="form-group">
@@ -240,8 +240,8 @@ textarea{resize:vertical;min-height:80px;}
         </div>
       </div>
       <div style="margin-top:20px;display:flex;gap:10px">
-        <button class="btn-accent" id="btn-salvar-questao">Salvar questão</button>
-        <button class="btn-sm" id="btn-limpar-form">Limpar</button>
+        <button class="btn-accent" id="btn-salvar-questao" onclick="salvarQuestao()">Salvar questão</button>
+        <button class="btn-sm" id="btn-limpar-form" onclick="limparForm()">Limpar</button>
       </div>
     </div>
   </div>
@@ -264,8 +264,8 @@ textarea{resize:vertical;min-height:80px;}
 
 <div class="selection-bar" id="sel-bar">
   <span><strong id="sel-num">0</strong> questões selecionadas</span>
-  <button class="sel-clear" id="btn-sel-clear">Limpar</button>
-  <button class="sel-export" id="btn-montar-prova">🖨 Montar Prova</button>
+  <button class="sel-clear" id="btn-sel-clear" onclick="clearSelection()">Limpar</button>
+  <button class="sel-export" id="btn-montar-prova" onclick="abrirModalExportar()">🖨 Montar Prova</button>
 </div>
 
 <div class="modal-overlay" id="modal-exportar">
@@ -273,7 +273,7 @@ textarea{resize:vertical;min-height:80px;}
     <div class="modal-title">Configurar Prova</div>
     <div class="form-group" style="margin-bottom:16px">
       <div class="form-label">Modelo de cabeçalho</div>
-      <select id="exp-modelo" style="width:100%">
+      <select id="exp-modelo" style="width:100%" onchange="toggleCamposModelo()">
         <option value="tradicional">Modelo Tradicional (UNIT)</option>
         <option value="abp">Modelo ABP (Avaliação Multinível)</option>
       </select>
@@ -300,10 +300,10 @@ textarea{resize:vertical;min-height:80px;}
     </div>
     <div class="modal-footer" style="flex-direction:column;gap:10px">
       <div style="display:flex;gap:10px;width:100%">
-        <button class="btn-accent" id="btn-exp-word" style="flex:1">⬇ Exportar Word</button>
-        <button class="btn-accent" id="btn-exp-pdf" style="flex:1;background:var(--accent2)">🖨 Exportar PDF</button>
+        <button class="btn-accent" id="btn-exp-word" style="flex:1" onclick="exportar('word')">⬇ Exportar Word</button>
+        <button class="btn-accent" id="btn-exp-pdf" style="flex:1;background:var(--accent2)" onclick="exportar('pdf')">🖨 Exportar PDF</button>
       </div>
-      <button class="btn-sm" id="btn-fechar-exportar" style="width:100%;text-align:center">Cancelar</button>
+      <button class="btn-sm" id="btn-fechar-exportar" style="width:100%;text-align:center" onclick="fecharModalExportar()">Cancelar</button>
     </div>
   </div>
 </div>
@@ -313,13 +313,44 @@ textarea{resize:vertical;min-height:80px;}
     <div class="modal-title">Editar Questão</div>
     <div id="modal-body"></div>
     <div class="modal-footer">
-      <button class="btn-sm" id="btn-close-modal">Cancelar</button>
-      <button class="btn-accent" id="btn-salvar-edicao">Salvar</button>
+      <button class="btn-sm" id="btn-close-modal" onclick="closeModal()">Cancelar</button>
+      <button class="btn-accent" id="btn-salvar-edicao" onclick="salvarEdicao()">Salvar</button>
     </div>
   </div>
 </div>
 
 <div class="toast" id="toast"></div>
+
+<!-- Funções críticas ANTES do Firebase para onclick inline funcionar -->
+
+<script>
+const SENHA = "@bento30";
+
+function doLogin(){
+  const v = document.getElementById('login-pass').value;
+  if(v === SENHA){
+    document.getElementById('login-screen').style.display='none';
+    document.getElementById('app').style.display='block';
+    if(typeof appInit==='function') appInit();
+  } else {
+    document.getElementById('login-err').style.display='block';
+  }
+}
+
+function logout(){
+  document.getElementById('login-screen').style.display='flex';
+  document.getElementById('app').style.display='none';
+  document.getElementById('login-pass').value='';
+}
+
+function showView(view){
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('view-'+view).classList.add('active');
+  document.getElementById('nav-'+view).classList.add('active');
+  if(view==='stats' && typeof renderStats==='function') renderStats();
+}
+</script>
 
 <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
 
@@ -331,7 +362,6 @@ textarea{resize:vertical;min-height:80px;}
 
 <script>
 // ── CONFIG ──
-const SENHA = "@bento30";
 const firebaseConfig = {
   apiKey:"AIzaSyDnGMYYokX3GMNfZsZ6D6KnR9XAXq7OWj4",
   authDomain:"cerqueira-apps.firebaseapp.com",
@@ -349,75 +379,11 @@ let tags={
   dificuldades:["Fácil","Médio","Difícil"]
 };
 
-// ── INIT ──
-window.addEventListener('load', function(){
-  try {
-    firebase.initializeApp(firebaseConfig);
-    db = firebase.firestore();
-  } catch(e){ console.warn('Firebase:',e); }
-  bindEvents();
-});
-
-function bindEvents(){
-  // Login
-  document.getElementById('btn-login').addEventListener('click', doLogin);
-  document.getElementById('login-pass').addEventListener('keydown', function(e){ if(e.key==='Enter') doLogin(); });
-
-  // Nav
-  document.getElementById('nav-questoes').addEventListener('click', function(){ showView('questoes'); });
-  document.getElementById('nav-nova').addEventListener('click', function(){ showView('nova'); });
-  document.getElementById('nav-tags').addEventListener('click', function(){ showView('tags'); });
-  document.getElementById('nav-stats').addEventListener('click', function(){ showView('stats'); });
-  document.getElementById('btn-logout').addEventListener('click', logout);
-
-  // Filtros
-  document.getElementById('f-materia').addEventListener('change', applyFilters);
-  document.getElementById('f-tema').addEventListener('change', applyFilters);
-  document.getElementById('f-tipo').addEventListener('change', applyFilters);
-  document.getElementById('f-dificuldade').addEventListener('change', applyFilters);
-  document.getElementById('f-busca').addEventListener('input', applyFilters);
-  document.getElementById('btn-clear-filters').addEventListener('click', clearFilters);
-  document.getElementById('btn-select-all').addEventListener('click', selectAll);
-
-  // Nova questão
-  document.getElementById('n-tipo').addEventListener('change', updateFormByType);
-  document.getElementById('btn-add-alt').addEventListener('click', addAlt);
-  document.getElementById('btn-salvar-questao').addEventListener('click', salvarQuestao);
-  document.getElementById('btn-limpar-form').addEventListener('click', limparForm);
-
-  // Selection bar
-  document.getElementById('btn-sel-clear').addEventListener('click', clearSelection);
-  document.getElementById('btn-montar-prova').addEventListener('click', abrirModalExportar);
-
-  // Modal exportar
-  document.getElementById('exp-modelo').addEventListener('change', toggleCamposModelo);
-  document.getElementById('btn-exp-word').addEventListener('click', function(){ exportar('word'); });
-  document.getElementById('btn-exp-pdf').addEventListener('click', function(){ exportar('pdf'); });
-  document.getElementById('btn-fechar-exportar').addEventListener('click', fecharModalExportar);
-
-  // Modal editar
-  document.getElementById('btn-close-modal').addEventListener('click', closeModal);
-  document.getElementById('btn-salvar-edicao').addEventListener('click', salvarEdicao);
-}
-
-// ── LOGIN ──
-function doLogin(){
-  const v = document.getElementById('login-pass').value;
-  const err = document.getElementById('login-err');
-  if(v === SENHA){
-    document.getElementById('login-screen').style.display='none';
-    document.getElementById('app').style.display='block';
-    appInit();
-  } else {
-    err.style.display='block';
-  }
-}
-
-function logout(){
-  document.getElementById('login-screen').style.display='flex';
-  document.getElementById('app').style.display='none';
-  document.getElementById('login-pass').value='';
-}
+// ── FIREBASE INIT ──
+try {
+  firebase.initializeApp(firebaseConfig);
+  db = firebase.firestore();
+} catch(e){ console.warn('Firebase:',e); }
 
 // ── APP INIT ──
 async function appInit(){
@@ -925,15 +891,6 @@ showToast(`${selecionadas.length} questões exportadas!`,'success');
 ```
 
 } catch(e){ console.error(e); showToast(’Erro: ’+e.message,‘error’); }
-}
-
-// ── NAV ──
-function showView(view){
-document.querySelectorAll(’.view’).forEach(v=>v.classList.remove(‘active’));
-document.querySelectorAll(’.nav-btn’).forEach(b=>b.classList.remove(‘active’));
-document.getElementById(‘view-’+view).classList.add(‘active’);
-document.getElementById(‘nav-’+view).classList.add(‘active’);
-if(view===‘stats’) renderStats();
 }
 
 // ── TOAST ──
