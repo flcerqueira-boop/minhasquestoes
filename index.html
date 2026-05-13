@@ -399,8 +399,17 @@ async function appInit(){
 async function loadTags(){
   try {
     const doc = await db.collection('bancoquestoes_config').doc('tags').get();
-    if(doc.exists) tags = {...tags, ...doc.data()};
-  } catch(e){ console.log('Tags default'); }
+    if(doc.exists){
+      const data = doc.data();
+      // Merge — mantém padrões + adiciona customizadas
+      if(data.materias?.length) tags.materias = data.materias;
+      if(data.temas?.length) tags.temas = data.temas;
+      if(data.tipos?.length) tags.tipos = data.tipos;
+      if(data.dificuldades?.length) tags.dificuldades = data.dificuldades;
+    }
+  } catch(e){ console.log('Firebase indisponível, usando tags padrão'); }
+  // Sempre popula os selects, com ou sem Firebase
+  populateAllSelects();
 }
 
 async function saveTags(){
