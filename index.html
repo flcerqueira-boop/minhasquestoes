@@ -232,7 +232,7 @@ padding: 28px; width: 100%; max-width: 640px; max-height: 90vh; overflow-y: auto
     <div class="login-logo">Minhas Questões</div>
     <div class="login-sub">Prof. Felipe Cerqueira</div>
     <input class="login-input" type="password" id="login-pass" placeholder="Senha de acesso" />
-    <button class="btn-primary" id="btn-login">Entrar</button>
+    <button class="btn-primary" id="btn-login" onclick="alert('clicou! senha: ' + document.getElementById('login-pass').value)">Entrar</button>
     <div class="login-err" id="login-err">Senha incorreta</div>
   </div>
 </div>
@@ -489,7 +489,6 @@ window.addEventListener('load', function() {
 
 <script>
 // ============ CONFIG ============
-const SENHA = "@bento30";
 const firebaseConfig = {
   apiKey: "AIzaSyDnGMYYokX3GMNfZsZ6D6KnR9XAXq7OWj4",
   authDomain: "cerqueira-apps.firebaseapp.com",
@@ -499,8 +498,13 @@ const firebaseConfig = {
   appId: "1:721645026868:web:f2e3e2125e43975794d461"
 };
 
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
+let db;
+try {
+  firebase.initializeApp(firebaseConfig);
+  db = firebase.firestore();
+} catch(e) {
+  console.error('Firebase error:', e);
+}
 
 // ============ STATE ============
 let questoes = [];
@@ -516,25 +520,6 @@ let editingId = null;
 let altCount = 0;
 
 // ============ LOGIN ============
-function doLogin() {
-  const el = document.getElementById('login-pass');
-  const v = el ? el.value : '';
-  const err = document.getElementById('login-err');
-  if (v === SENHA) {
-    document.getElementById('login-screen').style.display = 'none';
-    document.getElementById('app').style.display = 'block';
-    init();
-  } else {
-    if (err) err.style.display = 'block';
-  }
-}
-document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('btn-login').addEventListener('click', doLogin);
-  document.getElementById('login-pass').addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') doLogin();
-  });
-});
-
 function logout() {
   document.getElementById('login-screen').style.display = 'flex';
   document.getElementById('app').style.display = 'none';
@@ -550,6 +535,9 @@ async function init() {
   renderStats();
   resetAlts();
 }
+
+// Se login aconteceu antes do Firebase carregar
+if (window._pendingInit) { window._pendingInit = false; init(); }
 
 // ============ FIRESTORE ============
 async function loadTags() {
