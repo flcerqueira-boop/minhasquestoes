@@ -866,40 +866,40 @@ async function exportar(formato){
         type:'jpg'
       });
       // Col widths: logo=2400, middle=4200, notes=1800 (total=8400 ~ W)
-      const CW=[2400,4200,1800];
+      const CW=[2200,4600,1560];
 
       const r1=new TableRow({children:[
         new TableCell({rowSpan:3,width:{size:CW[0],type:WidthType.DXA},borders:{top:brdB(),bottom:brdB(),left:brdB(),right:brdB()},margins:cm2,verticalAlign:VerticalAlign.CENTER,children:[
           new Paragraph({alignment:AlignmentType.LEFT,spacing:{after:60},children:[logoImg]}),
-          new Paragraph({alignment:AlignmentType.LEFT,children:[new TextRun({text:'Avaliação Multinível',bold:true,size:22,font:'Arial',color:'1F3864'})]})
+          new Paragraph({alignment:AlignmentType.LEFT,children:[new TextRun({text:'Avaliação Multinível',bold:true,size:20,font:'Arial',color:'1F3864'})]})
         ]}),
-        new TableCell({width:{size:CW[1],type:WidthType.DXA},borders:{top:brdB(),bottom:brdB(),left:brdB(),right:brdB()},margins:cm2,children:[new Paragraph({children:[new TextRun({text:'Curso: Fisioterapia',size:22,font:'Arial'})]})] }),
-        new TableCell({width:{size:CW[2],type:WidthType.DXA},borders:{top:brdB(),bottom:brdB(),left:brdB(),right:brdB()},margins:cm2,children:[new Paragraph({children:[new TextRun({text:'Código:',size:22,font:'Arial'})]})] }),
+        new TableCell({width:{size:CW[1],type:WidthType.DXA},borders:{top:brdB(),bottom:brdB(),left:brdB(),right:brdB()},margins:cm2,children:[new Paragraph({children:[new TextRun({text:'Curso: Fisioterapia',size:20,font:'Arial'})]})] }),
+        new TableCell({width:{size:CW[2],type:WidthType.DXA},borders:{top:brdB(),bottom:brdB(),left:brdB(),right:brdB()},margins:cm2,children:[new Paragraph({children:[new TextRun({text:'Código:',size:20,font:'Arial'})]})] }),
       ]});
       const r2=new TableRow({children:[
-        new TableCell({columnSpan:2,width:{size:CW[1]+CW[2],type:WidthType.DXA},borders:{top:brdB(),bottom:brdB(),left:brdB(),right:brdB()},margins:cm2,children:[new Paragraph({children:[new TextRun({text:`Projeto: ${projeto}`,size:22,font:'Arial'})]})] }),
+        new TableCell({columnSpan:2,width:{size:CW[1]+CW[2],type:WidthType.DXA},borders:{top:brdB(),bottom:brdB(),left:brdB(),right:brdB()},margins:cm2,children:[new Paragraph({children:[new TextRun({text:`Projeto: ${projeto}`,size:20,font:'Arial'})]})] }),
       ]});
       const r3=new TableRow({children:[
-        new TableCell({columnSpan:2,width:{size:CW[1]+CW[2],type:WidthType.DXA},borders:{top:brdB(),bottom:brdB(),left:brdB(),right:brdB()},margins:cm2,children:[new Paragraph({children:[new TextRun({text:'Docente: Felipe Lima de Cerqueira',size:22,font:'Arial'})]})] }),
+        new TableCell({columnSpan:2,width:{size:CW[1]+CW[2],type:WidthType.DXA},borders:{top:brdB(),bottom:brdB(),left:brdB(),right:brdB()},margins:cm2,children:[new Paragraph({children:[new TextRun({text:'Docente: Felipe Lima de Cerqueira',size:20,font:'Arial'})]})] }),
       ]});
       // Estudante rows
       const rE1=new TableRow({children:[
-        new TableCell({rowSpan:2,width:{size:CW[0],type:WidthType.DXA},borders:{top:brdB(),bottom:brdB(),left:brdB(),right:brdB()},margins:{top:200,bottom:200,left:120,right:120},verticalAlign:VerticalAlign.TOP,children:[new Paragraph({children:[new TextRun({text:'Estudante:',size:22,font:'Arial'})]})] }),
-        new TableCell({width:{size:CW[1],type:WidthType.DXA},borders:{top:brdB(),bottom:brdB(),left:brdB(),right:brdB()},margins:cm2,children:[new Paragraph({children:[new TextRun({text:'Data:',size:22,font:'Arial'})]})] }),
+        new TableCell({rowSpan:2,width:{size:CW[0],type:WidthType.DXA},borders:{top:brdB(),bottom:brdB(),left:brdB(),right:brdB()},margins:{top:200,bottom:200,left:120,right:120},verticalAlign:VerticalAlign.TOP,children:[new Paragraph({children:[new TextRun({text:'Estudante:',size:20,font:'Arial'})]})] }),
+        new TableCell({width:{size:CW[1],type:WidthType.DXA},borders:{top:brdB(),bottom:brdB(),left:brdB(),right:brdB()},margins:cm2,children:[new Paragraph({children:[new TextRun({text:'Data:',size:20,font:'Arial'})]})] }),
         new TableCell({width:{size:CW[2],type:WidthType.DXA},borders:{top:brdB(),bottom:brdB(),left:brdB(),right:brdB()},margins:cm2,children:[new Paragraph({children:[]})] }),
       ]});
       const rE2=new TableRow({children:[
-        new TableCell({width:{size:CW[1],type:WidthType.DXA},borders:{top:brdB(),bottom:brdB(),left:brdB(),right:brdB()},margins:cm2,children:[new Paragraph({children:[new TextRun({text:'Nota — Objetivas:',size:22,font:'Arial'})]})] }),
+        new TableCell({width:{size:CW[1],type:WidthType.DXA},borders:{top:brdB(),bottom:brdB(),left:brdB(),right:brdB()},margins:cm2,children:[new Paragraph({children:[new TextRun({text:'Nota — Objetivas:',size:20,font:'Arial'})]})] }),
         new TableCell({width:{size:CW[2],type:WidthType.DXA},borders:{top:brdB(),bottom:brdB(),left:brdB(),right:brdB()},margins:cm2,children:[new Paragraph({children:[]})] }),
       ]});
       // Matrícula rows
       const rM1=new TableRow({children:[
-        new TableCell({rowSpan:2,width:{size:CW[0],type:WidthType.DXA},borders:{top:brdB(),bottom:brdB(),left:brdB(),right:brdB()},margins:{top:200,bottom:200,left:120,right:120},verticalAlign:VerticalAlign.TOP,children:[new Paragraph({children:[new TextRun({text:'Matrícula:',size:22,font:'Arial'})]})] }),
-        new TableCell({width:{size:CW[1],type:WidthType.DXA},borders:{top:brdB(),bottom:brdB(),left:brdB(),right:brdB()},margins:cm2,children:[new Paragraph({children:[new TextRun({text:'Nota — Discursivas:',size:22,font:'Arial'})]})] }),
+        new TableCell({rowSpan:2,width:{size:CW[0],type:WidthType.DXA},borders:{top:brdB(),bottom:brdB(),left:brdB(),right:brdB()},margins:{top:200,bottom:200,left:120,right:120},verticalAlign:VerticalAlign.TOP,children:[new Paragraph({children:[new TextRun({text:'Matrícula:',size:20,font:'Arial'})]})] }),
+        new TableCell({width:{size:CW[1],type:WidthType.DXA},borders:{top:brdB(),bottom:brdB(),left:brdB(),right:brdB()},margins:cm2,children:[new Paragraph({children:[new TextRun({text:'Nota — Discursivas:',size:20,font:'Arial'})]})] }),
         new TableCell({width:{size:CW[2],type:WidthType.DXA},borders:{top:brdB(),bottom:brdB(),left:brdB(),right:brdB()},margins:cm2,children:[new Paragraph({children:[]})] }),
       ]});
       const rM2=new TableRow({children:[
-        new TableCell({width:{size:CW[1],type:WidthType.DXA},borders:{top:brdB(),bottom:brdB(),left:brdB(),right:brdB()},margins:cm2,children:[new Paragraph({children:[new TextRun({text:'Nota Total:',size:22,font:'Arial'})]})] }),
+        new TableCell({width:{size:CW[1],type:WidthType.DXA},borders:{top:brdB(),bottom:brdB(),left:brdB(),right:brdB()},margins:cm2,children:[new Paragraph({children:[new TextRun({text:'Nota Total:',size:20,font:'Arial'})]})] }),
         new TableCell({width:{size:CW[2],type:WidthType.DXA},borders:{top:brdB(),bottom:brdB(),left:brdB(),right:brdB()},margins:cm2,children:[new Paragraph({children:[]})] }),
       ]});
       return [new Table({width:{size:W,type:WidthType.DXA},columnWidths:CW,rows:[r1,r2,r3,rE1,rE2,rM1,rM2]})];
@@ -908,10 +908,10 @@ async function exportar(formato){
     function buildQuestoes(sel){
       const ch=[];
       sel.forEach((q,i)=>{
-        ch.push(new Paragraph({spacing:{before:200,after:100,line:360,lineRule:'auto'},children:[new TextRun({text:`${i+1}. `,bold:true,size:22,font:'Arial'}),new TextRun({text:q.enunciado||'',size:22,font:'Arial'})]}));
+        ch.push(new Paragraph({spacing:{before:240,after:120,line:360,lineRule:'auto'},children:[new TextRun({text:`${i+1}. `,bold:true,size:22,font:'Arial'}),new TextRun({text:q.enunciado||'',size:22,font:'Arial'})]}));
         if(q.tipo==='Múltipla Escolha' && q.alternativas?.length){
           q.alternativas.forEach((a,ai)=>{
-            ch.push(new Paragraph({spacing:{after:40,line:360,lineRule:'auto'},indent:{left:300},children:[new TextRun({text:`${String.fromCharCode(65+ai)}) `,size:22,font:'Arial'}),new TextRun({text:a,size:22,font:'Arial'})]}));
+            ch.push(new Paragraph({spacing:{after:60,line:360,lineRule:'auto'},indent:{left:300},children:[new TextRun({text:`${String.fromCharCode(65+ai)}) `,size:22,font:'Arial'}),new TextRun({text:a,size:22,font:'Arial'})]}));
           });
         }
         ch.push(new Paragraph({spacing:{after:60},children:[]}));
