@@ -452,6 +452,31 @@ padding: 28px; width: 100%; max-width: 640px; max-height: 90vh; overflow-y: auto
 
 <div class="toast" id="toast"></div>
 
+<!-- LOGIN SCRIPT - independente, antes do Firebase -->
+
+<script>
+const SENHA = "@bento30";
+function doLogin() {
+  const el = document.getElementById('login-pass');
+  const v = el ? el.value : '';
+  if (v === SENHA) {
+    document.getElementById('login-screen').style.display = 'none';
+    document.getElementById('app').style.display = 'block';
+    if (typeof init === 'function') init();
+    else window._pendingInit = true;
+  } else {
+    const err = document.getElementById('login-err');
+    if (err) { err.style.display = 'block'; err.textContent = 'Senha incorreta'; }
+  }
+}
+window.addEventListener('load', function() {
+  const btn = document.getElementById('btn-login');
+  const inp = document.getElementById('login-pass');
+  if (btn) btn.addEventListener('click', doLogin);
+  if (inp) inp.addEventListener('keydown', function(e){ if(e.key==='Enter') doLogin(); });
+});
+</script>
+
 <!-- Firebase + docx via CDN -->
 
 <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
