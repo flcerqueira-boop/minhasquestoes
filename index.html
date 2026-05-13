@@ -388,9 +388,9 @@ try {
 // ── APP INIT ──
 async function appInit(){
   await loadTags();
-  await loadQuestoes();
   populateAllSelects();
   renderTagsManager();
+  await loadQuestoes();
   renderStats();
   resetAlts();
 }
@@ -573,7 +573,10 @@ function resetAlts(){
   altCount=0;
   document.getElementById('alts-list').innerHTML='';
   addAlt(); addAlt(); addAlt(); addAlt();
-  updateFormByType();
+  // Força exibição correta baseado no tipo atual
+  const tipo = document.getElementById('n-tipo').value;
+  document.getElementById('alts-section').style.display = (!tipo || tipo==='Múltipla Escolha') ? 'block' : 'none';
+  document.getElementById('gabarito-section').style.display = (tipo && tipo!=='Múltipla Escolha') ? 'block' : 'none';
 }
 
 function addAlt(){
