@@ -339,6 +339,7 @@ function doLogin(){
 }
 
 function logout(){
+  sessionStorage.removeItem('mq_auth');
   document.getElementById('login-screen').style.display='flex';
   document.getElementById('app').style.display='none';
   document.getElementById('login-pass').value='';
@@ -801,7 +802,7 @@ async function exportar(formato){
     : '';
   const unidade=document.getElementById('exp-unidade')?.value.trim()||'';
   const projeto=document.getElementById('exp-projeto')?.value.trim()||'';
-  const comGabarito = document.getElementById('exp-gabarito').value === 'sim';
+  const comGabarito=document.getElementById('exp-gabarito').value==='sim';
   fecharModalExportar();
   showToast('Gerando documento...','success');
   try {
