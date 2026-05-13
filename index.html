@@ -339,7 +339,7 @@ function doLogin(){
 }
 
 function logout(){
-  sessionStorage.removeItem('mq_auth');
+  localStorage.removeItem('mq_auth');
   document.getElementById('login-screen').style.display='flex';
   document.getElementById('app').style.display='none';
   document.getElementById('login-pass').value='';
@@ -779,6 +779,7 @@ function formatDate(str){
 }
 
 // ── MODAL EXPORTAR ──
+let _gabarito = 'sim';
 function abrirModalExportar(){
   if(!selectedIds.size){ showToast('Nenhuma questão selecionada','error'); return; }
   document.getElementById('modal-exportar').classList.add('open');
@@ -802,7 +803,8 @@ async function exportar(formato){
     : '';
   const unidade=document.getElementById('exp-unidade')?.value.trim()||'';
   const projeto=document.getElementById('exp-projeto')?.value.trim()||'';
-  const comGabarito=document.getElementById('exp-gabarito').value==='sim';
+  const gabaritoEl=document.getElementById('exp-gabarito');
+  const comGabarito=gabaritoEl ? gabaritoEl.value==='sim' : false;
   fecharModalExportar();
   showToast('Gerando documento...','success');
   try {
@@ -921,7 +923,8 @@ async function exportar(formato){
     }
 
     function buildGabarito(sel){
-      const ch=[new Paragraph({pageBreakBefore:true,spacing:{before:0,after:200},children:[new TextRun({text:'GABARITO',bold:true,size:28,font:'Arial'})]})];
+      if(!comGabarito) return [];
+      const ch=[new Paragraph({pageBreakBefore:true,spacing:{before:0,after:200},children:[new TextRun({text:'GABARITO',bold:true,size:22,font:'Arial'})]})];
       sel.forEach((q,i)=>{
         let resp='';
         if(q.tipo==='Múltipla Escolha' && q.correta!==undefined) resp=String.fromCharCode(65+q.correta);
