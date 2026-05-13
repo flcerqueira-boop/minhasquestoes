@@ -907,10 +907,9 @@ async function exportar(formato){
     const document=new Document({
       sections:[{properties:{page:{size:{width:11906,height:16838},margin:{top:1134,right:1134,bottom:1134,left:1134}}},children:allChildren}]
     });
-    const buffer=await Packer.toBuffer(document);
+    const blob = await Packer.toBlob(document);
     const nomeArq=`prova_${disciplina.replace(/\s+/g,'_')||'sem_disciplina'}_${new Date().toLocaleDateString('pt-BR').replace(/\//g,'-')}`;
-    const blob=new Blob([buffer],{type:'application/vnd.openxmlformats-officedocument.wordprocessingml.document'});
-    saveAs(blob,`${nomeArq}.docx`);
+    saveAs(blob, `${nomeArq}.docx`);
     showToast(`${selecionadas.length} questões exportadas!`,'success');
   } catch(e){ console.error(e); showToast('Erro: '+e.message,'error'); }
 }
