@@ -33,6 +33,7 @@ background: radial-gradient(ellipse at 60% 30%, #1a1f35 0%, #0f1117 70%);
 background: var(–surface); border: 1px solid var(–border); border-radius: 20px;
 padding: 48px 40px; width: 360px; text-align: center;
 box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+position: relative; z-index: 10;
 }
 .login-logo { font-family: ‘Syne’, sans-serif; font-size: 28px; font-weight: 800; color: var(–accent); margin-bottom: 4px; letter-spacing: -1px; }
 .login-sub { color: var(–muted); font-size: 13px; margin-bottom: 32px; }
@@ -43,9 +44,11 @@ transition: border-color .2s;
 }
 .login-input:focus { border-color: var(–accent); }
 .btn-primary {
-width: 100%; padding: 12px; background: var(–accent); color: #fff; border: none;
+width: 100%; padding: 14px; background: var(–accent); color: #fff; border: none;
 border-radius: var(–radius); font-size: 15px; font-weight: 600; cursor: pointer;
 transition: opacity .2s, transform .1s;
+-webkit-appearance: none; appearance: none;
+position: relative; z-index: 10;
 }
 .btn-primary:hover { opacity: .9; }
 .btn-primary:active { transform: scale(.98); }
@@ -229,7 +232,7 @@ padding: 28px; width: 100%; max-width: 640px; max-height: 90vh; overflow-y: auto
     <div class="login-logo">Minhas Questões</div>
     <div class="login-sub">Prof. Felipe Cerqueira</div>
     <input class="login-input" type="password" id="login-pass" placeholder="Senha de acesso" />
-    <button class="btn-primary" onclick="doLogin()">Entrar</button>
+    <button class="btn-primary" id="btn-login">Entrar</button>
     <div class="login-err" id="login-err">Senha incorreta</div>
   </div>
 </div>
@@ -489,16 +492,23 @@ let altCount = 0;
 
 // ============ LOGIN ============
 function doLogin() {
-  const v = document.getElementById('login-pass').value;
+  const el = document.getElementById('login-pass');
+  const v = el ? el.value : '';
+  const err = document.getElementById('login-err');
   if (v === SENHA) {
     document.getElementById('login-screen').style.display = 'none';
     document.getElementById('app').style.display = 'block';
     init();
   } else {
-    document.getElementById('login-err').style.display = 'block';
+    if (err) err.style.display = 'block';
   }
 }
-document.getElementById('login-pass').addEventListener('keydown', e => { if(e.key==='Enter') doLogin(); });
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('btn-login').addEventListener('click', doLogin);
+  document.getElementById('login-pass').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') doLogin();
+  });
+});
 
 function logout() {
   document.getElementById('login-screen').style.display = 'flex';
