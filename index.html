@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8"/>
@@ -17,45 +16,46 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 
 /* LOGIN */
 #login-screen{min-height:100vh;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at 60% 30%,#1a1f35 0%,#0d1117 70%);}
-.login-box{background:var(–surface);border:1px solid var(–border);border-radius:20px;padding:48px 40px;width:360px;text-align:center;box-shadow:0 32px 80px rgba(0,0,0,.6);}
-.login-logo{font-family:‘Syne’,sans-serif;font-size:26px;font-weight:800;color:var(–accent);margin-bottom:4px;}
-.login-sub{color:var(–muted);font-size:13px;margin-bottom:32px;}
-.login-input{width:100%;padding:13px 16px;background:var(–surface2);border:1px solid var(–border);border-radius:var(–radius);color:var(–text);font-size:16px;margin-bottom:14px;outline:none;-webkit-appearance:none;}
-.login-input:focus{border-color:var(–accent);}
-.btn-primary{width:100%;padding:14px;background:var(–accent);color:#fff;border:none;border-radius:var(–radius);font-size:16px;font-weight:700;cursor:pointer;-webkit-appearance:none;touch-action:manipulation;}
-.login-err{color:var(–red);font-size:13px;margin-top:10px;display:none;}
+.login-box{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:48px 40px;width:360px;text-align:center;box-shadow:0 32px 80px rgba(0,0,0,.6);}
+.login-logo{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;color:var(--accent);margin-bottom:4px;}
+.login-sub{color:var(--muted);font-size:13px;margin-bottom:32px;}
+.login-input{width:100%;padding:13px 16px;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);color:var(--text);font-size:16px;margin-bottom:14px;outline:none;-webkit-appearance:none;}
+.login-input:focus{border-color:var(--accent);}
+.btn-primary{width:100%;padding:14px;background:var(--accent);color:#fff;border:none;border-radius:var(--radius);font-size:16px;font-weight:700;cursor:pointer;-webkit-appearance:none;touch-action:manipulation;}
+.login-err{color:var(--red);font-size:13px;margin-top:10px;display:none;}
 
 /* APP */
 #app{display:none;min-height:100vh;}
-.topbar{background:var(–surface);border-bottom:1px solid var(–border);padding:0 20px;height:64px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
-.topbar-logo{font-family:‘Syne’,sans-serif;font-weight:800;font-size:20px;color:var(–accent);}
+.topbar{background:var(--surface);border-bottom:1px solid var(--border);padding:0 20px;height:64px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+.topbar-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;color:var(--accent);}
 .topbar-nav{display:flex;gap:4px;}
-.nav-btn{padding:8px 16px;border-radius:8px;border:none;background:transparent;color:var(–muted);font-size:14px;font-weight:500;cursor:pointer;font-family:‘DM Sans’,sans-serif;touch-action:manipulation;-webkit-appearance:none;}
-.nav-btn.active{background:var(–accent);color:#fff;}
-.logout-btn{background:none;border:1px solid var(–border);color:var(–muted);padding:7px 14px;border-radius:8px;cursor:pointer;font-size:13px;touch-action:manipulation;-webkit-appearance:none;}
+.nav-btn{padding:8px 16px;border-radius:8px;border:none;background:transparent;color:var(--muted);font-size:14px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;touch-action:manipulation;-webkit-appearance:none;}
+.nav-btn.active{background:var(--accent);color:#fff;}
+.logout-btn{background:none;border:1px solid var(--border);color:var(--muted);padding:7px 14px;border-radius:8px;cursor:pointer;font-size:13px;touch-action:manipulation;-webkit-appearance:none;}
 
 /* VIEWS */
 .view{display:none;padding:24px;max-width:1200px;margin:0 auto;}
 .view.active{display:block;}
 
 /* PANELS */
-.panel{background:var(–surface);border:1px solid var(–border);border-radius:var(–radius);padding:20px;margin-bottom:20px;}
-.panel-title{font-family:‘Syne’,sans-serif;font-weight:700;font-size:15px;margin-bottom:16px;color:var(–text);}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:20px;}
+.panel-title{font-family:'Syne',sans-serif;font-weight:700;font-size:15px;margin-bottom:16px;color:var(--text);}
 
 /* FILTERS */
 .filter-row{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end;}
 .filter-group{display:flex;flex-direction:column;gap:6px;min-width:150px;}
-.filter-label{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(–muted);}
-select,input[type=text],input[type=date],textarea{background:var(–surface2);border:1px solid var(–border);border-radius:8px;color:var(–text);padding:9px 12px;font-size:14px;font-family:‘DM Sans’,sans-serif;outline:none;-webkit-appearance:none;}
-select{cursor:pointer;background-image:url(“data:image/svg+xml,%3Csvg xmlns=‘http://www.w3.org/2000/svg’ width=‘12’ height=‘8’ viewBox=‘0 0 12 8’%3E%3Cpath fill=’%238b95b0’ d=‘M1 1l5 5 5-5’/%3E%3C/svg%3E”);background-repeat:no-repeat;background-position:right 10px center;padding-right:30px;}
+.filter-label{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);}
+select,input[type=text],input[type=date],textarea{background:var(--surface2);border:1px solid var(--border);border-radius:8px;color:var(--text);padding:9px 12px;font-size:14px;font-family:'DM Sans',sans-serif;outline:none;-webkit-appearance:none;appearance:none;}
+select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23f0f4ff' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:30px;}
+select option{background:#1c2236;color:#f0f4ff;}
 textarea{resize:vertical;min-height:80px;}
 
 /* Q CARDS */
-.q-card{background:var(–surface2);border:1px solid var(–border);border-radius:var(–radius);padding:16px 18px;margin-bottom:12px;cursor:pointer;position:relative;touch-action:manipulation;}
-.q-card.selected{border-color:var(–accent);background:#1a2236;}
-.q-card-check{position:absolute;top:14px;right:14px;width:22px;height:22px;border:2px solid var(–border);border-radius:6px;display:flex;align-items:center;justify-content:center;}
-.q-card.selected .q-card-check{background:var(–accent);border-color:var(–accent);}
-.q-card.selected .q-card-check::after{content:‘✓’;color:#fff;font-size:13px;font-weight:700;}
+.q-card{background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;margin-bottom:12px;cursor:pointer;position:relative;touch-action:manipulation;}
+.q-card.selected{border-color:var(--accent);background:#1a2236;}
+.q-card-check{position:absolute;top:14px;right:14px;width:22px;height:22px;border:2px solid var(--border);border-radius:6px;display:flex;align-items:center;justify-content:center;}
+.q-card.selected .q-card-check{background:var(--accent);border-color:var(--accent);}
+.q-card.selected .q-card-check::after{content:'✓';color:#fff;font-size:13px;font-weight:700;}
 .q-card-top{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;padding-right:36px;}
 .tag{font-size:11px;padding:3px 9px;border-radius:20px;font-weight:500;display:inline-flex;align-items:center;white-space:nowrap;}
 .tag-materia{background:rgba(79,142,247,.2);color:#a0c4ff;border:1px solid rgba(79,142,247,.3);}
@@ -65,78 +65,77 @@ textarea{resize:vertical;min-height:80px;}
 .tag-dif-medio{background:rgba(245,158,11,.15);color:#fcd34d;border:1px solid rgba(245,158,11,.25);}
 .tag-dif-dificil{background:rgba(239,68,68,.15);color:#fca5a5;border:1px solid rgba(239,68,68,.25);}
 .tag-used{background:rgba(245,158,11,.12);color:#fbbf24;border:1px solid rgba(245,158,11,.25);cursor:pointer;}
-.q-card-text{font-size:14px;line-height:1.6;color:var(–text);}
+.q-card-text{font-size:14px;line-height:1.6;color:var(--text);}
 .q-card-text.truncated{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
 .q-card-alts{margin-top:10px;display:none;}
 .q-card.expanded .q-card-alts{display:block;}
 .q-card.expanded .q-card-text{-webkit-line-clamp:unset;overflow:visible;}
-.alt-item{font-size:13px;padding:4px 0;color:var(–muted);}
-.alt-item.correta{color:var(–green);font-weight:500;}
+.alt-item{font-size:13px;padding:4px 0;color:var(--muted);}
+.alt-item.correta{color:var(--green);font-weight:500;}
 .q-card-footer{display:flex;justify-content:space-between;align-items:center;margin-top:12px;}
-.q-card-id{font-size:11px;color:var(–muted);}
-.btn-sm{padding:6px 12px;border-radius:6px;border:1px solid var(–border);background:transparent;color:var(–muted);font-size:12px;cursor:pointer;touch-action:manipulation;-webkit-appearance:none;}
+.q-card-id{font-size:11px;color:var(--muted);}
+.btn-sm{padding:6px 12px;border-radius:6px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:12px;cursor:pointer;touch-action:manipulation;-webkit-appearance:none;}
 
 /* SELECTION BAR */
-.selection-bar{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(–accent);color:#fff;padding:12px 24px;border-radius:40px;display:none;align-items:center;gap:16px;box-shadow:0 8px 32px rgba(79,142,247,.4);font-size:14px;font-weight:500;z-index:200;}
+.selection-bar{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;padding:12px 24px;border-radius:40px;display:none;align-items:center;gap:16px;box-shadow:0 8px 32px rgba(79,142,247,.4);font-size:14px;font-weight:500;z-index:200;}
 .selection-bar.visible{display:flex;}
 .sel-clear{background:rgba(255,255,255,.2);border:none;color:#fff;padding:6px 14px;border-radius:20px;cursor:pointer;font-size:13px;touch-action:manipulation;}
-.sel-export{background:#fff;border:none;color:var(–accent);padding:7px 18px;border-radius:20px;cursor:pointer;font-size:13px;font-weight:700;touch-action:manipulation;}
+.sel-export{background:#fff;border:none;color:var(--accent);padding:7px 18px;border-radius:20px;cursor:pointer;font-size:13px;font-weight:700;touch-action:manipulation;}
 
 /* FORM */
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
 .form-full{grid-column:1/-1;}
 .form-group{display:flex;flex-direction:column;gap:6px;}
-.form-label{font-size:12px;color:var(–muted);text-transform:uppercase;letter-spacing:.4px;}
+.form-label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;}
 .alt-row{display:flex;gap:8px;align-items:center;margin-bottom:8px;}
 .alt-row input[type=text]{flex:1;}
-.alt-row input[type=radio]{accent-color:var(–green);width:18px;height:18px;cursor:pointer;}
-.alt-label{font-size:13px;color:var(–muted);width:20px;}
-.add-alt-btn{background:none;border:1px dashed var(–border);color:var(–muted);padding:7px 14px;border-radius:8px;cursor:pointer;font-size:13px;touch-action:manipulation;}
+.alt-row input[type=radio]{accent-color:var(--green);width:18px;height:18px;cursor:pointer;}
+.alt-label{font-size:13px;color:var(--muted);width:20px;}
+.add-alt-btn{background:none;border:1px dashed var(--border);color:var(--muted);padding:7px 14px;border-radius:8px;cursor:pointer;font-size:13px;touch-action:manipulation;}
 
 /* TAGS */
 .tags-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;}
-.tags-category{background:var(–surface2);border:1px solid var(–border);border-radius:var(–radius);padding:16px;}
-.tags-category-title{font-family:‘Syne’,sans-serif;font-size:13px;font-weight:700;margin-bottom:12px;color:var(–accent);text-transform:uppercase;}
-.tag-item{display:flex;justify-content:space-between;align-items:center;padding:6px 8px;border-radius:6px;font-size:13px;margin-bottom:4px;background:var(–surface);}
-.tag-del{background:none;border:none;color:var(–muted);cursor:pointer;font-size:16px;padding:0 4px;touch-action:manipulation;}
+.tags-category{background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);padding:16px;}
+.tags-category-title{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;margin-bottom:12px;color:var(--accent);text-transform:uppercase;}
+.tag-item{display:flex;justify-content:space-between;align-items:center;padding:6px 8px;border-radius:6px;font-size:13px;margin-bottom:4px;background:var(--surface);}
+.tag-del{background:none;border:none;color:var(--muted);cursor:pointer;font-size:16px;padding:0 4px;touch-action:manipulation;}
 .tag-add-row{display:flex;gap:8px;margin-top:10px;}
 .tag-add-row input{flex:1;padding:7px 10px;font-size:13px;}
-.tag-add-btn{background:var(–accent);border:none;color:#fff;padding:7px 14px;border-radius:8px;cursor:pointer;font-size:13px;touch-action:manipulation;}
+.tag-add-btn{background:var(--accent);border:none;color:#fff;padding:7px 14px;border-radius:8px;cursor:pointer;font-size:13px;touch-action:manipulation;}
 
 /* STATS */
 .stats-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-bottom:20px;}
-.stat-card{background:var(–surface2);border:1px solid var(–border);border-radius:var(–radius);padding:16px;text-align:center;}
-.stat-num{font-family:‘Syne’,sans-serif;font-size:32px;font-weight:800;color:var(–accent);}
-.stat-label{font-size:12px;color:var(–muted);margin-top:4px;}
+.stat-card{background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);padding:16px;text-align:center;}
+.stat-num{font-family:'Syne',sans-serif;font-size:32px;font-weight:800;color:var(--accent);}
+.stat-label{font-size:12px;color:var(--muted);margin-top:4px;}
 
 /* UTILS */
 .flex-between{display:flex;justify-content:space-between;align-items:center;}
 .mb-16{margin-bottom:16px;}
-.empty-state{text-align:center;padding:60px 20px;color:var(–muted);}
-.btn-accent{background:var(–accent);border:none;color:#fff;padding:10px 20px;border-radius:var(–radius);cursor:pointer;font-size:14px;font-weight:600;touch-action:manipulation;-webkit-appearance:none;}
-.toast{position:fixed;top:24px;right:24px;background:var(–surface);border:1px solid var(–border);border-radius:var(–radius);padding:12px 18px;font-size:14px;z-index:999;transform:translateY(-60px);opacity:0;transition:all .3s;pointer-events:none;}
+.empty-state{text-align:center;padding:60px 20px;color:var(--muted);}
+.btn-accent{background:var(--accent);border:none;color:#fff;padding:10px 20px;border-radius:var(--radius);cursor:pointer;font-size:14px;font-weight:600;touch-action:manipulation;-webkit-appearance:none;}
+.toast{position:fixed;top:24px;right:24px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:12px 18px;font-size:14px;z-index:999;transform:translateY(-60px);opacity:0;transition:all .3s;pointer-events:none;}
 .toast.show{transform:translateY(0);opacity:1;}
-.toast.success{border-color:var(–green);color:var(–green);}
-.toast.error{border-color:var(–red);color:var(–red);}
+.toast.success{border-color:var(--green);color:var(--green);}
+.toast.error{border-color:var(--red);color:var(--red);}
 
 /* MODAL */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:300;display:none;align-items:center;justify-content:center;padding:20px;}
 .modal-overlay.open{display:flex;}
-.modal{background:var(–surface);border:1px solid var(–border);border-radius:16px;padding:28px;width:100%;max-width:640px;max-height:90vh;overflow-y:auto;}
-.modal-title{font-family:‘Syne’,sans-serif;font-size:18px;font-weight:700;margin-bottom:20px;}
+.modal{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;width:100%;max-width:640px;max-height:90vh;overflow-y:auto;}
+.modal-title{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin-bottom:20px;}
 .modal-footer{display:flex;gap:10px;justify-content:flex-end;margin-top:20px;}
 
 ::-webkit-scrollbar{width:6px;}
-::-webkit-scrollbar-track{background:var(–bg);}
-::-webkit-scrollbar-thumb{background:var(–border);border-radius:3px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
 
 @media(max-width:600px){
-.form-grid{grid-template-columns:1fr;}
-.view{padding:14px;}
-.topbar-nav .nav-btn span{display:none;}
+  .form-grid{grid-template-columns:1fr;}
+  .view{padding:14px;}
+  .topbar-nav .nav-btn span{display:none;}
 }
 </style>
-
 </head>
 <body>
 
@@ -322,7 +321,6 @@ textarea{resize:vertical;min-height:80px;}
 <div class="toast" id="toast"></div>
 
 <!-- Funções críticas ANTES do Firebase para onclick inline funcionar -->
-
 <script>
 const SENHA = "@bento30";
 
@@ -353,11 +351,8 @@ function showView(view){
 </script>
 
 <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
-
 <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/8.2.2/docx.umd.min.js"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 
 <script>
@@ -387,8 +382,7 @@ try {
 
 // ── APP INIT ──
 async function appInit(){
-  await loadTags();
-  populateAllSelects();
+  await loadTags(); // já chama populateAllSelects internamente
   renderTagsManager();
   await loadQuestoes();
   renderStats();
@@ -648,270 +642,285 @@ function openEdit(id){
     : `<div class="form-group form-full" style="margin-top:12px">
         <div class="form-label">Gabarito</div>
         <textarea id="edit-gabarito" rows="3">${q.gabarito||''}</textarea>
-
-```
-  </div>`;
-```
-
-document.getElementById(‘modal-body’).innerHTML=` <div class="form-grid"> <div class="form-group"><div class="form-label">Matéria</div><select id="edit-materia">${tags.materias.map(m=>`<option ${m===q.materia?‘selected’:’’}>${m}</option>`).join('')}</select></div> <div class="form-group"><div class="form-label">Tema</div><select id="edit-tema">${tags.temas.map(m=>`<option ${m===q.tema?‘selected’:’’}>${m}</option>`).join('')}</select></div> <div class="form-group"><div class="form-label">Tipo</div><select id="edit-tipo">${tags.tipos.map(m=>`<option ${m===q.tipo?‘selected’:’’}>${m}</option>`).join('')}</select></div> <div class="form-group"><div class="form-label">Dificuldade</div><select id="edit-dif">${tags.dificuldades.map(m=>`<option ${m===q.dificuldade?‘selected’:’’}>${m}</option>`).join('')}</select></div> <div class="form-group form-full"><div class="form-label">Última utilização</div><input type="date" id="edit-ultima" value="${q.ultimaUtilizacao||''}" style="width:100%"/></div> <div class="form-group form-full"><div class="form-label">Enunciado</div><textarea id="edit-enunciado" rows="4">${q.enunciado||''}</textarea></div> ${altsHtml} </div>`;
-document.getElementById(‘modal-edit’).classList.add(‘open’);
+      </div>`;
+  document.getElementById('modal-body').innerHTML=`
+    <div class="form-grid">
+      <div class="form-group"><div class="form-label">Matéria</div><select id="edit-materia">${tags.materias.map(m=>`<option ${m===q.materia?'selected':''}>${m}</option>`).join('')}</select></div>
+      <div class="form-group"><div class="form-label">Tema</div><select id="edit-tema">${tags.temas.map(m=>`<option ${m===q.tema?'selected':''}>${m}</option>`).join('')}</select></div>
+      <div class="form-group"><div class="form-label">Tipo</div><select id="edit-tipo">${tags.tipos.map(m=>`<option ${m===q.tipo?'selected':''}>${m}</option>`).join('')}</select></div>
+      <div class="form-group"><div class="form-label">Dificuldade</div><select id="edit-dif">${tags.dificuldades.map(m=>`<option ${m===q.dificuldade?'selected':''}>${m}</option>`).join('')}</select></div>
+      <div class="form-group form-full"><div class="form-label">Última utilização</div><input type="date" id="edit-ultima" value="${q.ultimaUtilizacao||''}" style="width:100%"/></div>
+      <div class="form-group form-full"><div class="form-label">Enunciado</div><textarea id="edit-enunciado" rows="4">${q.enunciado||''}</textarea></div>
+      ${altsHtml}
+    </div>`;
+  document.getElementById('modal-edit').classList.add('open');
 }
 
 async function salvarEdicao(){
-const q=questoes.find(x=>x.id===editingId);
-if(!q) return;
-q.materia=document.getElementById(‘edit-materia’).value;
-q.tema=document.getElementById(‘edit-tema’).value;
-q.tipo=document.getElementById(‘edit-tipo’).value;
-q.dificuldade=document.getElementById(‘edit-dif’).value;
-q.enunciado=document.getElementById(‘edit-enunciado’).value;
-const eu=document.getElementById(‘edit-ultima’)?.value;
-if(eu) q.ultimaUtilizacao=eu; else delete q.ultimaUtilizacao;
-if(q.tipo===‘Múltipla Escolha’){
-q.alternativas=q.alternativas.map((_,i)=>document.getElementById(‘edit-alt-’+i)?.value||’’);
-const c=document.querySelector(‘input[name=edit-correta]:checked’);
-if(c) q.correta=parseInt(c.value);
-} else {
-q.gabarito=document.getElementById(‘edit-gabarito’)?.value||’’;
-}
-await saveQuestao(q);
-applyFilters(); closeModal();
-showToast(‘Questão atualizada!’,‘success’);
+  const q=questoes.find(x=>x.id===editingId);
+  if(!q) return;
+  q.materia=document.getElementById('edit-materia').value;
+  q.tema=document.getElementById('edit-tema').value;
+  q.tipo=document.getElementById('edit-tipo').value;
+  q.dificuldade=document.getElementById('edit-dif').value;
+  q.enunciado=document.getElementById('edit-enunciado').value;
+  const eu=document.getElementById('edit-ultima')?.value;
+  if(eu) q.ultimaUtilizacao=eu; else delete q.ultimaUtilizacao;
+  if(q.tipo==='Múltipla Escolha'){
+    q.alternativas=q.alternativas.map((_,i)=>document.getElementById('edit-alt-'+i)?.value||'');
+    const c=document.querySelector('input[name=edit-correta]:checked');
+    if(c) q.correta=parseInt(c.value);
+  } else {
+    q.gabarito=document.getElementById('edit-gabarito')?.value||'';
+  }
+  await saveQuestao(q);
+  applyFilters(); closeModal();
+  showToast('Questão atualizada!','success');
 }
 
-function closeModal(){ document.getElementById(‘modal-edit’).classList.remove(‘open’); editingId=null; }
+function closeModal(){ document.getElementById('modal-edit').classList.remove('open'); editingId=null; }
 
 async function confirmDelete(id){
-if(confirm(‘Excluir esta questão?’)){ await deleteQuestao(id); showToast(‘Questão excluída’,‘success’); }
+  if(confirm('Excluir esta questão?')){ await deleteQuestao(id); showToast('Questão excluída','success'); }
 }
 
 // ── TAGS ──
 function renderTagsManager(){
-const cats=[{key:‘materias’,label:‘🎓 Matérias’},{key:‘temas’,label:‘🦴 Temas’},{key:‘tipos’,label:‘📝 Tipos’},{key:‘dificuldades’,label:‘⚡ Dificuldades’}];
-const grid=document.getElementById(‘tags-grid’);
-grid.innerHTML=cats.map(cat=>` <div class="tags-category"> <div class="tags-category-title">${cat.label}</div> ${tags[cat.key].map((t,i)=>`<div class="tag-item"><span>${t}</span><button class="tag-del" data-cat="${cat.key}" data-idx="${i}">✕</button></div>`).join('')} <div class="tag-add-row"> <input type="text" id="new-${cat.key}" placeholder="Nova tag..."/> <button class="tag-add-btn" data-cat="${cat.key}">+</button> </div> </div>`).join(’’);
-grid.querySelectorAll(’.tag-del’).forEach(btn=>{
-btn.addEventListener(‘click’, function(){ removeTag(this.dataset.cat, parseInt(this.dataset.idx)); });
-});
-grid.querySelectorAll(’.tag-add-btn’).forEach(btn=>{
-btn.addEventListener(‘click’, function(){ addTag(this.dataset.cat); });
-});
-grid.querySelectorAll(’.tag-add-row input’).forEach(inp=>{
-inp.addEventListener(‘keydown’, function(e){ if(e.key===‘Enter’) addTag(this.id.replace(‘new-’,’’)); });
-});
+  const cats=[{key:'materias',label:'🎓 Matérias'},{key:'temas',label:'🦴 Temas'},{key:'tipos',label:'📝 Tipos'},{key:'dificuldades',label:'⚡ Dificuldades'}];
+  const grid=document.getElementById('tags-grid');
+  grid.innerHTML=cats.map(cat=>`
+    <div class="tags-category">
+      <div class="tags-category-title">${cat.label}</div>
+      ${tags[cat.key].map((t,i)=>`<div class="tag-item"><span>${t}</span><button class="tag-del" data-cat="${cat.key}" data-idx="${i}">✕</button></div>`).join('')}
+      <div class="tag-add-row">
+        <input type="text" id="new-${cat.key}" placeholder="Nova tag..."/>
+        <button class="tag-add-btn" data-cat="${cat.key}">+</button>
+      </div>
+    </div>`).join('');
+  grid.querySelectorAll('.tag-del').forEach(btn=>{
+    btn.addEventListener('click', function(){ removeTag(this.dataset.cat, parseInt(this.dataset.idx)); });
+  });
+  grid.querySelectorAll('.tag-add-btn').forEach(btn=>{
+    btn.addEventListener('click', function(){ addTag(this.dataset.cat); });
+  });
+  grid.querySelectorAll('.tag-add-row input').forEach(inp=>{
+    inp.addEventListener('keydown', function(e){ if(e.key==='Enter') addTag(this.id.replace('new-','')); });
+  });
 }
 
 async function addTag(cat){
-const input=document.getElementById(‘new-’+cat);
-const val=input.value.trim();
-if(!val||tags[cat].includes(val)) return;
-tags[cat].push(val);
-await saveTags();
-input.value=’’;
-renderTagsManager();
-populateAllSelects();
-showToast(‘Tag adicionada!’,‘success’);
+  const input=document.getElementById('new-'+cat);
+  const val=input.value.trim();
+  if(!val||tags[cat].includes(val)) return;
+  tags[cat].push(val);
+  await saveTags();
+  input.value='';
+  renderTagsManager();
+  populateAllSelects();
+  showToast('Tag adicionada!','success');
 }
 
 async function removeTag(cat,idx){
-if(!confirm(‘Remover esta tag?’)) return;
-tags[cat].splice(idx,1);
-await saveTags();
-renderTagsManager();
-populateAllSelects();
+  if(!confirm('Remover esta tag?')) return;
+  tags[cat].splice(idx,1);
+  await saveTags();
+  renderTagsManager();
+  populateAllSelects();
 }
 
 // ── STATS ──
 function renderStats(){
-const total=questoes.length;
-const byMateria={}, byTema={};
-questoes.forEach(q=>{
-byMateria[q.materia]=(byMateria[q.materia]||0)+1;
-byTema[q.tema]=(byTema[q.tema]||0)+1;
-});
-document.getElementById(‘stats-grid’).innerHTML=` <div class="stat-card"><div class="stat-num">${total}</div><div class="stat-label">Total de Questões</div></div> ${Object.entries(byMateria).map(([k,v])=>`<div class="stat-card"><div class="stat-num">${v}</div><div class="stat-label">${k||‘Sem matéria’}</div></div>`).join('')}`;
-document.getElementById(‘stats-by-tema’).innerHTML=` <div style="margin-top:16px"> <div class="panel-title">Por Tema</div> ${Object.entries(byTema).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`
-<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)">
-<span style="font-size:14px">${k||‘Sem tema’}</span>
-<div style="display:flex;align-items:center;gap:10px">
-<div style="width:100px;height:6px;background:var(--border);border-radius:3px">
-<div style="width:${total?Math.round(v/total*100):0}%;height:100%;background:var(--accent);border-radius:3px"></div>
-</div>
-<span style="font-size:13px;color:var(--muted);width:24px;text-align:right">${v}</span>
-</div>
-</div>`).join('')} </div>`;
+  const total=questoes.length;
+  const byMateria={}, byTema={};
+  questoes.forEach(q=>{
+    byMateria[q.materia]=(byMateria[q.materia]||0)+1;
+    byTema[q.tema]=(byTema[q.tema]||0)+1;
+  });
+  document.getElementById('stats-grid').innerHTML=`
+    <div class="stat-card"><div class="stat-num">${total}</div><div class="stat-label">Total de Questões</div></div>
+    ${Object.entries(byMateria).map(([k,v])=>`<div class="stat-card"><div class="stat-num">${v}</div><div class="stat-label">${k||'Sem matéria'}</div></div>`).join('')}`;
+  document.getElementById('stats-by-tema').innerHTML=`
+    <div style="margin-top:16px">
+      <div class="panel-title">Por Tema</div>
+      ${Object.entries(byTema).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)">
+          <span style="font-size:14px">${k||'Sem tema'}</span>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="width:100px;height:6px;background:var(--border);border-radius:3px">
+              <div style="width:${total?Math.round(v/total*100):0}%;height:100%;background:var(--accent);border-radius:3px"></div>
+            </div>
+            <span style="font-size:13px;color:var(--muted);width:24px;text-align:right">${v}</span>
+          </div>
+        </div>`).join('')}
+    </div>`;
 }
 
 // ── ÚLTIMA UTILIZAÇÃO ──
 async function marcarUtilizacao(id){
-const hoje=new Date().toISOString().slice(0,10);
-const q=questoes.find(x=>x.id===id);
-if(!q) return;
-const data=prompt(‘Data de utilização (AAAA-MM-DD):’, hoje);
-if(!data) return;
-q.ultimaUtilizacao=data;
-await saveQuestao(q);
-applyFilters();
-showToast(‘Utilização registrada!’,‘success’);
+  const hoje=new Date().toISOString().slice(0,10);
+  const q=questoes.find(x=>x.id===id);
+  if(!q) return;
+  const data=prompt('Data de utilização (AAAA-MM-DD):', hoje);
+  if(!data) return;
+  q.ultimaUtilizacao=data;
+  await saveQuestao(q);
+  applyFilters();
+  showToast('Utilização registrada!','success');
 }
 
 function formatDate(str){
-if(!str) return ‘’;
-const [y,m,d]=str.split(’-’);
-return `${d}/${m}/${y}`;
+  if(!str) return '';
+  const [y,m,d]=str.split('-');
+  return `${d}/${m}/${y}`;
 }
 
 // ── MODAL EXPORTAR ──
 function abrirModalExportar(){
-if(!selectedIds.size){ showToast(‘Nenhuma questão selecionada’,‘error’); return; }
-document.getElementById(‘modal-exportar’).classList.add(‘open’);
+  if(!selectedIds.size){ showToast('Nenhuma questão selecionada','error'); return; }
+  document.getElementById('modal-exportar').classList.add('open');
 }
-function fecharModalExportar(){ document.getElementById(‘modal-exportar’).classList.remove(‘open’); }
+function fecharModalExportar(){ document.getElementById('modal-exportar').classList.remove('open'); }
 function toggleCamposModelo(){
-const m=document.getElementById(‘exp-modelo’).value;
-document.getElementById(‘campos-tradicional’).style.display=m===‘tradicional’?‘block’:‘none’;
-document.getElementById(‘campos-abp’).style.display=m===‘abp’?‘block’:‘none’;
+  const m=document.getElementById('exp-modelo').value;
+  document.getElementById('campos-tradicional').style.display=m==='tradicional'?'block':'none';
+  document.getElementById('campos-abp').style.display=m==='abp'?'block':'none';
 }
 
 // ── EXPORTAR ──
 async function exportar(formato){
-const selecionadas=questoes.filter(q=>selectedIds.has(q.id));
-if(!selecionadas.length){ showToast(‘Nenhuma questão selecionada’,‘error’); return; }
-const modelo=document.getElementById(‘exp-modelo’).value;
-const disciplina=modelo===‘tradicional’
-? document.getElementById(‘exp-disciplina’).value.trim()
-: document.getElementById(‘exp-disciplina-abp’).value.trim();
-const unidade=document.getElementById(‘exp-unidade’)?.value.trim()||’’;
-const projeto=document.getElementById(‘exp-projeto’)?.value.trim()||’’;
-fecharModalExportar();
-showToast(‘Gerando documento…’,‘success’);
-try {
-const {Document,Packer,Paragraph,TextRun,Table,TableRow,TableCell,
-AlignmentType,WidthType,BorderStyle,ShadingType,VerticalAlign}=docx;
-const W=9360;
-const brd=(color=‘000000’,size=8)=>({style:BorderStyle.SINGLE,size,color});
-const cm={top:80,bottom:80,left:120,right:120};
+  const selecionadas=questoes.filter(q=>selectedIds.has(q.id));
+  if(!selecionadas.length){ showToast('Nenhuma questão selecionada','error'); return; }
+  const modelo=document.getElementById('exp-modelo').value;
+  const disciplina=modelo==='tradicional'
+    ? document.getElementById('exp-disciplina').value.trim()
+    : document.getElementById('exp-disciplina-abp').value.trim();
+  const unidade=document.getElementById('exp-unidade')?.value.trim()||'';
+  const projeto=document.getElementById('exp-projeto')?.value.trim()||'';
+  fecharModalExportar();
+  showToast('Gerando documento...','success');
+  try {
+    const {Document,Packer,Paragraph,TextRun,Table,TableRow,TableCell,
+           AlignmentType,WidthType,BorderStyle,ShadingType,VerticalAlign}=docx;
+    const W=9360;
+    const brd=(color='000000',size=8)=>({style:BorderStyle.SINGLE,size,color});
+    const cm={top:80,bottom:80,left:120,right:120};
 
-```
-function makeHeaderTradicional(){
-  const logoCell=new TableCell({rowSpan:4,width:{size:2200,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:cm,verticalAlign:VerticalAlign.CENTER,children:[
-    new Paragraph({alignment:AlignmentType.CENTER,spacing:{after:40},children:[new TextRun({text:'Unit',bold:true,size:36,font:'Arial',color:'1a5276'})]}),
-    new Paragraph({alignment:AlignmentType.CENTER,spacing:{after:40},children:[new TextRun({text:'UNIVERSIDADE TIRADENTES',size:14,font:'Arial',bold:true})]}),
-    new Paragraph({alignment:AlignmentType.CENTER,spacing:{after:60},children:[new TextRun({text:'Direção de Graduação',size:14,font:'Arial'})]}),
-    new Paragraph({alignment:AlignmentType.CENTER,spacing:{after:40},children:[new TextRun({text:'Cód. Acervo Acadêmico',size:14,font:'Arial'})]}),
-    new Paragraph({alignment:AlignmentType.CENTER,spacing:{after:60},children:[new TextRun({text:'125.31',size:14,font:'Arial'})]}),
-    new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:`${unidade?unidade.toUpperCase():'______'} UNIDADE`,size:18,bold:true,font:'Arial'})]})
-  ]});
-  const r1=new TableRow({children:[logoCell,new TableCell({columnSpan:4,width:{size:7160,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:cm,children:[new Paragraph({children:[new TextRun({text:'CURSO: FISIOTERAPIA',bold:true,size:22,font:'Arial'})]})]})]});
-  const r2=new TableRow({children:[new TableCell({columnSpan:4,width:{size:7160,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:cm,children:[new Paragraph({children:[new TextRun({text:`DISCIPLINA: ${disciplina.toUpperCase()}`,bold:true,size:22,font:'Arial'})]})]})]});
-  const r3=new TableRow({children:[new TableCell({columnSpan:4,width:{size:7160,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:cm,children:[new Paragraph({children:[new TextRun({text:'DOCENTE: FELIPE CERQUEIRA',bold:true,size:22,font:'Arial'})]})]})]});
-  const r4=new TableRow({children:[
-    new TableCell({width:{size:1800,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:cm,children:[new Paragraph({alignment:AlignmentType.CENTER,spacing:{after:40},children:[new TextRun({text:'Data da Avaliação',bold:true,size:18,font:'Arial'})]}),new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:'____/____/______',size:18,font:'Arial'})]})]
-    }),
-    new TableCell({width:{size:1800,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:cm,children:[new Paragraph({alignment:AlignmentType.CENTER,spacing:{after:40},children:[new TextRun({text:'Data da Devolução',bold:true,size:18,font:'Arial'})]}),new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:'____/____/______',size:18,font:'Arial'})]})]
-    }),
-    new TableCell({width:{size:900,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:cm,verticalAlign:VerticalAlign.CENTER,children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:'TURMA',bold:true,size:18,font:'Arial'})]})]
-    }),
-    new TableCell({width:{size:2660,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:cm,children:[
-      new Paragraph({alignment:AlignmentType.CENTER,spacing:{after:40},children:[new TextRun({text:'MAPA DE NOTAS',bold:true,size:18,font:'Arial'})]}),
-      new Table({width:{size:2400,type:WidthType.DXA},columnWidths:[800,800,800],rows:[
-        new TableRow({children:[
-          new TableCell({width:{size:800,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:cm,children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:'PC',bold:true,size:18,font:'Arial'})]})] }),
-          new TableCell({width:{size:800,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:cm,children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:'ME',bold:true,size:18,font:'Arial'})]})] }),
-          new TableCell({width:{size:800,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:cm,children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:'NOTA FINAL',bold:true,size:16,font:'Arial'})]})] }),
-        ]}),
-        new TableRow({children:[
-          new TableCell({width:{size:800,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:{top:200,bottom:200,left:80,right:80},children:[new Paragraph({children:[]})]}),
-          new TableCell({width:{size:800,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:{top:200,bottom:200,left:80,right:80},children:[new Paragraph({children:[]})]}),
-          new TableCell({width:{size:800,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:{top:200,bottom:200,left:80,right:80},children:[new Paragraph({children:[]})]}),
-        ]}),
-      ]})
-    ]})
-  ]});
-  const rEst=new TableRow({children:[new TableCell({columnSpan:5,width:{size:W,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:cm,children:[new Paragraph({children:[new TextRun({text:'ESTUDANTE:',bold:true,size:22,font:'Arial'})]})] })]});
-  const tbl=new Table({width:{size:W,type:WidthType.DXA},columnWidths:[2200,1800,1800,900,2660],rows:[r1,r2,r3,r4,rEst]});
-  const instrucao=new Paragraph({spacing:{before:0,after:200},border:{top:brd('000000',4),bottom:brd('000000',4),left:brd('000000',4),right:brd('000000',4)},children:[
-    new TextRun({text:'1. A prova deverá ser realizada de caneta azul ou preta. Não serão corrigidas questões a lápis. As questões subjetivas devem ser realizadas no ',size:18,font:'Arial'}),
-    new TextRun({text:'LOCAL DETERMINADO',size:18,font:'Arial',bold:true,underline:{}}),
-    new TextRun({text:'. As questões objetivas devem ser marcadas na alternativa.',size:18,font:'Arial'}),
-  ]});
-  return [tbl, instrucao];
-}
-
-function makeHeaderABP(){
-  const az='BDD7EE';
-  const r1=new TableRow({children:[
-    new TableCell({rowSpan:3,width:{size:2600,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},shading:{fill:az,type:ShadingType.CLEAR},margins:cm,verticalAlign:VerticalAlign.CENTER,children:[
-      new Paragraph({alignment:AlignmentType.CENTER,spacing:{after:40},children:[new TextRun({text:'Unit',bold:true,size:40,font:'Arial',color:'1a5276'})]}),
-      new Paragraph({alignment:AlignmentType.CENTER,spacing:{after:60},children:[new TextRun({text:'UNIVERSIDADE TIRADENTES',size:14,bold:true,font:'Arial'})]}),
-      new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:'Avaliação Multinível',bold:true,size:20,font:'Arial'})]})
-    ]}),
-    new TableCell({width:{size:4480,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},shading:{fill:az,type:ShadingType.CLEAR},margins:cm,children:[new Paragraph({children:[new TextRun({text:`Curso: Fisioterapia`,size:20,font:'Arial'})]})] }),
-    new TableCell({width:{size:2280,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},shading:{fill:az,type:ShadingType.CLEAR},margins:cm,children:[new Paragraph({children:[new TextRun({text:'Código:',size:20,font:'Arial'})]})] }),
-  ]});
-  const r2=new TableRow({children:[new TableCell({columnSpan:2,width:{size:6760,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},shading:{fill:az,type:ShadingType.CLEAR},margins:cm,children:[new Paragraph({children:[new TextRun({text:`Projeto: ${projeto}`,size:20,font:'Arial'})]})] })]});
-  const r3=new TableRow({children:[new TableCell({columnSpan:2,width:{size:6760,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},shading:{fill:az,type:ShadingType.CLEAR},margins:cm,children:[new Paragraph({children:[new TextRun({text:'Docente: Felipe Lima de Cerqueira',size:20,font:'Arial'})]})] })]});
-  const rDisc=new TableRow({children:[new TableCell({columnSpan:3,width:{size:W,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},shading:{fill:az,type:ShadingType.CLEAR},margins:cm,children:[new Paragraph({children:[new TextRun({text:`Disciplina: ${disciplina}`,size:20,font:'Arial'})]})] })]});
-  const rE1=new TableRow({children:[
-    new TableCell({rowSpan:2,width:{size:6760,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},shading:{fill:az,type:ShadingType.CLEAR},margins:{top:200,bottom:200,left:120,right:120},verticalAlign:VerticalAlign.TOP,children:[new Paragraph({children:[new TextRun({text:'Estudante:',size:20,font:'Arial'})]})] }),
-    new TableCell({width:{size:2600,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},shading:{fill:az,type:ShadingType.CLEAR},margins:cm,children:[new Paragraph({children:[new TextRun({text:'Data:',size:20,font:'Arial'})]})] }),
-  ]});
-  const rE2=new TableRow({children:[new TableCell({width:{size:2600,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},shading:{fill:az,type:ShadingType.CLEAR},margins:cm,children:[new Paragraph({children:[new TextRun({text:'Nota - Objetivas:',size:20,font:'Arial'})]})] })]});
-  const rM1=new TableRow({children:[
-    new TableCell({rowSpan:2,width:{size:6760,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},shading:{fill:az,type:ShadingType.CLEAR},margins:{top:200,bottom:200,left:120,right:120},verticalAlign:VerticalAlign.TOP,children:[new Paragraph({children:[new TextRun({text:'Matrícula:',size:20,font:'Arial'})]})] }),
-    new TableCell({width:{size:2600,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},shading:{fill:az,type:ShadingType.CLEAR},margins:cm,children:[new Paragraph({children:[new TextRun({text:'Nota - Discursivas:',size:20,font:'Arial'})]})] }),
-  ]});
-  const rM2=new TableRow({children:[new TableCell({width:{size:2600,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},shading:{fill:az,type:ShadingType.CLEAR},margins:cm,children:[new Paragraph({children:[new TextRun({text:'Nota Total:',size:20,font:'Arial'})]})] })]});
-  return [new Table({width:{size:W,type:WidthType.DXA},columnWidths:[2600,4480,2280],rows:[r1,r2,r3,rDisc,rE1,rE2,rM1,rM2]})];
-}
-
-function buildQuestoes(sel){
-  const ch=[];
-  sel.forEach((q,i)=>{
-    ch.push(new Paragraph({spacing:{before:240,after:120},children:[new TextRun({text:`${i+1}. `,bold:true,size:24,font:'Arial'}),new TextRun({text:q.enunciado||'',size:24,font:'Arial'})]}));
-    if(q.tipo==='Múltipla Escolha' && q.alternativas?.length){
-      q.alternativas.forEach((a,ai)=>{
-        ch.push(new Paragraph({spacing:{after:60},indent:{left:360},children:[new TextRun({text:`${String.fromCharCode(65+ai)}) `,size:22,font:'Arial'}),new TextRun({text:a,size:22,font:'Arial'})]}));
-      });
+    function makeHeaderTradicional(){
+      const logoCell=new TableCell({rowSpan:4,width:{size:2200,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:cm,verticalAlign:VerticalAlign.CENTER,children:[
+        new Paragraph({alignment:AlignmentType.CENTER,spacing:{after:40},children:[new TextRun({text:'Unit',bold:true,size:36,font:'Arial',color:'1a5276'})]}),
+        new Paragraph({alignment:AlignmentType.CENTER,spacing:{after:40},children:[new TextRun({text:'UNIVERSIDADE TIRADENTES',size:14,font:'Arial',bold:true})]}),
+        new Paragraph({alignment:AlignmentType.CENTER,spacing:{after:60},children:[new TextRun({text:'Direção de Graduação',size:14,font:'Arial'})]}),
+        new Paragraph({alignment:AlignmentType.CENTER,spacing:{after:40},children:[new TextRun({text:'Cód. Acervo Acadêmico',size:14,font:'Arial'})]}),
+        new Paragraph({alignment:AlignmentType.CENTER,spacing:{after:60},children:[new TextRun({text:'125.31',size:14,font:'Arial'})]}),
+        new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:`${unidade?unidade.toUpperCase():'______'} UNIDADE`,size:18,bold:true,font:'Arial'})]})
+      ]});
+      const r1=new TableRow({children:[logoCell,new TableCell({columnSpan:4,width:{size:7160,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:cm,children:[new Paragraph({children:[new TextRun({text:'CURSO: FISIOTERAPIA',bold:true,size:22,font:'Arial'})]})]})]});
+      const r2=new TableRow({children:[new TableCell({columnSpan:4,width:{size:7160,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:cm,children:[new Paragraph({children:[new TextRun({text:`DISCIPLINA: ${disciplina.toUpperCase()}`,bold:true,size:22,font:'Arial'})]})]})]});
+      const r3=new TableRow({children:[new TableCell({columnSpan:4,width:{size:7160,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:cm,children:[new Paragraph({children:[new TextRun({text:'DOCENTE: FELIPE CERQUEIRA',bold:true,size:22,font:'Arial'})]})]})]});
+      const r4=new TableRow({children:[
+        new TableCell({width:{size:1800,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:cm,children:[new Paragraph({alignment:AlignmentType.CENTER,spacing:{after:40},children:[new TextRun({text:'Data da Avaliação',bold:true,size:18,font:'Arial'})]}),new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:'____/____/______',size:18,font:'Arial'})]})]
+        }),
+        new TableCell({width:{size:1800,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:cm,children:[new Paragraph({alignment:AlignmentType.CENTER,spacing:{after:40},children:[new TextRun({text:'Data da Devolução',bold:true,size:18,font:'Arial'})]}),new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:'____/____/______',size:18,font:'Arial'})]})]
+        }),
+        new TableCell({width:{size:900,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:cm,verticalAlign:VerticalAlign.CENTER,children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:'TURMA',bold:true,size:18,font:'Arial'})]})]
+        }),
+        new TableCell({width:{size:2660,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:cm,children:[
+          new Paragraph({alignment:AlignmentType.CENTER,spacing:{after:40},children:[new TextRun({text:'MAPA DE NOTAS',bold:true,size:18,font:'Arial'})]}),
+          new Table({width:{size:2400,type:WidthType.DXA},columnWidths:[800,800,800],rows:[
+            new TableRow({children:[
+              new TableCell({width:{size:800,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:cm,children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:'PC',bold:true,size:18,font:'Arial'})]})] }),
+              new TableCell({width:{size:800,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:cm,children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:'ME',bold:true,size:18,font:'Arial'})]})] }),
+              new TableCell({width:{size:800,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:cm,children:[new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:'NOTA FINAL',bold:true,size:16,font:'Arial'})]})] }),
+            ]}),
+            new TableRow({children:[
+              new TableCell({width:{size:800,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:{top:200,bottom:200,left:80,right:80},children:[new Paragraph({children:[]})]}),
+              new TableCell({width:{size:800,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:{top:200,bottom:200,left:80,right:80},children:[new Paragraph({children:[]})]}),
+              new TableCell({width:{size:800,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:{top:200,bottom:200,left:80,right:80},children:[new Paragraph({children:[]})]}),
+            ]}),
+          ]})
+        ]})
+      ]});
+      const rEst=new TableRow({children:[new TableCell({columnSpan:5,width:{size:W,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},margins:cm,children:[new Paragraph({children:[new TextRun({text:'ESTUDANTE:',bold:true,size:22,font:'Arial'})]})] })]});
+      const tbl=new Table({width:{size:W,type:WidthType.DXA},columnWidths:[2200,1800,1800,900,2660],rows:[r1,r2,r3,r4,rEst]});
+      const instrucao=new Paragraph({spacing:{before:0,after:200},border:{top:brd('000000',4),bottom:brd('000000',4),left:brd('000000',4),right:brd('000000',4)},children:[
+        new TextRun({text:'1. A prova deverá ser realizada de caneta azul ou preta. Não serão corrigidas questões a lápis. As questões subjetivas devem ser realizadas no ',size:18,font:'Arial'}),
+        new TextRun({text:'LOCAL DETERMINADO',size:18,font:'Arial',bold:true,underline:{}}),
+        new TextRun({text:'. As questões objetivas devem ser marcadas na alternativa.',size:18,font:'Arial'}),
+      ]});
+      return [tbl, instrucao];
     }
-    ch.push(new Paragraph({spacing:{after:80},children:[]}));
-  });
-  return ch;
-}
 
-function buildGabarito(sel){
-  const ch=[new Paragraph({pageBreakBefore:true,spacing:{before:0,after:200},children:[new TextRun({text:'GABARITO',bold:true,size:28,font:'Arial'})]})];
-  sel.forEach((q,i)=>{
-    let resp='';
-    if(q.tipo==='Múltipla Escolha' && q.correta!==undefined) resp=String.fromCharCode(65+q.correta);
-    else if(q.gabarito) resp=q.gabarito;
-    if(resp) ch.push(new Paragraph({spacing:{after:80},children:[new TextRun({text:`${i+1}. `,bold:true,size:22,font:'Arial'}),new TextRun({text:resp,size:22,font:'Arial'})]}));
-  });
-  return ch;
-}
+    function makeHeaderABP(){
+      const az='BDD7EE';
+      const r1=new TableRow({children:[
+        new TableCell({rowSpan:3,width:{size:2600,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},shading:{fill:az,type:ShadingType.CLEAR},margins:cm,verticalAlign:VerticalAlign.CENTER,children:[
+          new Paragraph({alignment:AlignmentType.CENTER,spacing:{after:40},children:[new TextRun({text:'Unit',bold:true,size:40,font:'Arial',color:'1a5276'})]}),
+          new Paragraph({alignment:AlignmentType.CENTER,spacing:{after:60},children:[new TextRun({text:'UNIVERSIDADE TIRADENTES',size:14,bold:true,font:'Arial'})]}),
+          new Paragraph({alignment:AlignmentType.CENTER,children:[new TextRun({text:'Avaliação Multinível',bold:true,size:20,font:'Arial'})]})
+        ]}),
+        new TableCell({width:{size:4480,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},shading:{fill:az,type:ShadingType.CLEAR},margins:cm,children:[new Paragraph({children:[new TextRun({text:`Curso: Fisioterapia`,size:20,font:'Arial'})]})] }),
+        new TableCell({width:{size:2280,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},shading:{fill:az,type:ShadingType.CLEAR},margins:cm,children:[new Paragraph({children:[new TextRun({text:'Código:',size:20,font:'Arial'})]})] }),
+      ]});
+      const r2=new TableRow({children:[new TableCell({columnSpan:2,width:{size:6760,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},shading:{fill:az,type:ShadingType.CLEAR},margins:cm,children:[new Paragraph({children:[new TextRun({text:`Projeto: ${projeto}`,size:20,font:'Arial'})]})] })]});
+      const r3=new TableRow({children:[new TableCell({columnSpan:2,width:{size:6760,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},shading:{fill:az,type:ShadingType.CLEAR},margins:cm,children:[new Paragraph({children:[new TextRun({text:'Docente: Felipe Lima de Cerqueira',size:20,font:'Arial'})]})] })]});
+      const rDisc=new TableRow({children:[new TableCell({columnSpan:3,width:{size:W,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},shading:{fill:az,type:ShadingType.CLEAR},margins:cm,children:[new Paragraph({children:[new TextRun({text:`Disciplina: ${disciplina}`,size:20,font:'Arial'})]})] })]});
+      const rE1=new TableRow({children:[
+        new TableCell({rowSpan:2,width:{size:6760,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},shading:{fill:az,type:ShadingType.CLEAR},margins:{top:200,bottom:200,left:120,right:120},verticalAlign:VerticalAlign.TOP,children:[new Paragraph({children:[new TextRun({text:'Estudante:',size:20,font:'Arial'})]})] }),
+        new TableCell({width:{size:2600,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},shading:{fill:az,type:ShadingType.CLEAR},margins:cm,children:[new Paragraph({children:[new TextRun({text:'Data:',size:20,font:'Arial'})]})] }),
+      ]});
+      const rE2=new TableRow({children:[new TableCell({width:{size:2600,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},shading:{fill:az,type:ShadingType.CLEAR},margins:cm,children:[new Paragraph({children:[new TextRun({text:'Nota - Objetivas:',size:20,font:'Arial'})]})] })]});
+      const rM1=new TableRow({children:[
+        new TableCell({rowSpan:2,width:{size:6760,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},shading:{fill:az,type:ShadingType.CLEAR},margins:{top:200,bottom:200,left:120,right:120},verticalAlign:VerticalAlign.TOP,children:[new Paragraph({children:[new TextRun({text:'Matrícula:',size:20,font:'Arial'})]})] }),
+        new TableCell({width:{size:2600,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},shading:{fill:az,type:ShadingType.CLEAR},margins:cm,children:[new Paragraph({children:[new TextRun({text:'Nota - Discursivas:',size:20,font:'Arial'})]})] }),
+      ]});
+      const rM2=new TableRow({children:[new TableCell({width:{size:2600,type:WidthType.DXA},borders:{top:brd(),bottom:brd(),left:brd(),right:brd()},shading:{fill:az,type:ShadingType.CLEAR},margins:cm,children:[new Paragraph({children:[new TextRun({text:'Nota Total:',size:20,font:'Arial'})]})] })]});
+      return [new Table({width:{size:W,type:WidthType.DXA},columnWidths:[2600,4480,2280],rows:[r1,r2,r3,rDisc,rE1,rE2,rM1,rM2]})];
+    }
 
-const headerChildren=modelo==='tradicional'?makeHeaderTradicional():makeHeaderABP();
-const allChildren=[...headerChildren,new Paragraph({spacing:{before:300,after:0},children:[]}), ...buildQuestoes(selecionadas),...buildGabarito(selecionadas)];
-const document=new Document({
-  sections:[{properties:{page:{size:{width:11906,height:16838},margin:{top:1134,right:1134,bottom:1134,left:1134}}},children:allChildren}]
-});
-const buffer=await Packer.toBuffer(document);
-const nomeArq=`prova_${disciplina.replace(/\s+/g,'_')||'sem_disciplina'}_${new Date().toLocaleDateString('pt-BR').replace(/\//g,'-')}`;
-const blob=new Blob([buffer],{type:'application/vnd.openxmlformats-officedocument.wordprocessingml.document'});
-saveAs(blob,`${nomeArq}.docx`);
-showToast(`${selecionadas.length} questões exportadas!`,'success');
-```
+    function buildQuestoes(sel){
+      const ch=[];
+      sel.forEach((q,i)=>{
+        ch.push(new Paragraph({spacing:{before:240,after:120},children:[new TextRun({text:`${i+1}. `,bold:true,size:24,font:'Arial'}),new TextRun({text:q.enunciado||'',size:24,font:'Arial'})]}));
+        if(q.tipo==='Múltipla Escolha' && q.alternativas?.length){
+          q.alternativas.forEach((a,ai)=>{
+            ch.push(new Paragraph({spacing:{after:60},indent:{left:360},children:[new TextRun({text:`${String.fromCharCode(65+ai)}) `,size:22,font:'Arial'}),new TextRun({text:a,size:22,font:'Arial'})]}));
+          });
+        }
+        ch.push(new Paragraph({spacing:{after:80},children:[]}));
+      });
+      return ch;
+    }
 
-} catch(e){ console.error(e); showToast(’Erro: ’+e.message,‘error’); }
+    function buildGabarito(sel){
+      const ch=[new Paragraph({pageBreakBefore:true,spacing:{before:0,after:200},children:[new TextRun({text:'GABARITO',bold:true,size:28,font:'Arial'})]})];
+      sel.forEach((q,i)=>{
+        let resp='';
+        if(q.tipo==='Múltipla Escolha' && q.correta!==undefined) resp=String.fromCharCode(65+q.correta);
+        else if(q.gabarito) resp=q.gabarito;
+        if(resp) ch.push(new Paragraph({spacing:{after:80},children:[new TextRun({text:`${i+1}. `,bold:true,size:22,font:'Arial'}),new TextRun({text:resp,size:22,font:'Arial'})]}));
+      });
+      return ch;
+    }
+
+    const headerChildren=modelo==='tradicional'?makeHeaderTradicional():makeHeaderABP();
+    const allChildren=[...headerChildren,new Paragraph({spacing:{before:300,after:0},children:[]}), ...buildQuestoes(selecionadas),...buildGabarito(selecionadas)];
+    const document=new Document({
+      sections:[{properties:{page:{size:{width:11906,height:16838},margin:{top:1134,right:1134,bottom:1134,left:1134}}},children:allChildren}]
+    });
+    const buffer=await Packer.toBuffer(document);
+    const nomeArq=`prova_${disciplina.replace(/\s+/g,'_')||'sem_disciplina'}_${new Date().toLocaleDateString('pt-BR').replace(/\//g,'-')}`;
+    const blob=new Blob([buffer],{type:'application/vnd.openxmlformats-officedocument.wordprocessingml.document'});
+    saveAs(blob,`${nomeArq}.docx`);
+    showToast(`${selecionadas.length} questões exportadas!`,'success');
+  } catch(e){ console.error(e); showToast('Erro: '+e.message,'error'); }
 }
 
 // ── TOAST ──
-function showToast(msg,type=‘success’){
-const t=document.getElementById(‘toast’);
-t.textContent=msg; t.className=’toast show ’+type;
-setTimeout(()=>{ t.className=‘toast’; },2500);
+function showToast(msg,type='success'){
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.className='toast show '+type;
+  setTimeout(()=>{ t.className='toast'; },2500);
 }
 </script>
-
 </body>
 </html>
